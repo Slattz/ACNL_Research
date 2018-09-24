@@ -1,0 +1,938 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: ACNL_Save.bt
+//   Authors: Slattz
+//   Version: 0.2
+//   Purpose: ACNL garden_plus.dat Savefile Structure
+//  Category: 
+// File Mask: garden_plus.dat
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+/* FUNCTIONS FOR STRINGS */
+
+string     DecryptACNLValue(uint64 encval) //Decrypt ACNL Numerical Values
+{
+    string result;
+
+    // Unpack 64-bit value into (uint32, uint16, ubyte, ubyte) values.
+    uint32 enc = (encval & 0xFFFFFFFF);
+    uint16 adjust = ((encval >> 32) & 0xFFFF);
+    ubyte  shift_val = ((encval >> 48) & 0xFF);
+    ubyte  chk = ((encval >> 56) & 0xFF);
+    // Validate 8-bit checksum
+    if ((((enc >> 0) + (enc >> 8) + (enc >> 16) + (enc >> 24) + 0xBA) & 0xFF) != chk) return 0;
+        
+    ubyte  left_shift = ((0x1C - shift_val) & 0xFF);
+    ubyte  right_shift = 0x20 - left_shift;
+
+    // Handle error case: Invalid shift value.
+    if (left_shift >= 0x20)
+    {
+        SPrintf(result, "Decrypted Value: %d", (0 + (enc << right_shift) - (adjust + 0x8F187432)));
+        return result;
+    }
+
+    // This case should occur for all game-generated values.
+    SPrintf(result, "Decrypted Value: %d", ((enc << left_shift) + (enc >> right_shift) - (adjust + 0x8F187432)));
+    return result;
+}
+
+uint64     EncryptACNLValue(uint32 decval) //Encrypt ACNL Numerical Values
+{
+    // Make a new RNG
+    uint16 adjust = Random(0x10000);
+    ubyte  shift_val = Random(0x1A);
+
+    // Encipher value
+    uint32 enc = decval + adjust + 0x8F187432;
+    enc = (enc >> (0x1C - shift_val)) + (enc << (shift_val + 4));
+
+    // Calculate Checksum
+    ubyte  chk = (((enc >> 0) + (enc >> 8) + (enc >> 16) + (enc >> 24) + 0xBA) & 0xFF);
+
+    // Pack result
+    return ((uint64)enc << 0) | ((uint64)adjust << 32) | ((uint64)shift_val << 48) | ((uint64)chk << 56);
+}
+
+string HairStyleString(ubyte HairStyle)
+{
+    string init = "Values: Male: 0x0 -> 0x10, Female: 0x11 -> 0x21 Current: ";
+    string hair;
+
+    if (HairStyle == 17)
+        return init += "Male #17 - Bed Head";
+
+    else if (HairStyle == 34)
+        return init += "Female #17 - Bed Head";
+
+    else if (HairStyle >= 0 && HairStyle <= 16)
+    {
+        SPrintf(hair, "Male #%d", HairStyle);
+        return init += hair;
+    }
+
+    else if (HairStyle >= 18 && HairStyle <= 33)
+    {
+        HairStyle -= 0x11;
+        SPrintf(hair, "Female #%d", HairStyle);
+        return init += hair;
+    }
+
+    else
+        return init += "Invalid Hair";
+}
+
+string EmoteString(ubyte Emote)
+{
+    string init = "Emote: ";
+
+    switch (Emote)
+    {
+        case 0x1:
+            return init += "Happiness";
+        case 0x2:
+            return init += "Laughter";
+        case 0x3: 
+            return init += "Joy";
+        case 0x4: 
+            return init += "Love";
+        case 0x5: 
+            return init += "Glee";
+        case 0x6: 
+            return init += "Anger";
+        case 0x7: 
+            return init += "Aggravation";
+        case 0x8: 
+            return init += "Outrage";
+        case 0x9: 
+            return init += "Worry";
+        case 0xA: 
+            return init += "Sighing";
+        case 0xB: 
+            return init += "Thought";
+        case 0xC: 
+            return init += "Sadness";
+        case 0xD: 
+            return init += "Distress";
+        case 0xE: 
+            return init += "Sorrow";
+        case 0x10: 
+            return init += "Surprise";
+        case 0x11: 
+            return init += "Disbelief";
+        case 0x12: 
+            return init += "Shocked";
+        case 0x13: 
+            return init += "Cold Chill";
+        case 0x14: 
+            return init += "Fearful";
+        case 0x15: 
+            return init += "Agreement";
+        case 0x16: 
+            return init += "Inspiration";
+        case 0x17: 
+            return init += "Curiosity";
+        case 0x18: 
+            return init += "Heartbreak";
+        case 0x19: 
+            return init += "Sleepy";
+        case 0x1A: 
+            return init += "Bashfulness";
+        case 0x1B: 
+            return init += "Resignation";
+        case 0x1C: 
+            return init += "Mischief";
+        case 0x1D: 
+            return init += "Delight";
+        case 0x1E: 
+            return init += "Sneezing";
+        case 0x20: 
+            return init += "Greetings";
+        case 0x21: 
+            return init += "Pride";
+        case 0x24: 
+            return init += "Sheepishness";
+        case 0x26: 
+            return init += "Sunniness";
+        case 0x27: 
+            return init += "Shyness";
+        case 0x28: 
+            return init += "Disagreement";
+        case 0x29: 
+            return init += "Mistaken";
+        case 0x2A: 
+            return init += "Flourish";
+        case 0x2B: 
+            return init += "Daydreaming";
+        case 0x2C: 
+            return init += "Showmanship";
+        case 0x2E: 
+            return init += "Shrunk Funk Shuffle";
+        default:
+            return init += "Invalid Emote!";    
+    }
+}
+
+/* EXTRA STRUCTS */
+
+typedef struct MiiData
+{
+    ubyte MiiFace[92] <format=hex,comment="Based on https://3dbrew.org/wiki/Mii#Mii_format">; //0x5538 -> 0x5595
+    uint16 ZeroPad_1 <format=hex,comment="U16 Zero Padding; Always 0x0000">;  //0x5594
+    uint16 Mii_CRC16 <format=hex>;
+    uint32 AES_CCM_MAC[4] <format=hex>;
+    ubyte Unknown2[24];            //0x5596 -> 0x55BF: Gets written to when getting a Mii form Harriet. Never read(?)
+    ubyte ZeroPad_3[30];           //0x55C0 -> 0x55DF
+    uint16  ZeroPad_2;
+
+};
+
+typedef struct Mannequin
+{
+    uint32 Hat  <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 Accessory <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 TopWear <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 BottomWear <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 Socks <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 Shoes <format=hex,comment="Item ID < 0xXXXX">;
+};
+
+typedef struct Player_Flags
+{
+    ubyte Unknown1 : 1;
+    ubyte Unknown2 : 1;
+    ubyte Unknown3 : 1;
+    ubyte Unknown4 : 1;
+    ubyte Unknown5 : 1;
+    ubyte Unknown6 : 1;
+    ubyte Unknown7 : 1;
+    ubyte Unknown8 : 1;
+    ubyte Unknown9 : 1;
+    ubyte Unknown10 : 1;
+    ubyte Unknown11 : 1;
+    ubyte Unknown12 : 1;
+    ubyte Unknown13 : 1;
+    ubyte Unknown14 : 1;
+    ubyte Unknown15 : 1;
+    ubyte Unknown16 : 1;
+    ubyte Unknown17 : 1;
+    ubyte Unknown18 : 1;
+    ubyte Unknown19 : 1;
+    ubyte Unknown20 : 1;
+    ubyte Unknown21 : 1;
+    ubyte Unknown22 : 1;
+    ubyte Unknown23 : 1;
+    ubyte Unknown24 : 1;
+    ubyte Unknown25 : 1;
+    ubyte Unknown26 : 1;
+    ubyte Unknown27 : 1;
+    ubyte Unknown28 : 1;
+    ubyte Unknown29 : 1;
+    ubyte Unknown30 : 1;
+    ubyte Unknown31 : 1;
+    ubyte Unknown32 : 1;
+    ubyte Unknown33 : 1;
+    ubyte Unknown34 : 1;
+    ubyte Unknown35 : 1;
+    ubyte Unknown36 : 1;
+    ubyte Unknown37 : 1;
+    ubyte Unknown38 : 1;
+    ubyte Unknown39 : 1;
+    ubyte Unknown40 : 1;
+    ubyte Unknown41 : 1;
+    ubyte Unknown42 : 1;
+    ubyte Unknown43 : 1;
+    ubyte Unknown44 : 1;
+    ubyte Unknown45 : 1;
+    ubyte Unknown46 : 1;
+    ubyte Unknown47 : 1;
+    ubyte Unknown48 : 1;
+    ubyte Unknown49 : 1;
+    ubyte Unknown50 : 1;
+    ubyte Unknown51 : 1;
+    ubyte Unknown52 : 1;
+    ubyte Unknown53 : 1;
+    ubyte Unknown54 : 1;
+    ubyte Unknown55 : 1;
+    ubyte Unknown56 : 1;
+    ubyte Unknown57 : 1;
+    ubyte Unknown58 : 1;
+    ubyte Unknown59 : 1;
+    ubyte Unknown60 : 1;
+    ubyte Unknown61 : 1;
+    ubyte Unknown62 : 1;
+    ubyte Unknown63 : 1;
+    ubyte Unknown64 : 1;
+    ubyte Unknown65 : 1;
+    ubyte Unknown66 : 1;
+    ubyte Unknown67 : 1;
+    ubyte Unknown68 : 1;
+    ubyte Unknown69 : 1;
+    ubyte Unknown70 : 1;
+    ubyte Unknown71 : 1;
+    ubyte Unknown72 : 1;
+    ubyte Unknown73 : 1;
+    ubyte Unknown74 : 1;
+    ubyte Unknown75 : 1;
+    ubyte Unknown76 : 1;
+    ubyte Unknown77 : 1;
+    ubyte Unknown78 : 1;
+    ubyte Unknown79 : 1;
+    ubyte Unknown80 : 1;
+    ubyte Unknown81 : 1;
+    ubyte ResetPending : 1;
+    ubyte Unknown83 : 1;
+    ubyte Unknown84 : 1;
+    ubyte Unknown85 : 1;
+    ubyte Unknown86 : 1;
+    ubyte Unknown87 : 1;
+    ubyte Unknown88 : 1;
+    ubyte Unknown89 : 1;
+    ubyte Unknown90 : 1;
+    ubyte Unknown91 : 1;
+    ubyte Unknown92 : 1;
+    ubyte Unknown93 : 1;
+    ubyte Unknown94 : 1;
+    ubyte Unknown95 : 1;
+    ubyte Unknown96 : 1;
+    ubyte Unknown97 : 1;
+    ubyte Unknown98 : 1;
+    ubyte Unknown99 : 1;
+    ubyte Unknown100 : 1;
+    ubyte Unknown101 : 1;
+    ubyte Unknown102 : 1;
+    ubyte Unknown103 : 1;
+    ubyte Unknown104 : 1;
+    ubyte Unknown105 : 1;
+    ubyte Unknown106 : 1;
+    ubyte Unknown107 : 1;
+    ubyte Unknown108 : 1;
+    ubyte Unknown109 : 1;
+    ubyte Unknown110 : 1;
+    ubyte Unknown111 : 1;
+    ubyte Unknown112 : 1;
+    ubyte Unknown113 : 1;
+    ubyte Unknown114 : 1;
+    ubyte Unknown115 : 1;
+    ubyte Unknown116 : 1;
+    ubyte Unknown117 : 1;
+    ubyte Unknown118 : 1;
+    ubyte Unknown119 : 1;
+    ubyte Unknown120 : 1;
+    ubyte Unknown121 : 1;
+    ubyte Unknown122 : 1;
+    ubyte Unknown123 : 1;
+    ubyte Unknown124 : 1;
+    ubyte Unknown125 : 1;
+    ubyte Unknown126 : 1;
+    ubyte Unknown127 : 1;
+    ubyte Unknown128 : 1;
+    ubyte Unknown129 : 1;
+    ubyte Unknown130 : 1;
+    ubyte Unknown131 : 1;
+    ubyte Unknown132 : 1;
+    ubyte Unknown133 : 1;
+    ubyte Unknown134 : 1;
+    ubyte Unknown135 : 1;
+    ubyte Unknown136 : 1;
+    ubyte Unknown137 : 1;
+    ubyte Unknown138 : 1;
+    ubyte Unknown139 : 1;
+    ubyte Unknown140 : 1;
+    ubyte Unknown141 : 1;
+    ubyte Unknown142 : 1;
+    ubyte Unknown143 : 1;
+    ubyte Unknown144 : 1;
+    ubyte Unknown145 : 1;
+    ubyte Unknown146 : 1;
+    ubyte Unknown147 : 1;
+    ubyte Unknown148 : 1;
+    ubyte Unknown149 : 1;
+    ubyte Unknown150 : 1;
+    ubyte Unknown151 : 1;
+    ubyte Unknown152 : 1;
+    ubyte Unknown153 : 1;
+    ubyte Unknown154 : 1;
+    ubyte Unknown155 : 1;
+    ubyte Unknown156 : 1;
+    ubyte Unknown157 : 1;
+    ubyte Unknown158 : 1;
+    ubyte Unknown159 : 1;
+    ubyte Unknown160 : 1;
+    ubyte Unknown161 : 1;
+    ubyte Unknown162 : 1;
+    ubyte Unknown163 : 1;
+    ubyte Unknown164 : 1;
+    ubyte Unknown165 : 1;
+    ubyte Unknown166 : 1;
+    ubyte Unknown167 : 1;
+    ubyte Unknown168 : 1;
+    ubyte Unknown169 : 1;
+    ubyte Unknown170 : 1;
+    ubyte Unknown171 : 1;
+    ubyte Unknown172 : 1;
+    ubyte Unknown173 : 1;
+    ubyte Unknown174 : 1;
+    ubyte Unknown175 : 1;
+    ubyte Unknown176 : 1;
+    ubyte Unknown177 : 1;
+    ubyte Unknown178 : 1;
+    ubyte Unknown179 : 1;
+    ubyte Unknown180 : 1;
+    ubyte Unknown181 : 1;
+    ubyte Unknown182 : 1;
+    ubyte Unknown183 : 1;
+    ubyte Unknown184 : 1;
+    ubyte Unknown185 : 1;
+    ubyte Unknown186 : 1;
+    ubyte Unknown187 : 1;
+    ubyte Unknown188 : 1;
+    ubyte Unknown189 : 1;
+    ubyte Unknown190 : 1;
+    ubyte Unknown191 : 1;
+    ubyte Unknown192 : 1;
+    ubyte Unknown193 : 1;
+    ubyte Unknown194 : 1;
+    ubyte Unknown195 : 1;
+    ubyte Unknown196 : 1;
+    ubyte Unknown197 : 1;
+    ubyte Unknown198 : 1;
+    ubyte Unknown199 : 1;
+    ubyte Unknown200 : 1;
+    ubyte Unknown201 : 1;
+    ubyte Unknown202 : 1;
+    ubyte Unknown203 : 1;
+    ubyte Unknown204 : 1;
+    ubyte Unknown205 : 1;
+    ubyte Unknown206 : 1;
+    ubyte Unknown207 : 1;
+    ubyte Unknown208 : 1;
+    ubyte Unknown209 : 1;
+    ubyte Unknown210 : 1;
+    ubyte Unknown211 : 1;
+    ubyte Unknown212 : 1;
+    ubyte Unknown213 : 1;
+    ubyte Unknown214 : 1;
+    ubyte Unknown215 : 1;
+    ubyte Unknown216 : 1;
+    ubyte Unknown217 : 1;
+    ubyte Unknown218 : 1;
+    ubyte Unknown219 : 1;
+    ubyte Unknown220 : 1;
+    ubyte Unknown221 : 1;
+    ubyte Unknown222 : 1;
+    ubyte Unknown223 : 1;
+    ubyte Unknown224 : 1;
+    ubyte Unknown225 : 1;
+    ubyte Unknown226 : 1;
+    ubyte Unknown227 : 1;
+    ubyte Unknown228 : 1;
+    ubyte Unknown229 : 1;
+    ubyte Unknown230 : 1;
+    ubyte Unknown231 : 1;
+    ubyte Unknown232 : 1;
+    ubyte Unknown233 : 1;
+    ubyte Unknown234 : 1;
+    ubyte Unknown235 : 1;
+    ubyte Unknown236 : 1;
+    ubyte Unknown237 : 1;
+    ubyte Unknown238 : 1;
+    ubyte Unknown239 : 1;
+    ubyte Unknown240 : 1;
+    ubyte Unknown241 : 1;
+    ubyte Unknown242 : 1;
+    ubyte Unknown243 : 1;
+    ubyte Unknown244 : 1;
+    ubyte Unknown245 : 1;
+    ubyte Unknown246 : 1;
+    ubyte Unknown247 : 1;
+    ubyte Unknown248 : 1;
+    ubyte Unknown249 : 1;
+    ubyte Unknown250 : 1;
+    ubyte Unknown251 : 1;
+    ubyte Unknown252 : 1;
+    ubyte Unknown253 : 1;
+    ubyte Unknown254 : 1;
+    ubyte Unknown255 : 1;
+    ubyte Unknown256 : 1;
+    ubyte Unknown257 : 1;
+    ubyte Unknown258 : 1;
+    ubyte Unknown259 : 1;
+    ubyte Unknown260 : 1;
+    ubyte Unknown261 : 1;
+    ubyte Unknown262 : 1;
+    ubyte Unknown263 : 1;
+    ubyte Unknown264 : 1;
+    ubyte Unknown265 : 1;
+    ubyte Unknown266 : 1;
+    ubyte Unknown267 : 1;
+    ubyte Unknown268 : 1;
+    ubyte Unknown269 : 1;
+    ubyte Unknown270 : 1;
+    ubyte Unknown271 : 1;
+    ubyte Unknown272 : 1;
+    ubyte Unknown273 : 1;
+    ubyte Unknown274 : 1;
+    ubyte Unknown275 : 1;
+    ubyte Unknown276 : 1;
+    ubyte Unknown277 : 1;
+    ubyte Unknown278 : 1;
+    ubyte Unknown279 : 1;
+    ubyte Unknown280 : 1;
+    ubyte Unknown281 : 1;
+    ubyte Unknown282 : 1;
+    ubyte Unknown283 : 1;
+    ubyte Unknown284 : 1;
+    ubyte Unknown285 : 1;
+    ubyte Unknown286 : 1;
+    ubyte Unknown287 : 1;
+    ubyte Unknown288 : 1;
+    ubyte Unknown289 : 1;
+    ubyte Unknown290 : 1;
+    ubyte Unknown291 : 1;
+    ubyte Unknown292 : 1;
+    ubyte Unknown293 : 1;
+    ubyte Unknown294 : 1;
+    ubyte Unknown295 : 1;
+    ubyte Unknown296 : 1;
+    ubyte Unknown297 : 1;
+    ubyte Unknown298 : 1;
+    ubyte Unknown299 : 1;
+    ubyte Unknown300 : 1;
+    ubyte Unknown301 : 1;
+    ubyte Unknown302 : 1;
+    ubyte Unknown303 : 1;
+    ubyte Unknown304 : 1;
+    ubyte Unknown305 : 1;
+    ubyte Unknown306 : 1;
+    ubyte Unknown307 : 1;
+    ubyte Unknown308 : 1;
+    ubyte Unknown309 : 1;
+    ubyte Unknown310 : 1;
+    ubyte Unknown311 : 1;
+    ubyte Unknown312 : 1;
+    ubyte Unknown313 : 1;
+    ubyte Unknown314 : 1;
+    ubyte Unknown315 : 1;
+    ubyte Unknown316 : 1;
+    ubyte Unknown317 : 1;
+    ubyte Unknown318 : 1;
+    ubyte Unknown319 : 1;
+    ubyte Unknown320 : 1;
+    ubyte Unknown321 : 1;
+    ubyte Unknown322 : 1;
+    ubyte Unknown323 : 1;
+    ubyte Unknown324 : 1;
+    ubyte Unknown325 : 1;
+    ubyte Unknown326 : 1;
+    ubyte Unknown327 : 1;
+    ubyte Unknown328 : 1;
+    ubyte Unknown329 : 1;
+    ubyte Unknown330 : 1;
+    ubyte Unknown331 : 1;
+    ubyte Unknown332 : 1;
+    ubyte Unknown333 : 1;
+    ubyte Unknown334 : 1;
+    ubyte Unknown335 : 1;
+    ubyte Unknown336 : 1;
+    ubyte Unknown337 : 1;
+    ubyte Unknown338 : 1;
+    ubyte Unknown339 : 1;
+    ubyte Unknown340 : 1;
+    ubyte Unknown341 : 1;
+    ubyte Unknown342 : 1;
+    ubyte Unknown343 : 1;
+    ubyte Unknown344 : 1;
+    ubyte Unknown345 : 1;
+    ubyte Unknown346 : 1;
+    ubyte Unknown347 : 1;
+    ubyte Unknown348 : 1;
+    ubyte Unknown349 : 1;
+    ubyte Unknown350 : 1;
+    ubyte Unknown351 : 1;
+    ubyte Unknown352 : 1;
+    ubyte Unknown353 : 1;
+    ubyte Unknown354 : 1;
+    ubyte Unknown355 : 1;
+    ubyte Unknown356 : 1;
+    ubyte Unknown357 : 1;
+    ubyte Unknown358 : 1;
+    ubyte Unknown359 : 1;
+    ubyte Unknown360 : 1;
+    ubyte Unknown361 : 1;
+    ubyte Unknown362 : 1;
+    ubyte Unknown363 : 1;
+    ubyte Unknown364 : 1;
+    ubyte Unknown365 : 1;
+    ubyte Unknown366 : 1;
+    ubyte Unknown367 : 1;
+    ubyte Unknown368 : 1;
+    ubyte Unknown369 : 1;
+    ubyte Unknown370 : 1;
+    ubyte Unknown371 : 1;
+    ubyte Unknown372 : 1;
+    ubyte Unknown373 : 1;
+    ubyte Unknown374 : 1;
+    ubyte Unknown375 : 1;
+    ubyte Unknown376 : 1;
+    ubyte Unknown377 : 1;
+    ubyte Unknown378 : 1;
+    ubyte Unknown379 : 1;
+    ubyte Unknown380 : 1;
+    ubyte Unknown381 : 1;
+    ubyte Unknown382 : 1;
+    ubyte CanUseCensusMenu : 1;
+    ubyte Unknown384 : 1;
+    ubyte Unknown385 : 1;
+    ubyte Unknown386 : 1;
+    ubyte Unknown387 : 1;
+    ubyte Unknown388 : 1;
+    ubyte Unknown389 : 1;
+    ubyte Unknown390 : 1;
+    ubyte Unknown391 : 1;
+    ubyte Unknown392 : 1;
+    ubyte Unknown393 : 1;
+    ubyte Unknown394 : 1;
+    ubyte Unknown395 : 1;
+    ubyte Unknown396 : 1;
+    ubyte Unknown397 : 1;
+    ubyte Unknown398 : 1;
+    ubyte Unknown399 : 1;
+    ubyte Unknown400 : 1;
+    ubyte Unknown401 : 1;
+    ubyte Unknown402 : 1;
+    ubyte Unknown403 : 1;
+    ubyte Unknown404 : 1;
+    ubyte Unknown405 : 1;
+    ubyte Unknown406 : 1;
+    ubyte Unknown407 : 1;
+    ubyte Unknown408 : 1;
+    ubyte Unknown409 : 1;
+    ubyte Unknown410 : 1;
+    ubyte Unknown411 : 1;
+    ubyte Unknown412 : 1;
+    ubyte Unknown413 : 1;
+    ubyte Unknown414 : 1;
+    ubyte Unknown415 : 1;
+    ubyte Unknown416 : 1;
+    ubyte Unknown417 : 1;
+    ubyte Unknown418 : 1;
+    ubyte Unknown419 : 1;
+    ubyte Unknown420 : 1;
+    ubyte Unknown421 : 1;
+    ubyte Unknown422 : 1;
+    ubyte Unknown423 : 1;
+    ubyte Unknown424 : 1;
+    ubyte Unknown425 : 1;
+    ubyte Unknown426 : 1;
+    ubyte Unknown427 : 1;
+    ubyte Unknown428 : 1;
+    ubyte Unknown429 : 1;
+    ubyte Unknown430 : 1;
+    ubyte Unknown431 : 1;
+    ubyte Unknown432 : 1;
+};
+
+typedef struct PlayerData
+{
+	uint16   PID <format=hex>;
+    wchar_t  DataPlayerName[9];
+	ubyte    Gender;
+    ubyte    ZeroPad;
+	uint16 	 TID <format=hex>;
+	wchar_t  DataTownName[9];
+    ubyte Unknown01;
+    ubyte Unknown02;
+    ubyte TPC_Country;
+    ubyte TPC_County;
+
+};
+
+typedef struct BDGValues
+{
+    uint64 Badge_Fishes_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Bugs_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Marine_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_FishColl_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_BugColl_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_MarineColl_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Balloons_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Visiting_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Hosting_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_Gardening_Value <format=hex,comment=DecryptACNLValue >;       //Encrypted Value
+    uint64 Badge_Bank_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Turnips_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_Medals_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Streetpass_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Weeding_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_Shopping_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_LetterWriter_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Refurbish_Value <format=hex,comment=DecryptACNLValue >;       //Encrypted Value
+    uint64 Badge_Catalog_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_KK_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_HHAScore_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_PlayTime_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Helper_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Dream_Value <format=hex,comment=DecryptACNLValue >;       //Encrypted Value      
+};
+
+typedef struct BDG
+{
+    ubyte Badge_Fishes;
+    ubyte Badge_Bugs;
+    ubyte Badge_Marine;
+    ubyte Badge_FishColl;
+    ubyte Badge_BugColl;
+    ubyte Badge_MarineColl;
+    ubyte Badge_Balloons;
+    ubyte Badge_Visiting;
+    ubyte Badge_Hosting;
+    ubyte Badge_Gardening;
+    ubyte Badge_Bank;
+    ubyte Badge_Turnips;
+    ubyte Badge_Medals;
+    ubyte Badge_Streetpass;
+    ubyte Badge_Weeding;
+    ubyte Badge_Shopping;
+    ubyte Badge_LetterWriter;
+    ubyte Badge_Refurbish;
+    ubyte Badge_Catalog;
+    ubyte Badge_KK;
+    ubyte Badge_HHAScore;
+    ubyte Badge_PlayTime;
+    ubyte Badge_Helper;
+    ubyte Badge_Dream;   
+};
+
+typedef struct PlayerBadges
+{
+    BDGValues   BadgeValues;
+    BDG         Badges;					//0x573C: 24 badges
+
+};
+
+typedef struct ACNL_Pattern
+{
+	wchar_t Title[21];
+	PlayerData CreatorData;
+	ubyte   Palette[15];
+	ubyte   Unknown2 <format=hex,comment="Default: 1, Set at 0x1B4F74 EUR 1.5">; //values are usually random - changing seems to have no effect
+	ubyte   TenConstant; //seems to always be 0x0A
+	ubyte   PatternType; //normal patterns: 0x09; dresses: 0x00; photo boards: 0x08
+	uint16  ZeroPad_2; //Zero Padding; Always 0x0000
+	ubyte   PatternData1[512]; //mandatory
+	ubyte   PatternData2[512]; //optional
+	ubyte   PatternData3[512]; //optional
+	ubyte   PatternData4[512]; //optional
+	uint32  ZeroPad_3; //Zero Padding; Optional
+
+};
+
+typedef struct ACNL_Letter
+{
+	PlayerData Reciever;
+	uint16  ZeroPad_1;
+	uint16   RecieverID; //
+	ubyte   ZeroPad_2[50];
+	uint16  Unknown2; //Some form of ID?
+	uint16  ZeroPad_3;
+	wchar_t Header[32]; //Max amount is 32 UTF-16 characters
+	uint16  ZeroPad_4;
+	wchar_t Body[192]; //Max amount is 192 UTF-16 characters
+	uint16  ZeroPad_5;
+	wchar_t Signature[32]; //Max amount is 32 UTF-16 characters
+	uint16  ZeroPad_6;
+    ubyte   RecieverNameIndent;
+    ubyte   PaperID;
+    ubyte   LetterFlag;
+    ubyte   StringIDOfSender;
+    ubyte   LetterType;
+    ubyte   Unknown2;
+    uint32  AttachedItem;
+    uint64  Unknown3;
+};
+
+typedef struct Player_Patterns
+{
+	ACNL_Pattern Pattern1;
+	ACNL_Pattern Pattern2;
+	ACNL_Pattern Pattern3;
+	ACNL_Pattern Pattern4;
+	ACNL_Pattern Pattern5;
+	ACNL_Pattern Pattern6;
+	ACNL_Pattern Pattern7;
+	ACNL_Pattern Pattern8;
+	ACNL_Pattern Pattern9;
+	ACNL_Pattern Pattern10;
+
+};
+
+typedef struct Player_Letters
+{
+	ACNL_Letter Letter1;
+	ACNL_Letter Letter2;
+	ACNL_Letter Letter3;
+	ACNL_Letter Letter4;
+	ACNL_Letter Letter5;
+	ACNL_Letter Letter6;
+	ACNL_Letter Letter7;
+	ACNL_Letter Letter8;
+	ACNL_Letter Letter9;
+	ACNL_Letter Letter10;
+
+};
+
+typedef struct Player_Emotes
+{
+    ubyte Emote1 <format=hex,comment=EmoteString>;
+    ubyte Emote2 <format=hex,comment=EmoteString>;
+    ubyte Emote3 <format=hex,comment=EmoteString>;
+    ubyte Emote4 <format=hex,comment=EmoteString>;
+    ubyte Emote5 <format=hex,comment=EmoteString>;
+    ubyte Emote6 <format=hex,comment=EmoteString>;
+    ubyte Emote7 <format=hex,comment=EmoteString>;
+    ubyte Emote8 <format=hex,comment=EmoteString>;
+    ubyte Emote9 <format=hex,comment=EmoteString>;
+    ubyte Emote10 <format=hex,comment=EmoteString>;
+    ubyte Emote11 <format=hex,comment=EmoteString>;
+    ubyte Emote12 <format=hex,comment=EmoteString>;
+    ubyte Emote13 <format=hex,comment=EmoteString>;
+    ubyte Emote14 <format=hex,comment=EmoteString>;
+    ubyte Emote15 <format=hex,comment=EmoteString>;
+    ubyte Emote16 <format=hex,comment=EmoteString>;
+    ubyte Emote17 <format=hex,comment=EmoteString>;
+    ubyte Emote18 <format=hex,comment=EmoteString>;
+    ubyte Emote19 <format=hex,comment=EmoteString>;
+    ubyte Emote20 <format=hex,comment=EmoteString>;
+    ubyte Emote21 <format=hex,comment=EmoteString>;
+    ubyte Emote22 <format=hex,comment=EmoteString>;
+    ubyte Emote23 <format=hex,comment=EmoteString>;
+    ubyte Emote24 <format=hex,comment=EmoteString>;
+    ubyte Emote25 <format=hex,comment=EmoteString>;
+    ubyte Emote26 <format=hex,comment=EmoteString>;
+    ubyte Emote27 <format=hex,comment=EmoteString>;
+    ubyte Emote28 <format=hex,comment=EmoteString>;
+    ubyte Emote29 <format=hex,comment=EmoteString>;
+    ubyte Emote30 <format=hex,comment=EmoteString>;
+    ubyte Emote31 <format=hex,comment=EmoteString>;
+    ubyte Emote32 <format=hex,comment=EmoteString>;
+    ubyte Emote33 <format=hex,comment=EmoteString>;
+    ubyte Emote34 <format=hex,comment=EmoteString>;
+    ubyte Emote35 <format=hex,comment=EmoteString>;
+    ubyte Emote36 <format=hex,comment=EmoteString>;
+    ubyte Emote37 <format=hex,comment=EmoteString>;
+    ubyte Emote38 <format=hex,comment=EmoteString>;
+    ubyte Emote39 <format=hex,comment=EmoteString>;
+    ubyte Emote40 <format=hex,comment=EmoteString>;
+};
+
+/* HEADER STRUCT */
+
+typedef struct ACNL_SaveHeader
+{
+    uint64  SecureValue <format=hex,comment="Unused in ACNL WA">;
+    uint32  SaveInitalised <format=hex,comment="Has to be exactly 1">;
+    ubyte   HeadrerZeroPad0[0x74] <format=hex,comment="Always 0">;
+    //0x80 Onwards
+    uint32  HeaderChecksum <format=hex,comment="Checksum of the next 0x1C of header data">;  //0x80
+    uint16  SaveVerifier1 <format=hex,comment="Always 0x009E; 0x00F8 pre-WA">;
+    ubyte   SaveVerifier2 <format=hex,comment="Has to be exactly 0x2; 0x2 pre-WA">;
+    ubyte   HeadrerZeroPad[0x19] <format=hex,comment="Always 0">;
+};
+
+/* PLAYER STRUCT */
+
+typedef struct ACNL_Player
+{
+    uint32 Checksum1 <format=hex,comment="Checksum of the first 0x6b84 of player data">;  //0xA0
+    ubyte HairStyle <format=hex,comment=HairStyleString>;         //0xA4
+    ubyte HairColor <format=hex,comment="Values: 0x0 -> 0xF">;    //0xA5
+    ubyte Face <format=hex,comment="Values: 0x0 -> 0xB">;         //0xA6
+    ubyte EyeColor <format=hex,comment="Values: 0x0 -> 0x5">;     //0xA7
+    uint16 Tan <format=hex,comment="Values: 0x0 -> 0xF">;         //0xA8
+    uint32 Hat  <format=hex,comment="Item ID < 0xXXXX">;          //0xAA
+    uint32 Accessory <format=hex,comment="Item ID < 0xXXXX">;     //0xAE
+    uint32 TopWear <format=hex,comment="Item ID < 0xXXXX">;       //0xB2
+    uint32 UnderTopWear <format=hex,comment="Item ID < 0xXXXX">;  //0xB6
+    uint32 BottomWear <format=hex,comment="Item ID < 0xXXXX">;    //0xBA
+    uint32 Socks <format=hex,comment="Item ID < 0xXXXX">;         //0xBE
+    uint32 Shoes <format=hex,comment="Item ID < 0xXXXX">;         //0xC2
+    uint32 HeldItem <format=hex,comment="Item ID < 0xXXXX">;      //0xC6
+    ubyte Unknown0 <format=hex,comment="Inverted gender(?): 1 for male, 0 for female. Default = 1 in PlayerConstructor (EUR 1.5 0x20D27C)">; //0xCA
+    ubyte ZeroPad_0 <format=hex,comment="U8 Zero Padding; Always 0x00">; //0xCB
+    Player_Patterns Patterns <comment="10 Patterns">;  //0xCC
+    ubyte PatternOrder[10]  <format=hex,comment="Order of patterns from 0x0 - 0x9">;  //0x552C -> 0x5535
+    uint16 ZeroPad_1 <format=hex,comment="U16 Zero Padding; Always 0x0000">;  //0x5536
+    MiiData PlayerMii;
+    ubyte HasMii <format=hex,comment="Values: 0 = No Mii, 1 = Has Mii, <1 = Has Mii, face doesn't show">; //0x55E0
+    ubyte ZeroPad_00 <format=hex,comment="Not Verified: U8 Zero Padding; Always 0x00">;    //0x55E1
+    uint16 ZeroPad_01 <format=hex,comment="Not Verified: U16 Zero Padding; Always 0x0000">;   //0x55E2 -> 0x55E3
+    Mannequin Mannequin1;
+    Mannequin Mannequin2;
+    Mannequin Mannequin3;
+    Mannequin Mannequin4;
+    uint16 ZeroPad_4;                                       //0x5644
+    PlayerData PlayerInfo;                                  //0x5646 -> 0x5671
+    ubyte BirthMonth;                                       //0x5674
+    ubyte BirthDay;                                         //0x5675
+    uint16 YearRegistered;                                  //0x5676
+    ubyte MonthRegistered;                                  //0x5678
+    ubyte DayRegistered;                                    //0x5679
+    uint16 ZeroPad_5;                                       //0x567A: Zero Padding; Always 0x0000  
+    PlayerBadges Badges;                                    //0x567C -> 0x5753
+    ubyte Unknown1[76];                                     //0x5754 -> 0x57BF
+    //ubyte PlayerFlags[54];                                  //0x57A0 -> 0x57D5
+    Player_Flags PlayerFlags;                               //0x57A0 -> 0x57D5
+    uint16 ZeroPad_10;                                      //0x57D6 -> 0x57D7
+    ubyte TPCPic[0x1400];                                   //0x57D8 -> 0x6BD7
+    wchar_t TPCText[39];                                    //0x6BD8 -> 0x6C0F
+    uint16 ZeroPad_6;                                       //0x6C10 -> 0x6C27
+    uint32 Checksum2;                                       //0x6C28 -> 0x6C2B
+    uint64 BankAmount <format=hex,comment=DecryptACNLValue >; //0x6C2C -> 0x6C33: Encrypted Value
+    uint64 DebtAmount <format=hex,comment=DecryptACNLValue >; //0x6C34 -> 0x6C3B: Encrypted Value
+    uint64 MedalAmount <format=hex,comment=DecryptACNLValue >; //0x6C3C -> 0x6C43: Encrypted Value
+    uint64 Badge11_Value_2 <format=hex,comment=DecryptACNLValue >; //0x6C44 -> 0x6C4B: Encrypted Value
+    uint32 ZeroPad_7;                                       //0x6C4C -> 0x6C4F
+    uint32 Playtime;                                        //0x6C50 -> 0x6C53
+    uint32 ZeroPad_8;                                       //0x6C54 -> 0x6C57
+    uint16 TID_2;                                           //0x6C68 -> 0x6C59
+    wchar_t TownName_2[9];                                  //0x6C5A -> 0x6C6B
+    ubyte Unknown2;                                        //0x6C5C
+    ubyte Unknown3;                                        //0x6C5D
+    uint16 ZeroPad_9;                                       //0x6C6E -> 0x6C6F
+    uint32 Inventory[16];                                   //0x6C70 -> 0x6CAF
+    ubyte InventoryItemLocks[16];                           //0x6CB0 -> 0x6CBF
+    ubyte Unknown4[80];                                     //0x6CC0 -> 0x6D0F
+    ubyte Encyclopedia[28];                                 //0x6D10 -> 0x6D2B
+    uint32 Unknown5;                                        //0x6D2C -> 0x6D2F
+    ubyte Catalog[424];                                     //0x6D30 -> 0x6ED7
+    ubyte Unknown6[208];                                   //0x6ED8 -> 0x6FA7
+    uint64 PocketMoney <format=hex,comment=DecryptACNLValue >; //0x6FA8 -> 0x6FAF: Encrypted Value
+    uint32 IslandBox[40];                                   //0x6FB0 -> 0x704F
+    uint32 IslandInventory[16];                             //0x7050 -> 0x708F
+    ubyte IslandInventoryItemLocks[16];                     //0x7090 -> 0x709F: may be Padding also, needs testing
+    uint32 UnknownItem1;                                    //0x70A0 -> 0x70A3
+    uint32 UnknownItem2;                                    //0x70A4 -> 0x70A7
+    Player_Letters Letters;                                 //0x70A8 -> 0x89A7
+    wchar_t LetterHeader[0x20];                             //0x89A8 -> 0x89E7
+    uint16 ZeroPad_9;                                       //0x89E8 -> 0x89E9
+    wchar_t FutureLetterHeader[0x20];                       //0x89EA -> 0x8A29
+    uint16 ZeroPad_10;                                      //0x8A2A -> 0x8A2B    
+    wchar_t LetterSignature[0x20];                          //0x8A2C -> 0x8A6B
+    uint16 ZeroPad_11;                                      //0x8A6C -> 0x8A6D
+    ubyte DefaultLtrRecieverNameIndent <format=hex >;       //0x8A6E -> 0x8A6E
+    ubyte DefaultFutureLtrRecieverNameIndent <format=hex,comment= "Cannot be >= 0x20" >; //0x8A6F -> 0x8A6F
+    Player_Emotes Emotes <comment= "Players Emotes (40 slots)">; //0x8A70 -> 0x8A97
+    uint16 NoIdea <comment= "0x00 or 0x00FF on different saves">;        //0x8A98 -> 0x8A99
+    
+
+    //uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
+
+};
+
+//main
+ACNL_SaveHeader Header;
+ACNL_Player Player1;
