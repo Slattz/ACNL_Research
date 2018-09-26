@@ -88,17 +88,19 @@ Can Fish Spawn:
 Example Modifications (Need to be converted to Gateway)
 -------------------
 [Fish Running Away]
-sub_253FC0 (.elf)
-0x00154140 (code.bin)
-0x00254140 (.elf)
-06 00 00 0A 00 00 94 E5 00 00 50 E3 (both)
-Function to replace 
-	sub_0EAAFC (code.bin)
-	sub_1EAAFC (.elf)
+0x0025414C (.elf)
+0x00254150 (.elf)
+(69 5A FE 1B) 04 40 94 E5  00 00 54 E3 F8 FF FF 1A
+.text:0025414C ANDNE R1, R5, #0xFF -> .text:0025414C NOP (00F020E3)
+.text:00254150 BLNE despawnFishIfPlayerIsRunning -> .text:00254150 NOP (00F020E3)
 	
 [Fish Bite on First Attempt]
-sub_fishOnBobberLogic
 001EA838 (.elf)
 CE 01 D4 E5 00 01 80 E0  00 01 55 E1 17 00 00 AA
 
-	
+[Fish Spawn Instantly]
+00254008 (.elf)
+08 00 50 E3 09 00 00 AA (20 01 96 E5) 00 00 50 E3 - Patch with 0000A0E3
+.text:00254008 LDR R0, [R6,#0x120] -> .text:00254008 MOV R0, #0
+
+
