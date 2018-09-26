@@ -1,0 +1,104 @@
+--------------
+---USA DATA---
+--------------
+
+Fish Data
+------------------------
+Fish Containers (Example: 3307E423) : A pointer to the fish object. This container is used to control the spawned fish within the game in an update loop.
+Fish (Example: 30F7A360) : The actual fish object. NOT THE SHADOW. Contains most of the information about the fish. Including the index, current command, locations, and velocity.
+
+
+General System
+--------------
+The fish system has a timer where it attempts to see if there is an empty fish array spot. The fish array contains about 6 fish at any given time.
+If there is an empty spot it will attempt to generate a fish. When the player leaves the area or saves it will nullify the array causing all new fish to spawn.
+
+
+Fish Struct
+-----------
+"Fish" + 0 = ID
+"Fish" + 8 = Index
+"Fish" + C9 = Index
+"Fish" + 18C = Command Struct
+"Fish" + 190 = Current Command
+"Fish" + 1CF = (Bool) Is Ocean Fish
+
+Command Struct
+-------------
+Varies between River fish and Ocean Fish
+
+River Fish Commands
+0 Moving
+2 MovingR
+3 MovingS
+5 Drifting
+6 Running Away (Escape)
+7 Bobber
+A Bite Bobber
+
+Ocean Fish Commands
+0 Moving
+1 MovingR
+2 MovingS
+4 Drifting
+5 Running Away (Escape)
+7 Bobber
+A Bite Bobber
+
+Fish Generation Function
+----------------
+Timer Function:
+  70 40 2D E9 00 60 A0 E1  ED 8C 02 EB 7D 00 50 E3 sub_00253FC0 (.elf) sub_00153FC0 (code.bin)
+	Larger function that is based on a timer. .text:00254008 LDR R0, [R6,#0x120]. Once R0 hits 0 it will call the function to check fish spawns.
+	Contains other useful functions such as checking if the player is running to despawn the fish.
+
+Spawn Fish Generation:
+  14 D0 4D E2 20 00 90 E5  00 00 50 E3 60 00 00 0A sub_00252C58 (.elf) sub_00152C58 (code.bin)
+	This file contains quite a few randomNumberGenerator functions to determine which fish to spawn.
+	Seems to split the fish index's in half as part of the calculation.
+	Then it goes through a while loop to match the random generated index to the correct type of spawn area.
+	Makes sure to match Ocean fish to the Ocean.
+
+Can See Bobber:
+  F0 43 2D E9 00 50 A0 E1 06 8B 2D ED sub_001ED654 (.elf) sub_00ED654(code.bin)
+	Uses math to check the location of the bobber in relation to the fish.
+	The math changes based on if its an ocean fish or not. if ( *(fishId + 0x1CF) )
+	
+Fish Swimming Logic 1:
+  00 40 A0 E1 02 8B 2D ED  2C D0 4D E2 18 0A 00 EB sub_001EADDC (.elf) sub_00EADDC (code.bin)
+    General logic to control the fish while its ideling in the water.
+	Controls if it can see the bobber, Its drifting, and its velocity.
+
+Setup Fish:
+  F0 41 2D E9 00 40 A0 E1  00 60 A0 E3 7E 0A 9F ED sub_001EA180 (.elf) sub_00EA180 (code.bin)
+	General logic to set some of the variables on a fish when it is spawned.
+	Includes the is Ocean Fish variable
+	
+Despawn Fish:
+  38 40 2D E9 00 40 A0 E1  00 00 90 E5 C0 10 90 E5 sub_0027DC30 (.elf) sub_0017DC30 (code.bin)
+	Called when the fish is set to despawn or be destroyed.
+	Clears the array only partially as the fish reuse the same memory space.
+	
+Can Fish Spawn:
+  1E FF 2F E1 FF 4F 2D E9  5C D0 4D E2 03 60 A0 E1 sub_001F3E94 (.elf) sub_000F3E94 (code.bin)
+	Checks to see if a fish is able to spawn based on its current data and index
+	Also checks to see the fishes current X Y coordinate 
+	
+	
+Example Modifications (Need to be converted to Gateway)
+-------------------
+[Fish Running Away]
+sub_253FC0 (.elf)
+0x00154140 (code.bin)
+0x00254140 (.elf)
+06 00 00 0A 00 00 94 E5 00 00 50 E3 (both)
+Function to replace 
+	sub_0EAAFC (code.bin)
+	sub_1EAAFC (.elf)
+	
+[Fish Bite on First Attempt]
+sub_fishOnBobberLogic
+001EA838 (.elf)
+CE 01 D4 E5 00 01 80 E0  00 01 55 E1 17 00 00 AA
+
+	
