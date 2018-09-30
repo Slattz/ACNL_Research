@@ -926,7 +926,10 @@ typedef struct ACNL_Player
     ubyte DefaultLtrRecieverNameIndent <format=hex >;       //0x8A6E -> 0x8A6E
     ubyte DefaultFutureLtrRecieverNameIndent <format=hex,comment= "Cannot be >= 0x20" >; //0x8A6F -> 0x8A6F
     Player_Emotes Emotes <comment= "Players Emotes (40 slots)">; //0x8A70 -> 0x8A97
-    uint16 NoIdea <comment= "0x00 or 0x00FF on different saves">;        //0x8A98 -> 0x8A99
+    ubyte EmotePage <comment= "0xFF = Page 1, 0x00 = Page 2">;   //0x8A98 -> 0x8A98
+    ubyte ZeroPad_12;                                            //0x8A99 -> 0x8A99
+    uint16 SpotpassDLCRecievedIds[32] <comment= "Not Verified; 0xFFFF is default, then 0xXXXX is ID of DLC recieved">; //0x8A9A -> 0x8AD9
+    uint16 ZeroPad_13;                                           //0x8ADA -> 0x8ADB
     
 
     //uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
