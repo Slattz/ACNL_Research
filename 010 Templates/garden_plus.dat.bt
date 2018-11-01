@@ -207,7 +207,7 @@ string HHAHouseThemeString(ubyte Theme)
 
 string HHAHouseEvaluatedString(ubyte Eval)
 {
-    string init = "Evaluation Status: ";
+    string init = "Evaluation Type: ";
 
     if ((Eval & 1))
     {
@@ -217,6 +217,73 @@ string HHAHouseEvaluatedString(ubyte Eval)
         else return init += "Indoor Only";
     }
     else return init += "Not Evaluated";
+}
+
+string HHAWhatsNewString(ubyte New)
+{
+    string init = "Lyle's \"What's New\" Topic: ";
+
+    //ubyte done = agree&2 ? 0xD : 0x0; Can't do a 2nd arg so doesn't work, rip
+
+    switch (New/*+done*/)
+    {
+        case 0x0: //0x0
+            return init += "Able Sisters";
+        case 0x1: //0x8
+            return init += "Leif";
+        case 0x2: //0x10
+            return init += "Racoon Brothers";
+        case 0x3: //0x18
+            return init += "Gracie";
+        case 0x4: //0x20
+            return init += "Shampoodle";
+        case 0x5: //0x28
+            return init += "Dr. Shrunk";
+        case 0x6: //0x30
+            return init += "K.K. Slider";
+        case 0x7: //0x38
+            return init += "Phyllis";
+        case 0x8: //0x40
+            return init += "Celeste";
+        case 0x9: //0x48
+            return init += "Reset Centre/Resetti";
+        case 0xA: //0x50
+            return init += "Lyle: Chess";
+        case 0xB: //0x58
+            return init += "Lyle: Daughters";
+        case 0xC: //0x60
+            return init += "NPC Gave Tasty Food";
+
+        /*  Already Talked Messages */
+        case 0xD: //0x68
+            return init += "Able Sisters Work Hard (Talked Msg)";
+        case 0xE: //0x70
+            return init += "Leif's Weed Pulling Contest (Talked Msg)";
+        case 0xF: //0x78
+            return init += "Can't tell Timmy & Tommy Apart (Talked Msg)";
+        case 0x10: //0x80
+            return init += "Gracie Furniture Expensive, Gracie is Amazing (Talked Msg)";
+        case 0x11: //0x88
+            return init += "Harriet has \"Winning\" Personality (Talked Msg)";
+        case 0x12: //0x90
+            return init += "People Don't Know About Shrunk's \"Comedy Chops\" (Talked Msg)";
+        case 0x13: //0x98
+            return init += "Can Request Songs from K.K. on Saturdays (Talked Msg)";
+        case 0x14: //0xA0
+            return init += "Phyllis Is Very Serious. \"Nose to the grindstone!\" (Talked Msg)";
+        case 0x15: //0xA8
+            return init += "Blathers & Celeste Get Along Well. Feels Like Needs a PhD When Talking. (Talked Msg)";
+        case 0x16: //0xB0
+            return init += "Can't Talk About Reset Centre/Resetti Secrets (Talked Msg)";
+        case 0x17: //0xB8
+            return init += "Nook's \"Becoming a chess master\" (Talked Msg)";
+        case 0x18: //0xC0
+            return init += "Everyone in Lyle's Family Looks The Same; Resentment From Daughters. (Talked Msg)";
+        case 0x19: //0xC8
+            return init += "Shop Is Friendly, Stop by Anytime. (Talked Msg)";
+        default:
+            return init += "???";    
+    }
 }
 
 /* EXTRA STRUCTS */
@@ -761,7 +828,7 @@ typedef struct HHAHouseInfo
     uint16 Item_Interior <format=hex, comment="Only used if you have a theme">;                        //0x5768 -> 0x5777
     uint16 HHAItem7 <format=hex, comment="Only used if you have a theme">;                        //0x5768 -> 0x5777
     ubyte CurrentHouseTheme <comment=HHAHouseThemeString>;  //0x5778 -> 0x5778
-    ubyte EvaluationStatus <comment=HHAHouseEvaluatedString>;   //0x5779 -> 0x5779
+    ubyte EvaluationType <comment=HHAHouseEvaluatedString>;   //0x5779 -> 0x5779
     ubyte HouseUnk0 <comment="Valid values: 0, 1, 2, 3">; //0x577A -> 0x577A
     ubyte HouseUnk1 <comment=" ">;    //0x577B -> 0x577B
     ubyte HouseUnk2 <comment="Read if HouseUnk0==3">; //0x577C -> 0x577C
@@ -997,6 +1064,45 @@ typedef struct UnknownStruct1
     TownID TownData; //0x6A -> 0x7F
 };
 
+typedef struct UnknownStruct2
+{
+    uint32 Unknown5 <comment= "???; Set to 0, then 0xFFFFFFFF in player ctor">; //0x8B80
+    uint32 Unknown6 <comment= "???; Set to 0, then 0x7FFFFFFF in player ctor">; //0x8B84
+    ubyte Unknown7 <comment= "???; Set to 0 in player ctor">; //0x8B88
+    ubyte Unknown8 <comment= "???; Set to 0 in player ctor">; //0x8B89
+    uint32 Unknown9 <comment= "???; Set to 0 in player ctor">; //0x8B8A
+    uint16 Unknown10 <comment= "???; Set to 0 in player ctor">; //0x8B8E
+    ubyte Unknown11 <comment= "???; Set to 0 in player ctor">; //0x8B90
+    uint32 Unknown12 <comment= "???; Set to 0 in player ctor">; //0x8B91
+    uint16 Unknown13 <comment= "???; Set to 0 in player ctor">; //0x8B95
+    ubyte Unknown14 <comment= "???; Set to 0 in player ctor">; //0x8B97
+    ubyte Unknown15 <comment= "???; Set to 0x65 in player ctor">; //0x8B98
+    ubyte Unknown16 <comment= "???; Set to 0 in player ctor">; //0x8B99
+    ubyte Unknown17 <comment= "???; Set to 0 in player ctor">; //0x8B9A
+    ubyte UnknownN18 <comment= "???; Not set in player ctor">; //0x8B9B
+    ubyte  Unknown19[0x198] <comment= "???; 0x198 buffer size set to 0 in player ctor">; //0x8B9C
+    ubyte  Unknown20[0x66] <comment= "???; 0x66 buffer size set to 0 in player ctor">; //0x8D34
+    ubyte UnknownN21 <comment= "???; Not set in player ctor">; //0x8B9A
+    ubyte UnknownN22 <comment= "???; Not set in player ctor">; //0x8B9B
+    uint32 Unknown23 <comment= "???; Set to 0 in player ctor">; //0x8D9C
+    uint32 Unknown24 <comment= "???; Set to 0 in player ctor">; //0x8DA0
+    uint32 Unknown25 <comment= "???; Set to 0 in player ctor">; //0x8DA4
+    uint32 Unknown26 <comment= "???; Set to 0 in player ctor">; //0x8DA8
+    uint32 Unknown27 <comment= "???; Set to 0 in player ctor">; //0x8DAC
+    uint32 Unknown28 <comment= "???; Set to 0 in player ctor">; //0x8DB0
+    uint32 Unknown29 <comment= "???; Set to 0 in player ctor">; //0x8DB4
+    uint32 Unknown30 <comment= "???; Set to 0 in player ctor">; //0x8DBC
+};
+
+typedef struct LyleFlags
+{
+
+    ubyte HasHeardEvaluation : 1 <comment="Set when asking about home evaluation">;
+    ubyte HasAskedWhatsNew : 1;
+    ubyte HasHeardFirstEvaluation: 1 <comment="Set when asking about home evaluation">;
+    ubyte LyleWhatsNew : 5 <format=hex, comment= HHAWhatsNewString>;
+};
+
 /* HEADER STRUCT */
 
 typedef struct ACNL_SaveHeader
@@ -1056,10 +1162,10 @@ typedef struct ACNL_Player
     uint32 HasTPCPic;                                       //0x57D4 -> 0x57D7
     ubyte TPCPic[0x1400];                                   //0x57D8 -> 0x6BD7
     wchar_t TPCText[33];                                    //0x6BD8 -> 0x6C19
-    ubyte Unknown1_1 <comment="Unknown: Was 1 on a save, 2 on another" >; //0x6C1A
-    ubyte Unknown1_2;                                       //0x6C1B
-    uint32 Unknown2;                                        //0x6C1C -> 0x6C19
-    uint32 Unknown3;                                        //0x6C20 -> 0x6C23
+    ubyte Unknown1 <comment="Unknown: Was 1 on a save, 2 on another" >; //0x6C1A
+    ubyte Unknown2;                                         //0x6C1B
+    uint32 Unknown3;                                        //0x6C1C -> 0x6C19
+    uint32 Unknown4;                                        //0x6C20 -> 0x6C23
     uint32 ZeroPad_6;                                        //0x6C24 -> 0x6C27
     uint32 Checksum2;                                       //0x6C28 -> 0x6C2B
     uint64 BankAmount <format=hex,comment=DecryptACNLValue >; //0x6C2C -> 0x6C33: Encrypted Value
@@ -1096,8 +1202,20 @@ typedef struct ACNL_Player
     uint16 ZeroPad_13;                                           //0x8ADA -> 0x8ADB
     UnknownStruct1 UnkBuffer1;                                   //0x8ADC -> 0x8B5B
     uint16 ZeroPad_14;                                           //0x8B5C -> 0x8B5D
-
-                                                                 //0x8B63 = READU8(CurrentHouseTheme+1) | 0x80;
+    LyleFlags LyleFlag;                                          //0x8B5E
+    ubyte  HasDeductions__ <comment= "Not 100% sure; something to do with items facing a wall, therefore deductions; Reads HouseUnk9 later in code">; //0x8B5F
+    ubyte  HHAAwardsUnlockedDupe;                                //0x8B60
+    ubyte  GoldExteriorsUnlockedDupe;                            //0x8B60
+    ubyte  HHAUnk1;                                              //0x8B62
+    ubyte  HHAUnk2 <comment= "READU8(CurrentHouseTheme+1) | 0x80; Only When Exterior/Theme???">; //0x8B63
+    ubyte  HHAUnk3[0x1C] <comment= "Come back to later">; //0x8B63 -> //0x8B7F
+    UnknownStruct2 UnkBuffer2;                                   //0x8B80 -> 0x8DBB
+    uint64 Unk1 <format=hex,comment=DecryptACNLValue >;          //0x8DBC -> 0x8DC3: Encrypted Value
+    uint64 Unk2 <format=hex,comment=DecryptACNLValue >;          //0x8DC4 -> 0x8DCB: Encrypted Value
+    uint64 Unk3 <format=hex,comment=DecryptACNLValue >;          //0x8DCC -> 0x8DD3: Encrypted Value
+    uint64 Unk4 <format=hex,comment=DecryptACNLValue >;          //0x8DD4 -> 0x8DDB: Encrypted Value
+    uint64 Unk5 <format=hex,comment=DecryptACNLValue >;          //0x8DDC -> 0x8DE3: Encrypted Value
+    uint64 Unk6 <format=hex,comment=DecryptACNLValue >;          //0x8DE4 -> 0x8DEB: Encrypted Value
     
 
     //uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
