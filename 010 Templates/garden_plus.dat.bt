@@ -851,24 +851,27 @@ typedef struct HHAHouseInfo
     ubyte GoldExteriorsUnlocked <comment="5 is max">; //0x577E -> 0x577E
     ubyte GoldExteriorsApplied <comment="Not Verified; 5 is max">; //0x577E -> 0x577E
     ubyte HouseUnk21 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk22 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk23 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk24 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk25 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk26 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk27 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk28 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk29 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk30 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk31 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk32 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk33 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk34 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk35 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk36 <comment=" ">;                          //0x577E -> 0x577E
-    ubyte HouseUnk37 <comment=" ">;                          //0x577E -> 0x577E
-
 };
+
+typedef struct ACNL_DreamAddress
+{
+    uint16 DCPart1 <comment=" ">;
+    uint16 DCPart2 <comment=" ">;
+    ubyte  DCPart3 <comment=" ">;
+    uint16 Unk1 <comment=" ">;
+    uint16 Unk2 <comment=" ">;
+    ubyte  DCPart4 <comment=" ">;
+    uint32 Unk3 <comment=" ">;
+    uint16 ZeroPad4 <comment=" ">;
+};
+
+string DreamCodeString(ACNL_DreamAddress &DC)
+{
+    string result;
+    SPrintf(result, "Dream Code: %02X%02X-%04X-%04X", DC.DCPart4, DC.DCPart3, DC.DCPart2, DC.DCPart1);
+    return result;
+
+}
 
 typedef struct ACNL_Pattern
 {
@@ -1157,7 +1160,8 @@ typedef struct ACNL_Player
     ubyte DayRegistered;                                    //0x5679
     uint16 ZeroPad_5;                                       //0x567A: Zero Padding; Always 0x0000  
     PlayerBadges Badges;                                    //0x567C -> 0x5763
-    HHAHouseInfo HHAHouse;                                  //0x5764 -> 0x579F
+    HHAHouseInfo HHAHouse;                                  //0x5764 -> 0x5789
+    ACNL_DreamAddress DreamCode <comment=DreamCodeString>;  //0x5790 -> 0x579F
     Player_Flags PlayerFlags;                               //0x57A0 -> 0x57D3
     uint32 HasTPCPic;                                       //0x57D4 -> 0x57D7
     ubyte TPCPic[0x1400];                                   //0x57D8 -> 0x6BD7
