@@ -1,0 +1,1082 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: ACNL_Save.bt
+//   Authors: Slattz
+//   Version: 0.2
+//   Purpose: ACNL garden.dat Savefile Structure
+//  Category: 
+// File Mask: garden.dat
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+/* FUNCTIONS FOR STRINGS */
+
+string     DecryptACNLValue(uint64 encval) //Decrypt ACNL Numerical Values
+{
+    string result;
+
+    // Unpack 64-bit value into (uint32, uint16, ubyte, ubyte) values.
+    uint32 enc = (encval & 0xFFFFFFFF);
+    uint16 adjust = ((encval >> 32) & 0xFFFF);
+    ubyte  shift_val = ((encval >> 48) & 0xFF);
+    ubyte  chk = ((encval >> 56) & 0xFF);
+    // Validate 8-bit checksum
+    if ((((enc >> 0) + (enc >> 8) + (enc >> 16) + (enc >> 24) + 0xBA) & 0xFF) != chk) return 0;
+        
+    ubyte  left_shift = ((0x1C - shift_val) & 0xFF);
+    ubyte  right_shift = 0x20 - left_shift;
+
+    // Handle error case: Invalid shift value.
+    if (left_shift >= 0x20)
+    {
+        SPrintf(result, "Decrypted Value: %d", (0 + (enc << right_shift) - (adjust + 0x8F187432)));
+        return result;
+    }
+
+    // This case should occur for all game-generated values.
+    SPrintf(result, "Decrypted Value: %d", ((enc << left_shift) + (enc >> right_shift) - (adjust + 0x8F187432)));
+    return result;
+}
+
+uint64     EncryptACNLValue(uint32 decval) //Encrypt ACNL Numerical Values
+{
+    // Make a new RNG
+    uint16 adjust = Random(0x10000);
+    ubyte  shift_val = Random(0x1A);
+
+    // Encipher value
+    uint32 enc = decval + adjust + 0x8F187432;
+    enc = (enc >> (0x1C - shift_val)) + (enc << (shift_val + 4));
+
+    // Calculate Checksum
+    ubyte  chk = (((enc >> 0) + (enc >> 8) + (enc >> 16) + (enc >> 24) + 0xBA) & 0xFF);
+
+    // Pack result
+    return ((uint64)enc << 0) | ((uint64)adjust << 32) | ((uint64)shift_val << 48) | ((uint64)chk << 56);
+}
+
+string HairStyleString(ubyte HairStyle)
+{
+    string init = "Values: Male: 0x0 -> 0x10, Female: 0x11 -> 0x21 Current: ";
+    string hair;
+
+    if (HairStyle == 17)
+        return init += "Male #17 - Bed Head";
+
+    else if (HairStyle == 34)
+        return init += "Female #17 - Bed Head";
+
+    else if (HairStyle >= 0 && HairStyle <= 16)
+    {
+        SPrintf(hair, "Male #%d", HairStyle);
+        return init += hair;
+    }
+
+    else if (HairStyle >= 18 && HairStyle <= 33)
+    {
+        HairStyle -= 0x11;
+        SPrintf(hair, "Female #%d", HairStyle);
+        return init += hair;
+    }
+
+    else
+        return init += "Invalid Hair";
+}
+
+string EmoteString(ubyte Emote)
+{
+    string init = "Emote: ";
+
+    switch (Emote)
+    {
+        case 0x1:
+            return init += "Happiness";
+        case 0x2:
+            return init += "Laughter";
+        case 0x3: 
+            return init += "Joy";
+        case 0x4: 
+            return init += "Love";
+        case 0x5: 
+            return init += "Glee";
+        case 0x6: 
+            return init += "Anger";
+        case 0x7: 
+            return init += "Aggravation";
+        case 0x8: 
+            return init += "Outrage";
+        case 0x9: 
+            return init += "Worry";
+        case 0xA: 
+            return init += "Sighing";
+        case 0xB: 
+            return init += "Thought";
+        case 0xC: 
+            return init += "Sadness";
+        case 0xD: 
+            return init += "Distress";
+        case 0xE: 
+            return init += "Sorrow";
+        case 0x10: 
+            return init += "Surprise";
+        case 0x11: 
+            return init += "Disbelief";
+        case 0x12: 
+            return init += "Shocked";
+        case 0x13: 
+            return init += "Cold Chill";
+        case 0x14: 
+            return init += "Fearful";
+        case 0x15: 
+            return init += "Agreement";
+        case 0x16: 
+            return init += "Inspiration";
+        case 0x17: 
+            return init += "Curiosity";
+        case 0x18: 
+            return init += "Heartbreak";
+        case 0x19: 
+            return init += "Sleepy";
+        case 0x1A: 
+            return init += "Bashfulness";
+        case 0x1B: 
+            return init += "Resignation";
+        case 0x1C: 
+            return init += "Mischief";
+        case 0x1D: 
+            return init += "Delight";
+        case 0x1E: 
+            return init += "Sneezing";
+        case 0x20: 
+            return init += "Greetings";
+        case 0x21: 
+            return init += "Pride";
+        case 0x24: 
+            return init += "Sheepishness";
+        case 0x26: 
+            return init += "Sunniness";
+        case 0x27: 
+            return init += "Shyness";
+        case 0x28: 
+            return init += "Disagreement";
+        case 0x29: 
+            return init += "Mistaken";
+        case 0x2A: 
+            return init += "Flourish";
+        case 0x2B: 
+            return init += "Daydreaming";
+        case 0x2C: 
+            return init += "Showmanship";
+        case 0x2E: 
+            return init += "Shrunk Funk Shuffle";
+        default:
+            return init += "Invalid Emote!";    
+    }
+}
+
+string HHAHouseThemeString(ubyte Theme)
+{
+    string init = "House Theme: ";
+
+    switch (Theme)
+    {
+        case 0x0:
+            return init += "Harmonious";
+        case 0x1:
+            return init += "Antique";
+        case 0x2:
+            return init += "Rusty";
+        case 0x3: 
+            return init += "Trendy";
+        case 0x4: 
+            return init += "Fairy Tale";
+        case 0x5: 
+            return init += "Toy Shop";
+        case 0x6: 
+            return init += "Sci-Fi";
+        case 0x7: 
+            return init += "Quirky";
+        case 0x8: 
+            return init += "No Theme";
+        default:
+            return init += "Invalid House Theme";    
+    }
+}
+
+string HHAHouseEvaluatedString(ubyte Eval)
+{
+    string init = "Evaluation Type: ";
+
+    if ((Eval & 1))
+    {
+        if ((Eval & 2)) // & 3
+            return init += "Indoor and Exterior";
+        
+        else return init += "Indoor Only";
+    }
+    else return init += "Not Evaluated";
+}
+
+string HHAWhatsNewString(ubyte New)
+{
+    string init = "Lyle's \"What's New\" Topic: ";
+
+    //ubyte done = agree&2 ? 0xD : 0x0; Can't do a 2nd arg so doesn't work, rip
+
+    switch (New/*+done*/)
+    {
+        case 0x0: //0x0
+            return init += "Able Sisters";
+        case 0x1: //0x8
+            return init += "Leif";
+        case 0x2: //0x10
+            return init += "Racoon Brothers";
+        case 0x3: //0x18
+            return init += "Gracie";
+        case 0x4: //0x20
+            return init += "Shampoodle";
+        case 0x5: //0x28
+            return init += "Dr. Shrunk";
+        case 0x6: //0x30
+            return init += "K.K. Slider";
+        case 0x7: //0x38
+            return init += "Phyllis";
+        case 0x8: //0x40
+            return init += "Celeste";
+        case 0x9: //0x48
+            return init += "Reset Centre/Resetti";
+        case 0xA: //0x50
+            return init += "Lyle: Chess";
+        case 0xB: //0x58
+            return init += "Lyle: Daughters";
+        case 0xC: //0x60
+            return init += "NPC Gave Tasty Food";
+
+        /*  Already Talked Messages */
+        case 0xD: //0x68
+            return init += "Able Sisters Work Hard (Talked Msg)";
+        case 0xE: //0x70
+            return init += "Leif's Weed Pulling Contest (Talked Msg)";
+        case 0xF: //0x78
+            return init += "Can't tell Timmy & Tommy Apart (Talked Msg)";
+        case 0x10: //0x80
+            return init += "Gracie Furniture Expensive, Gracie is Amazing (Talked Msg)";
+        case 0x11: //0x88
+            return init += "Harriet has \"Winning\" Personality (Talked Msg)";
+        case 0x12: //0x90
+            return init += "People Don't Know About Shrunk's \"Comedy Chops\" (Talked Msg)";
+        case 0x13: //0x98
+            return init += "Can Request Songs from K.K. on Saturdays (Talked Msg)";
+        case 0x14: //0xA0
+            return init += "Phyllis Is Very Serious. \"Nose to the grindstone!\" (Talked Msg)";
+        case 0x15: //0xA8
+            return init += "Blathers & Celeste Get Along Well. Feels Like Needs a PhD When Talking. (Talked Msg)";
+        case 0x16: //0xB0
+            return init += "Can't Talk About Reset Centre/Resetti Secrets (Talked Msg)";
+        case 0x17: //0xB8
+            return init += "Nook's \"Becoming a chess master\" (Talked Msg)";
+        case 0x18: //0xC0
+            return init += "Everyone in Lyle's Family Looks The Same; Resentment From Daughters. (Talked Msg)";
+        case 0x19: //0xC8
+            return init += "Shop Is Friendly, Stop by Anytime. (Talked Msg)";
+        default:
+            return init += "???";    
+    }
+}
+
+/* EXTRA STRUCTS */
+
+typedef struct MiiData
+{
+    ubyte MiiFace[92] <format=hex,comment="Based on https://3dbrew.org/wiki/Mii#Mii_format">; //0x5538 -> 0x5595
+    uint16 ZeroPad_1 <format=hex,comment="U16 Zero Padding; Always 0x0000">;  //0x5594
+    uint16 Mii_CRC16 <format=hex>;
+    uint32 AES_CCM_MAC[4] <format=hex>;
+    ubyte Unknown2[24];            //0x5596 -> 0x55BF: Gets written to when getting a Mii form Harriet. Never read(?)
+    ubyte ZeroPad_3[30];           //0x55C0 -> 0x55DF
+    uint16  ZeroPad_2;
+
+};
+
+typedef struct Mannequin
+{
+    uint32 Hat  <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 Accessory <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 TopWear <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 BottomWear <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 Socks <format=hex,comment="Item ID < 0xXXXX">;
+    uint32 Shoes <format=hex,comment="Item ID < 0xXXXX">;
+};
+
+typedef struct Player_Flags //Likely All Wrong, just hasn't been fixed for pre-WA
+{
+    ubyte Unknown1 : 1;
+    ubyte Unknown2 : 1;
+    ubyte Unknown3 : 1;
+    ubyte Unknown4 : 1;
+    ubyte Unknown5 : 1;
+    ubyte Unknown6 : 1;
+    ubyte Unknown7 : 1;
+    ubyte Unknown8 : 1;
+    ubyte Unknown9 : 1;
+    ubyte Unknown10 : 1;
+    ubyte Unknown11 : 1;
+    ubyte Unknown12 : 1;
+    ubyte Unknown13 : 1;
+    ubyte Unknown14 : 1;
+    ubyte Unknown15 : 1;
+    ubyte Unknown16 : 1;
+    ubyte Unknown17 : 1;
+    ubyte Unknown18 : 1;
+    ubyte Unknown19 : 1;
+    ubyte Unknown20 : 1;
+    ubyte Unknown21 : 1;
+    ubyte Unknown22 : 1;
+    ubyte Unknown23 : 1;
+    ubyte Unknown24 : 1;
+    ubyte Unknown25 : 1;
+    ubyte Unknown26 : 1;
+    ubyte Unknown27 : 1;
+    ubyte Unknown28 : 1;
+    ubyte BlathersIntroduced : 1;
+    ubyte Unknown30 : 1;
+    ubyte Unknown31 : 1;
+    ubyte Unknown32 : 1;
+    ubyte Unknown33 : 1;
+    ubyte Unknown34 : 1;
+    ubyte Unknown35 : 1;
+    ubyte Unknown36 : 1;
+    ubyte Unknown37 : 1;
+    ubyte Unknown38 : 1;
+    ubyte Unknown39 : 1;
+    ubyte Unknown40 : 1;
+    ubyte KnowIsabelleName : 1;
+    ubyte Unknown42 : 1;
+    ubyte Unknown43 : 1;
+    ubyte Unknown44 : 1;
+    ubyte Unknown45 : 1;
+    ubyte Unknown46 : 1;
+    ubyte Unknown47 : 1;
+    ubyte Unknown48 : 1;
+    ubyte Unknown49 : 1;
+    ubyte Unknown50 : 1;
+    ubyte Unknown51 : 1;
+    ubyte Unknown52 : 1;
+    ubyte Unknown53 : 1;
+    ubyte Unknown54 : 1;
+    ubyte Unknown55 : 1;
+    ubyte Unknown56 : 1;
+    ubyte Unknown57 : 1;
+    ubyte Unknown58 : 1;
+    ubyte Unknown59 : 1;
+    ubyte Unknown60 : 1;
+    ubyte Unknown61 : 1;
+    ubyte Unknown62 : 1;
+    ubyte Unknown63 : 1;
+    ubyte Unknown64 : 1;
+    ubyte Unknown65 : 1;
+    ubyte Unknown66 : 1;
+    ubyte Unknown67 : 1;
+    ubyte Unknown68 : 1;
+    ubyte Unknown69 : 1;
+    ubyte Unknown70 : 1;
+    ubyte Unknown71 : 1;
+    ubyte Unknown72 : 1;
+    ubyte Unknown73 : 1;
+    ubyte Unknown74 : 1;
+    ubyte Unknown75 : 1;
+    ubyte Unknown76 : 1;
+    ubyte Unknown77 : 1;
+    ubyte Unknown78 : 1;
+    ubyte Unknown79 : 1;
+    ubyte Unknown80 : 1;
+    ubyte Unknown81 : 1;
+    ubyte ResetPending : 1;
+    ubyte Unknown83 : 1;
+    ubyte Unknown84 : 1;
+    ubyte Unknown85 : 1;
+    ubyte Unknown86 : 1;
+    ubyte Unknown87 : 1;
+    ubyte Unknown88 : 1;
+    ubyte Unknown89 : 1;
+    ubyte Unknown90 : 1;
+    ubyte Unknown91 : 1;
+    ubyte Unknown92 : 1;
+    ubyte Unknown93 : 1;
+    ubyte Unknown94 : 1;
+    ubyte Unknown95 : 1;
+    ubyte Unknown96 : 1;
+    ubyte Unknown97 : 1;
+    ubyte Unknown98 : 1;
+    ubyte Unknown99 : 1;
+    ubyte Unknown100 : 1;
+    ubyte Unknown101 : 1;
+    ubyte Unknown102 : 1;
+    ubyte Unknown103 : 1;
+    ubyte Unknown104 : 1;
+    ubyte Unknown105 : 1;
+    ubyte Unknown106 : 1;
+    ubyte Unknown107 : 1;
+    ubyte Unknown108 : 1;
+    ubyte Unknown109 : 1;
+    ubyte Unknown110 : 1;
+    ubyte Unknown111 : 1;
+    ubyte Unknown112 : 1;
+    ubyte Unknown113 : 1;
+    ubyte Unknown114 : 1;
+    ubyte Unknown115 : 1;
+    ubyte Unknown116 : 1;
+    ubyte Unknown117 : 1;
+    ubyte Unknown118 : 1;
+    ubyte HasBeeSting : 1;
+    ubyte Unknown120 : 1;
+    ubyte Unknown121 : 1;
+    ubyte Unknown122 : 1;
+    ubyte Unknown123 : 1;
+    ubyte CanTravel : 1; //i.e. can use train
+    ubyte Unknown125 : 1;
+    ubyte Unknown126 : 1;
+    ubyte Unknown127 : 1;
+    ubyte Unknown128 : 1;
+    ubyte Unknown129 : 1;
+    ubyte Unknown130 : 1;
+    ubyte Unknown131 : 1;
+    ubyte Unknown132 : 1;
+    ubyte Unknown133 : 1;
+    ubyte Unknown134 : 1;
+    ubyte Unknown135 : 1;
+    ubyte Unknown136 : 1;
+    ubyte Unknown137 : 1;
+    ubyte Unknown138 : 1;
+    ubyte Unknown139 : 1;
+    ubyte Unknown140 : 1;
+    ubyte Unknown141 : 1;
+    ubyte Unknown142 : 1;
+    ubyte Unknown143 : 1;
+    ubyte Unknown144 : 1;
+    ubyte Unknown145 : 1;
+    ubyte Unknown146 : 1;
+    ubyte Unknown147 : 1;
+    ubyte Unknown148 : 1;
+    ubyte Unknown149 : 1;
+    ubyte Unknown150 : 1;
+    ubyte Unknown151 : 1;
+    ubyte Unknown152 : 1;
+    ubyte Unknown153 : 1;
+    ubyte Unknown154 : 1;
+    ubyte RecievedHHSIntro : 1;
+    ubyte Unknown156 : 1;
+    ubyte Unknown157 : 1;
+    ubyte Unknown158 : 1;
+    ubyte Unknown159 : 1;
+    ubyte Unknown160 : 1;
+    ubyte Unknown161 : 1;
+    ubyte Unknown162 : 1;
+    ubyte Unknown163 : 1;
+    ubyte Unknown164 : 1;
+    ubyte Unknown165 : 1;
+    ubyte Unknown166 : 1;
+    ubyte Unknown167 : 1;
+    ubyte Unknown168 : 1;
+    ubyte Unknown169 : 1;
+    ubyte Unknown170 : 1;
+    ubyte Unknown171 : 1;
+    ubyte Unknown172 : 1;
+    ubyte Unknown173 : 1;
+    ubyte Unknown174 : 1;
+    ubyte Unknown175 : 1;
+    ubyte Unknown176 : 1;
+    ubyte Unknown177 : 1;
+    ubyte Unknown178 : 1;
+    ubyte Unknown179 : 1;
+    ubyte Unknown180 : 1;
+    ubyte Unknown181 : 1;
+    ubyte Unknown182 : 1;
+    ubyte Unknown183 : 1;
+    ubyte Unknown184 : 1;
+    ubyte Unknown185 : 1;
+    ubyte Unknown186 : 1;
+    ubyte Unknown187 : 1;
+    ubyte Unknown188 : 1;
+    ubyte Unknown189 : 1;
+    ubyte Unknown190 : 1;
+    ubyte Unknown191 : 1;
+    ubyte Unknown192 : 1;
+    ubyte Unknown193 : 1;
+    ubyte Unknown194 : 1;
+    ubyte Unknown195 : 1;
+    ubyte Unknown196 : 1;
+    ubyte Unknown197 : 1;
+    ubyte Unknown198 : 1;
+    ubyte Unknown199 : 1;
+    ubyte Unknown200 : 1;
+    ubyte Unknown201 : 1;
+    ubyte Unknown202 : 1;
+    ubyte Unknown203 : 1;
+    ubyte Unknown204 : 1;
+    ubyte Unknown205 : 1;
+    ubyte Unknown206 : 1;
+    ubyte Unknown207 : 1;
+    ubyte Unknown208 : 1;
+    ubyte Unknown209 : 1;
+    ubyte Unknown210 : 1;
+    ubyte Unknown211 : 1;
+    ubyte Unknown212 : 1;
+    ubyte Unknown213 : 1;
+    ubyte Unknown214 : 1;
+    ubyte Unknown215 : 1;
+    ubyte Unknown216 : 1;
+    ubyte Unknown217 : 1;
+    ubyte Unknown218 : 1;
+    ubyte Unknown219 : 1;
+    ubyte Unknown220 : 1;
+    ubyte Unknown221 : 1;
+    ubyte Unknown222 : 1;
+    ubyte Unknown223 : 1;
+    ubyte Unknown224 : 1;
+    ubyte Unknown225 : 1;
+    ubyte Unknown226 : 1;
+    ubyte Unknown227 : 1;
+    ubyte Unknown228 : 1;
+    ubyte Unknown229 : 1;
+    ubyte Unknown230 : 1;
+    ubyte Unknown231 : 1;
+    ubyte Unknown232 : 1;
+    ubyte Unknown233 : 1;
+    ubyte Unknown234 : 1;
+    ubyte Unknown235 : 1;
+    ubyte Unknown236 : 1;
+    ubyte Unknown237 : 1;
+    ubyte Unknown238 : 1;
+    ubyte Unknown239 : 1;
+    ubyte Unknown240 : 1;
+    ubyte Unknown241 : 1;
+    ubyte Unknown242 : 1;
+    ubyte Unknown243 : 1;
+    ubyte Unknown244 : 1;
+    ubyte Unknown245 : 1;
+    ubyte Unknown246 : 1;
+    ubyte Unknown247 : 1;
+    ubyte Unknown248 : 1;
+    ubyte Unknown249 : 1;
+    ubyte Unknown250 : 1;
+    ubyte HasClubTortimerMembership : 1;
+    ubyte Unknown252 : 1;
+    ubyte Unknown253 : 1;
+    ubyte Unknown254 : 1;
+    ubyte Unknown255 : 1;
+    ubyte Unknown256 : 1;
+};
+
+typedef struct TownID
+{
+	uint16 	 TID <format=hex, comment="Default is 0 (Player ctor)">;
+	wchar_t  DataTownName[9] <comment="Default is 0 (Player ctor)">;
+    ubyte Unknown01 <comment="Default is 0xA (Player ctor)">;
+    ubyte Unknown02 <comment="Default is 0 (Player ctor)">;;
+
+};
+
+typedef struct PersonalID
+{
+	uint16   PID <format=hex>;
+    wchar_t  PlayerName[9];
+	ubyte    Gender;
+    ubyte    ZeroPad;
+    TownID   TownData;
+    ubyte    TPC_Country;
+    ubyte    TPC_County;
+
+};
+
+typedef struct BDGValues
+{
+    uint64 Badge_Fishes_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Bugs_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Marine_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_FishColl_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_BugColl_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_MarineColl_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Balloons_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Visiting_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Hosting_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_Gardening_Value <format=hex,comment=DecryptACNLValue >;       //Encrypted Value
+    uint64 Badge_Bank_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Turnips_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_Medals_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Streetpass_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Weeding_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_Shopping_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_LetterWriter_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Refurbish_Value <format=hex,comment=DecryptACNLValue >;       //Encrypted Value
+    uint64 Badge_Catalog_Value <format=hex,comment=DecryptACNLValue >;     //Encrypted Value
+    uint64 Badge_KK_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_HHAScore_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_PlayTime_Value <format=hex,comment=DecryptACNLValue >;        //Encrypted Value
+    uint64 Badge_Helper_Value <format=hex,comment=DecryptACNLValue >;      //Encrypted Value
+    uint64 Badge_Dream_Value <format=hex,comment=DecryptACNLValue >;       //Encrypted Value      
+};
+
+typedef struct BDG
+{
+    ubyte Badge_Fishes;
+    ubyte Badge_Bugs;
+    ubyte Badge_Marine;
+    ubyte Badge_FishColl;
+    ubyte Badge_BugColl;
+    ubyte Badge_MarineColl;
+    ubyte Badge_Balloons;
+    ubyte Badge_Visiting;
+    ubyte Badge_Hosting;
+    ubyte Badge_Gardening;
+    ubyte Badge_Bank;
+    ubyte Badge_Turnips;
+    ubyte Badge_Medals;
+    ubyte Badge_Streetpass;
+    ubyte Badge_Weeding;
+    ubyte Badge_Shopping;
+    ubyte Badge_LetterWriter;
+    ubyte Badge_Refurbish;
+    ubyte Badge_Catalog;
+    ubyte Badge_KK;
+    ubyte Badge_HHAScore;
+    ubyte Badge_PlayTime;
+    ubyte Badge_Helper;
+    ubyte Badge_Dream;   
+};
+
+typedef struct PlayerBadges
+{
+    BDGValues   BadgeValues;
+    BDG         Badges;
+    uint64 Unknown1 <format=hex,comment=DecryptACNLValue >;
+    uint64 Unknown1_1 <format=hex,comment=DecryptACNLValue >;
+
+};
+
+typedef struct HHAHouseInfo
+{
+    int32  HHAHousePoints;
+    uint16 HHAItem1 <format=hex, comment="Only used if no theme">;                        //0x5768 -> 0x5777
+    uint16 HHAItem2 <format=hex, comment="Only used if no theme">;                        //0x5768 -> 0x5777
+    uint16 HHAItem3 <format=hex, comment="Only used if no theme">;                        //0x5768 -> 0x5777
+    uint16 HHAItem4 <format=hex, comment="Only used if no theme">;                        //0x5768 -> 0x5777
+    uint16 HHAItem5 <format=hex, comment="Only used if no theme">;                        //0x5768 -> 0x5777
+    uint16 Item_Exterior <format=hex, comment="Only used if you have a theme">;                        //0x5768 -> 0x5777
+    uint16 Item_Interior <format=hex, comment="Only used if you have a theme">;                        //0x5768 -> 0x5777
+    uint16 HHAItem7 <format=hex, comment="Only used if you have a theme">;                        //0x5768 -> 0x5777
+    ubyte CurrentHouseTheme <comment=HHAHouseThemeString>;  //0x5778 -> 0x5778
+    ubyte EvaluationType <comment=HHAHouseEvaluatedString>;   //0x5779 -> 0x5779
+    ubyte HouseUnk0 <comment="Valid values: 0, 1, 2, 3">; //0x577A -> 0x577A
+    ubyte HouseUnk1 <comment=" ">;    //0x577B -> 0x577B
+    ubyte HouseUnk2 <comment="Read if HouseUnk0==3">; //0x577C -> 0x577C
+    ubyte HouseUnk3 <comment=" ">;                          //0x577D -> 0x577D
+    ubyte HouseUnk4 <comment=" ">;                          //0x577E -> 0x577E
+    ubyte HouseUnk5 <comment=" ">;                          //0x577F -> 0x577F
+    ubyte HouseUnk6 <comment=" ">;                          //0x5780 -> 0x5780
+    ubyte HouseUnk7 <comment=" ">;                          //0x5781 -> 0x5781
+    ubyte HouseUnk8 <comment=" ">;                          //0x577E -> 0x577E
+    ubyte HouseUnk9 <comment=" ">;                          //0x577E -> 0x577E
+    ubyte HouseUnk10 <comment=" ">;                          //0x577E -> 0x577E
+    ubyte HouseExteriorObeyingTheme <comment="Not Verified; 5 is max, 0 = Not obeying(?); higher better(?)">; //0x577E -> 0x577E
+    ubyte HouseInteriorObeyingTheme <comment="Not Verified; 5 is max, 0 = Not obeying(?); higher better(?)">; //0x577E -> 0x577E
+    ubyte WhichFloorWasImpressive <comment="Not Verified; 5 is max">;        //0x577E -> 0x577E
+    ubyte HouseUnk14 <comment=" ">;                          //0x577E -> 0x577E
+    ubyte HouseUnk15 <comment=" ">;                          //0x577E -> 0x577E
+    ubyte FutureAdvice <comment="Values: 0 - 10">;           //0x577E -> 0x577E
+    ubyte HHAAwardsUnlocked <comment="Not Verified; 8 is max">; //0x577E -> 0x577E
+    ubyte HHAAwardsRecieved <comment="Not Verified; 8 is max; 0 = None">; //0x577E -> 0x577E
+    ubyte GoldExteriorsUnlocked <comment="5 is max">; //0x577E -> 0x577E
+    ubyte GoldExteriorsApplied <comment="Not Verified; 5 is max">; //0x577E -> 0x577E
+    ubyte HouseUnk21 <comment=" ">;                          //0x577E -> 0x577E
+};
+
+typedef struct ACNL_DreamAddress
+{
+    uint16 DCPart1 <comment=" ">;
+    uint16 DCPart2 <comment=" ">;
+    ubyte  DCPart3 <comment=" ">;
+    uint16 Unk1 <comment=" ">;
+    uint16 Unk2 <comment=" ">;
+    ubyte  DCPart4 <comment=" ">;
+    uint32 Unk3 <comment=" ">;
+    uint16 ZeroPad4 <comment=" ">;
+};
+
+string DreamCodeString(ACNL_DreamAddress &DC)
+{
+    string result;
+    SPrintf(result, "Dream Code: %02X%02X-%04X-%04X", DC.DCPart4, DC.DCPart3, DC.DCPart2, DC.DCPart1);
+    return result;
+
+}
+
+typedef struct ACNL_Pattern
+{
+	wchar_t Title[21];
+	PersonalID CreatorData;
+	ubyte   Palette[15];
+	ubyte   Unknown2 <format=hex,comment="Default: 1, Set at 0x1B4F74 EUR 1.5">; //values are usually random - changing seems to have no effect
+	ubyte   TenConstant; //seems to always be 0x0A
+	ubyte   PatternType; //normal patterns: 0x09; dresses: 0x00; photo boards: 0x08
+	uint16  ZeroPad_2; //Zero Padding; Always 0x0000
+	ubyte   PatternData1[512]; //mandatory
+	ubyte   PatternData2[512]; //optional
+	ubyte   PatternData3[512]; //optional
+	ubyte   PatternData4[512]; //optional
+	uint32  ZeroPad_3; //Zero Padding; Optional
+
+};
+
+typedef struct ACNL_Letter
+{
+	PersonalID Reciever;
+	uint16  ZeroPad_1;
+	uint16   RecieverID; //
+	ubyte   ZeroPad_2[50];
+	uint16  Unknown2; //Some form of ID?
+	uint16  ZeroPad_3;
+	wchar_t Header[32]; //Max amount is 32 UTF-16 characters
+	uint16  ZeroPad_4;
+	wchar_t Body[192]; //Max amount is 192 UTF-16 characters
+	uint16  ZeroPad_5;
+	wchar_t Signature[32]; //Max amount is 32 UTF-16 characters
+	uint16  ZeroPad_6;
+    ubyte   RecieverNameIndent;
+    ubyte   PaperID;
+    ubyte   LetterFlag;
+    ubyte   StringIDOfSender;
+    ubyte   LetterType;
+    ubyte   Unknown2;
+    uint32  AttachedItem;
+    uint64  Unknown3;
+};
+
+typedef struct Player_Patterns
+{
+	ACNL_Pattern Pattern1;
+	ACNL_Pattern Pattern2;
+	ACNL_Pattern Pattern3;
+	ACNL_Pattern Pattern4;
+	ACNL_Pattern Pattern5;
+	ACNL_Pattern Pattern6;
+	ACNL_Pattern Pattern7;
+	ACNL_Pattern Pattern8;
+	ACNL_Pattern Pattern9;
+	ACNL_Pattern Pattern10;
+
+};
+
+typedef struct Player_Letters
+{
+	ACNL_Letter Letter1;
+	ACNL_Letter Letter2;
+	ACNL_Letter Letter3;
+	ACNL_Letter Letter4;
+	ACNL_Letter Letter5;
+	ACNL_Letter Letter6;
+	ACNL_Letter Letter7;
+	ACNL_Letter Letter8;
+	ACNL_Letter Letter9;
+	ACNL_Letter Letter10;
+
+};
+
+typedef struct Player_Dressers
+{
+    uint32 DrawerA[60];
+    uint32 DrawerB[60];
+    uint32 DrawerC[60];
+
+};
+
+typedef struct Player_Emotes
+{
+    ubyte Emote1 <format=hex,comment=EmoteString>;
+    ubyte Emote2 <format=hex,comment=EmoteString>;
+    ubyte Emote3 <format=hex,comment=EmoteString>;
+    ubyte Emote4 <format=hex,comment=EmoteString>;
+    ubyte Emote5 <format=hex,comment=EmoteString>;
+    ubyte Emote6 <format=hex,comment=EmoteString>;
+    ubyte Emote7 <format=hex,comment=EmoteString>;
+    ubyte Emote8 <format=hex,comment=EmoteString>;
+    ubyte Emote9 <format=hex,comment=EmoteString>;
+    ubyte Emote10 <format=hex,comment=EmoteString>;
+    ubyte Emote11 <format=hex,comment=EmoteString>;
+    ubyte Emote12 <format=hex,comment=EmoteString>;
+    ubyte Emote13 <format=hex,comment=EmoteString>;
+    ubyte Emote14 <format=hex,comment=EmoteString>;
+    ubyte Emote15 <format=hex,comment=EmoteString>;
+    ubyte Emote16 <format=hex,comment=EmoteString>;
+    ubyte Emote17 <format=hex,comment=EmoteString>;
+    ubyte Emote18 <format=hex,comment=EmoteString>;
+    ubyte Emote19 <format=hex,comment=EmoteString>;
+    ubyte Emote20 <format=hex,comment=EmoteString>;
+    ubyte Emote21 <format=hex,comment=EmoteString>;
+    ubyte Emote22 <format=hex,comment=EmoteString>;
+    ubyte Emote23 <format=hex,comment=EmoteString>;
+    ubyte Emote24 <format=hex,comment=EmoteString>;
+    ubyte Emote25 <format=hex,comment=EmoteString>;
+    ubyte Emote26 <format=hex,comment=EmoteString>;
+    ubyte Emote27 <format=hex,comment=EmoteString>;
+    ubyte Emote28 <format=hex,comment=EmoteString>;
+    ubyte Emote29 <format=hex,comment=EmoteString>;
+    ubyte Emote30 <format=hex,comment=EmoteString>;
+    ubyte Emote31 <format=hex,comment=EmoteString>;
+    ubyte Emote32 <format=hex,comment=EmoteString>;
+    ubyte Emote33 <format=hex,comment=EmoteString>;
+    ubyte Emote34 <format=hex,comment=EmoteString>;
+    ubyte Emote35 <format=hex,comment=EmoteString>;
+    ubyte Emote36 <format=hex,comment=EmoteString>;
+    ubyte Emote37 <format=hex,comment=EmoteString>;
+    ubyte Emote38 <format=hex,comment=EmoteString>;
+    ubyte Emote39 <format=hex,comment=EmoteString>;
+    ubyte Emote40 <format=hex,comment=EmoteString>;
+};
+
+typedef struct UnknownStruct1
+{
+    uint32  Unk1 <format=hex, comment="Set to 0 in Player ctor">; //0
+    uint32  Unk2 <format=hex, comment="Set to 0 in Player ctor">; //4
+    ubyte   Unk3 <format=hex, comment="Set to 0 in Player ctor">; //8
+    ubyte   Unk4 <format=hex, comment="Set to 0x80 in Player ctor">; //9
+    uint16  Unk5 <format=hex, comment="Set to 0 in Player ctor">; //0xA
+    ubyte  Unk6 <format=hex, comment="Set to 0xFF in Player ctor">; //0xC
+    uint32  Unk7 <format=hex, comment="Set to 0 in Player ctor (Set later, before 1st loop)">; //0xD
+    ubyte  Unk8 <format=hex, comment="Set to 0 in Player ctor">; //0x11
+    ubyte  Unk9 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x12
+    ubyte  UnkN10 <format=hex, comment="Not set in Player ctor">; //0x13
+    uint16  Unk11 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x14
+    ubyte  Unk12 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x16
+    ubyte  UnkN13 <format=hex, comment="Not set in Player ctor">; //0x17
+    uint16  Unk14 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x18
+    ubyte  Unk15 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x1A
+    ubyte  UnkN16 <format=hex, comment="Not set in Player ctor">; //0x1B
+    uint16  Unk17 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x1C
+    ubyte  Unk18 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x1E
+    ubyte  UnkN19 <format=hex, comment="Not set in Player ctor">; //0x1F
+    uint16  Unk20 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x20
+    ubyte  Unk21 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x22
+    ubyte  UnkN22 <format=hex, comment="Not set in Player ctor">; //0x23
+    uint16  Unk23 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x24
+    ubyte  Unk24 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x26
+    ubyte  UnkN25 <format=hex, comment="Not set in Player ctor">; //0x27
+    uint16  Unk26 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x28
+    ubyte  Unk27 <format=hex, comment="Set to 0 in Player ctor">; //0x2A
+    ubyte  UnkN28 <format=hex, comment="Not set in Player ctor">; //0x2B
+    uint16  Unk29 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x2C
+    ubyte  Unk30 <format=hex, comment="Set to 0 in Player ctor">; //0x2E
+    ubyte  Unk31 <format=hex, comment="Set to 0 in Player ctor">; //0x2F
+    uint16  Unk32 <format=hex, comment="Set to 0 in Player ctor">; //0x30
+    uint16  Unk33 <format=hex, comment="Set to 0 in Player ctor">; //0x32
+    uint32  Unk34 <format=hex, comment="Set to 0 in Player ctor">; //0x34
+    ubyte  Unk35 <format=hex, comment="Set to 0 in Player ctor">; //0x38
+    ubyte  Unk36 <format=hex, comment="Set to 0 in Player ctor">; //0x39
+    uint16  Unk37 <format=hex, comment="Set to 0 in Player ctor">; //0x3A
+    ubyte  Unk38 <format=hex, comment="Set to 0 in Player ctor">; //0x3C
+    ubyte  Unk39 <format=hex, comment="Set to 0 in Player ctor">; //0x3D
+    uint16  Unk40 <format=hex, comment="Set to 0 in Player ctor">; //0x3E
+    ubyte  Unk41 <format=hex, comment="Set to 0 in Player ctor">; //0x40
+    ubyte  Unk42 <format=hex, comment="Set to 1 in Player ctor">; //0x41
+    uint16  Unk43 <format=hex, comment="Set to 0 in Player ctor">; //0x42
+    ubyte  Unk44 <format=hex, comment="Set to 0 in Player ctor">; //0x44
+    ubyte  Unk45 <format=hex, comment="Set to 0 in Player ctor">; //0x45
+    uint16  Unk46 <format=hex, comment="Set to 0 in Player ctor">; //0x46
+    uint16  Unk47 <format=hex, comment="Set to 0 in Player ctor">; //0x48
+    uint16  Unk48 <format=hex, comment="Set to 0 in Player ctor">; //0x4A
+    uint32  Unk49 <format=hex, comment="Set to 0 in Player ctor">; //0x4C
+    ubyte  Unk50 <format=hex, comment="Set to 0 in Player ctor">; //0x50
+    ubyte  Unk51 <format=hex, comment="Set to 0 in Player ctor">; //0x51
+    uint16  Unk52 <format=hex, comment="Set to 0 in Player ctor">; //0x52
+    ubyte  Unk53 <format=hex, comment="Set to 0 in Player ctor">; //0x54
+    ubyte  Unk54 <format=hex, comment="Set to 0 in Player ctor">; //0x55
+    ubyte  Unk55 <format=hex, comment="Set to 0 in Player ctor">; //0x56
+    ubyte  Unk56 <format=hex, comment="Set to 0 in Player ctor">; //0x57
+    ubyte  Unk57 <format=hex, comment="Set to 5 in Player ctor">; //0x58
+    ubyte  Unk58 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x59
+    ubyte  Unk59 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x5A
+    ubyte  Unk60 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x5B
+    ubyte  Unk61 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x5C
+    ubyte  Unk62 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x5D
+    ubyte  Unk63 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x5E
+    ubyte  Unk64 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x5F
+    ubyte  Unk65 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x60
+    ubyte  Unk66 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x61
+    ubyte  Unk67 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x62
+    ubyte  Unk68 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x63
+    ubyte  Unk69 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x64
+    ubyte  Unk70 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x65
+    ubyte  Unk71 <format=hex, comment="Set to 0 in Player ctor (Set in 2nd loop, BIC R2 R2 0xF)">; //0x66
+    ubyte  Unk72 <format=hex, comment="Set to 0 in Player ctor">; //0x67
+    ubyte  Unk73 <format=hex, comment="Set to 0 in Player ctor">; //0x68
+    ubyte  Unk74 <format=hex, comment="Set to 0 in Player ctor">; //0x69
+    TownID TownData; //0x6A -> 0x7F
+};
+
+typedef struct UnknownStruct2
+{
+    uint32 Unknown5 <comment= "???; Set to 0, then 0xFFFFFFFF in player ctor">; //0x8B80
+    uint32 Unknown6 <comment= "???; Set to 0, then 0x7FFFFFFF in player ctor">; //0x8B84
+    ubyte Unknown7 <comment= "???; Set to 0 in player ctor">; //0x8B88
+    ubyte Unknown8 <comment= "???; Set to 0 in player ctor">; //0x8B89
+    uint32 Unknown9 <comment= "???; Set to 0 in player ctor">; //0x8B8A
+    uint16 Unknown10 <comment= "???; Set to 0 in player ctor">; //0x8B8E
+    ubyte Unknown11 <comment= "???; Set to 0 in player ctor">; //0x8B90
+    uint32 Unknown12 <comment= "???; Set to 0 in player ctor">; //0x8B91
+    uint16 Unknown13 <comment= "???; Set to 0 in player ctor">; //0x8B95
+    ubyte Unknown14 <comment= "???; Set to 0 in player ctor">; //0x8B97
+    ubyte Unknown15 <comment= "???; Set to 0x65 in player ctor">; //0x8B98
+    ubyte Unknown16 <comment= "???; Set to 0 in player ctor">; //0x8B99
+    ubyte Unknown17 <comment= "???; Set to 0 in player ctor">; //0x8B9A
+    ubyte UnknownN18 <comment= "???; Not set in player ctor">; //0x8B9B
+    ubyte  Unknown19[0x198] <comment= "???; 0x198 buffer size set to 0 in player ctor">; //0x8B9C
+    ubyte  Unknown20[0x66] <comment= "???; 0x66 buffer size set to 0 in player ctor">; //0x8D34
+    ubyte UnknownN21 <comment= "???; Not set in player ctor">; //0x8B9A
+    ubyte UnknownN22 <comment= "???; Not set in player ctor">; //0x8B9B
+    uint32 Unknown23 <comment= "???; Set to 0 in player ctor">; //0x8D9C
+    uint32 Unknown24 <comment= "???; Set to 0 in player ctor">; //0x8DA0
+    uint32 Unknown25 <comment= "???; Set to 0 in player ctor">; //0x8DA4
+    uint32 Unknown26 <comment= "???; Set to 0 in player ctor">; //0x8DA8
+    uint32 Unknown27 <comment= "???; Set to 0 in player ctor">; //0x8DAC
+    uint32 Unknown28 <comment= "???; Set to 0 in player ctor">; //0x8DB0
+    uint32 Unknown29 <comment= "???; Set to 0 in player ctor">; //0x8DB4
+    uint32 Unknown30 <comment= "???; Set to 0 in player ctor">; //0x8DBC
+};
+
+typedef struct LyleFlags
+{
+
+    ubyte HasHeardEvaluation : 1 <comment="Set when asking about home evaluation">;
+    ubyte HasAskedWhatsNew : 1;
+    ubyte HasHeardFirstEvaluation: 1 <comment="Set when asking about home evaluation">;
+    ubyte LyleWhatsNew : 5 <format=hex, comment= HHAWhatsNewString>;
+};
+
+/* HEADER STRUCT */
+
+typedef struct ACNL_SaveHeader
+{
+    uint64  SecureValue <format=hex,comment="Unused in ACNL WA">;
+    uint32  SaveInitalised <format=hex,comment="Doesn't need to be 1 on pre-WA???">;
+    ubyte   HeadrerZeroPad0[0x74] <format=hex,comment="Always 0">;
+    //0x80 Onwards
+    uint32  HeaderChecksum <format=hex,comment="Checksum of the next 0x1C of header data">;  //0x80
+    uint16  SaveVerifier1 <format=hex,comment="Always 0x009E; 0x00F8 pre-WA">;
+    ubyte   SaveVerifier2 <format=hex,comment="Has to be exactly 0x2; 0x2 pre-WA">;
+    ubyte   HeadrerZeroPad[0x19] <format=hex,comment="Always 0">;
+};
+
+/* PLAYER STRUCT */
+
+typedef struct ACNL_Player
+{
+    uint32 Checksum1 <format=hex,comment="Checksum of the first 0x6b84 of player data">;  //0xA0
+    ubyte HairStyle <format=hex,comment=HairStyleString>;         //0xA4
+    ubyte HairColor <format=hex,comment="Values: 0x0 -> 0xF">;    //0xA5
+    ubyte Face <format=hex,comment="Values: 0x0 -> 0xB">;         //0xA6
+    ubyte EyeColor <format=hex,comment="Values: 0x0 -> 0x5">;     //0xA7
+    uint16 Tan <format=hex,comment="Values: 0x0 -> 0xF">;         //0xA8
+    uint32 Hat  <format=hex,comment="Item ID < 0xXXXX">;          //0xAA
+    uint32 Accessory <format=hex,comment="Item ID < 0xXXXX">;     //0xAE
+    uint32 TopWear <format=hex,comment="Item ID < 0xXXXX">;       //0xB2
+    uint32 UnderTopWear <format=hex,comment="Item ID < 0xXXXX">;  //0xB6
+    uint32 BottomWear <format=hex,comment="Item ID < 0xXXXX">;    //0xBA
+    uint32 Socks <format=hex,comment="Item ID < 0xXXXX">;         //0xBE
+    uint32 Shoes <format=hex,comment="Item ID < 0xXXXX">;         //0xC2
+    uint32 HeldItem <format=hex,comment="Item ID < 0xXXXX">;      //0xC6
+    ubyte Unknown0 <format=hex,comment="Inverted gender(?): 1 for male, 0 for female. Default = 1 in PlayerConstructor (EUR 1.5 0x20D27C)">; //0xCA
+    ubyte ZeroPad_0 <format=hex,comment="U8 Zero Padding; Always 0x00">; //0xCB
+    Player_Patterns Patterns <comment="10 Patterns">;  //0xCC
+    ubyte PatternOrder[10]  <format=hex,comment="Order of patterns from 0x0 - 0x9">;  //0x552C -> 0x5535
+    uint16 ZeroPad_1 <format=hex,comment="U16 Zero Padding; Always 0x0000">;  //0x5536
+    MiiData PlayerMii;
+    ubyte HasMii <format=hex,comment="Values: 0 = No Mii, 1 = Has Mii, <1 = Has Mii, face doesn't show">; //0x55E0
+    ubyte ZeroPad_00 <format=hex,comment="Not Verified: U8 Zero Padding; Always 0x00">;    //0x55E1
+    uint16 ZeroPad_01 <format=hex,comment="Not Verified: U16 Zero Padding; Always 0x0000">;   //0x55E2 -> 0x55E3
+    Mannequin Mannequin1;
+    Mannequin Mannequin2;
+    Mannequin Mannequin3;
+    Mannequin Mannequin4;
+    uint16 ZeroPad_4;                                       //0x5644
+    PersonalID PlayerInfo;                                  //0x5646 -> 0x5671
+    ubyte BirthMonth;                                       //0x5674
+    ubyte BirthDay;                                         //0x5675
+    uint16 YearRegistered;                                  //0x5676
+    ubyte MonthRegistered;                                  //0x5678
+    ubyte DayRegistered;                                    //0x5679
+    uint16 ZeroPad_5;                                       //0x567A: Zero Padding; Always 0x0000  
+    PlayerBadges Badges;                                    //0x567C -> 0x5763
+    HHAHouseInfo HHAHouse;                                  //0x5764 -> 0x5789
+    ACNL_DreamAddress DreamCode <comment=DreamCodeString>;  //0x5790 -> 0x579F
+    Player_Flags PlayerFlags;                               //0x57A0 -> 0x57D3
+    uint32 HasTPCPic;                                       //0x57D4 -> 0x57D7
+    ubyte TPCPic[0x1400];                                   //0x57D8 -> 0x6BD7
+    wchar_t TPCText[33];                                    //0x6BD8 -> 0x6C19
+    ubyte Unknown1 <comment="Unknown: Was 1 on a save, 2 on another" >; //0x6C1A
+    ubyte Unknown2;                                         //0x6C1B
+    uint32 Checksum2;                                       //0x6C28 -> 0x6C2B
+    uint64 BankAmount <format=hex,comment=DecryptACNLValue >; //0x6C2C -> 0x6C33: Encrypted Value
+    uint64 DebtAmount <format=hex,comment=DecryptACNLValue >; //0x6C34 -> 0x6C3B: Encrypted Value
+    uint64 MedalAmount <format=hex,comment=DecryptACNLValue >; //0x6C3C -> 0x6C43: Encrypted Value
+    uint64 BellsFromReeseAmount <format=hex,comment=DecryptACNLValue >; //0x6C44 -> 0x6C4B: Encrypted Value
+    uint32 ZeroPad_7;                                       //0x6C4C -> 0x6C4F
+    uint32 Playtime;                                        //0x6C50 -> 0x6C53
+    uint32 ZeroPad_8;                                       //0x6C54 -> 0x6C57
+    TownID TownData2;                                       //0x6C68 -> 0x6C5D
+    uint16 ZeroPad_9;                                       //0x6C6E -> 0x6C6F
+    uint32 Inventory[16] <format=hex>;                      //0x6C70 -> 0x6CAF
+    ubyte InventoryItemLocks[16] <format=hex>;              //0x6CB0 -> 0x6CBF
+    ubyte UnlockedItems[0x238] <format=binary, comment="Game uses one big bitfield for items 'unlocked'. Bits correspond to item ids. Used for catalog, encyclopedia, etc" >; //0x6CC0 -> 0x6FA7
+    uint64 PocketMoney <format=hex,comment=DecryptACNLValue >; //0x6FA8 -> 0x6FAF: Encrypted Value
+    uint32 IslandBox[40] <format=hex>;                      //0x6FB0 -> 0x704F
+    uint32 IslandInventory[16] <format=hex>;                //0x7050 -> 0x708F
+    ubyte IslandInventoryItemLocks[16];                     //0x7090 -> 0x709F: may be Padding also, needs testing
+    uint32 UnknownItem1 <format=hex>;                       //0x70A0 -> 0x70A3
+    uint32 UnknownItem2 <format=hex>;                       //0x70A4 -> 0x70A7
+    Player_Letters Letters;                                 //0x70A8 -> 0x89A7
+    wchar_t LetterHeader[0x20];                             //0x89A8 -> 0x89E7
+    uint16 ZeroPad_9;                                       //0x89E8 -> 0x89E9
+    wchar_t FutureLetterHeader[0x20];                       //0x89EA -> 0x8A29
+    uint16 ZeroPad_10;                                      //0x8A2A -> 0x8A2B    
+    wchar_t LetterSignature[0x20];                          //0x8A2C -> 0x8A6B
+    uint16 ZeroPad_11;                                      //0x8A6C -> 0x8A6D
+    ubyte DefaultLtrRecieverNameIndent <format=hex >;       //0x8A6E -> 0x8A6E
+    ubyte DefaultFutureLtrRecieverNameIndent <format=hex,comment= "Cannot be >= 0x20" >; //0x8A6F -> 0x8A6F
+    Player_Emotes Emotes <comment= "Players Emotes (40 slots)">; //0x8A70 -> 0x8A97
+    ubyte EmotePage <comment= "0xFF = Page 1, 0x00 = Page 2">;   //0x8A98 -> 0x8A98
+    ubyte ZeroPad_12;                                            //0x8A99 -> 0x8A99
+    uint16 SpotpassDLCRecievedIds[32] <comment= "Not Verified; 0xFFFF is default, then 0xXXXX is ID of DLC recieved">; //0x8A9A -> 0x8AD9
+    uint16 ZeroPad_13;                                           //0x8ADA -> 0x8ADB
+    UnknownStruct1 UnkBuffer1;                                   //0x8ADC -> 0x8B5B
+    uint16 ZeroPad_14;                                           //0x8B5C -> 0x8B5D
+    LyleFlags LyleFlag;                                          //0x8B5E
+    ubyte  HasDeductions__ <comment= "Not 100% sure; something to do with items facing a wall, therefore deductions; Reads HouseUnk9 later in code">; //0x8B5F
+    ubyte  HHAAwardsUnlockedDupe;                                //0x8B60
+    ubyte  GoldExteriorsUnlockedDupe;                            //0x8B60
+    ubyte  HHAUnk1;                                              //0x8B62
+    ubyte  HHAUnk2 <comment= "READU8(CurrentHouseTheme+1) | 0x80; Only When Exterior/Theme???">; //0x8B63
+    ubyte  HHAUnk3[0x1C] <comment= "Come back to later">; //0x8B63 -> //0x8B7F
+    UnknownStruct2 UnkBuffer2;                                   //0x8B80 -> 0x8DBB
+    uint64 Unk1;   //0x8DBC -> 0x8DC3
+    uint64 Unk2;          //0x8DC4 -> 0x8DCB
+    uint32 Unk3;          //0x8DCC -> 0x8DD3
+    uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
+    uint32 Unk4[100];
+    Player_Dressers Dressers;
+    uint32 Unk5[17];
+    ACNL_Letter Letter1;
+	ACNL_Letter Letter2;
+	ACNL_Letter Letter3;
+	ACNL_Letter Letter4;
+	ACNL_Letter Letter5;
+    uint32 Unk6[89];
+};
+
+//main
+ACNL_SaveHeader Header;
+ACNL_Player Player1;
+ACNL_Player Player2;
+ACNL_Player Player3;
+ACNL_Player Player4;
