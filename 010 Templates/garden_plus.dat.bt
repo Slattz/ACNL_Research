@@ -1214,7 +1214,7 @@ typedef struct ACNL_Player
     ubyte  HHAUnk2 <comment= "READU8(CurrentHouseTheme+1) | 0x80; Only When Exterior/Theme???">; //0x8B63
     ubyte  HHAUnk3[0x1C] <comment= "Come back to later">; //0x8B63 -> //0x8B7F
     UnknownStruct2 UnkBuffer2;                                   //0x8B80 -> 0x8DBB
-    uint64 Unk1 <format=hex,comment=DecryptACNLValue >;          //0x8DBC -> 0x8DC3: Encrypted Value
+    uint64 MeowCoupons <format=hex,comment=DecryptACNLValue >;   //0x8DBC -> 0x8DC3: Encrypted Value
     uint64 Unk2 <format=hex,comment=DecryptACNLValue >;          //0x8DC4 -> 0x8DCB: Encrypted Value
     uint64 Unk3 <format=hex,comment=DecryptACNLValue >;          //0x8DCC -> 0x8DD3: Encrypted Value
     uint64 Unk4 <format=hex,comment=DecryptACNLValue >;          //0x8DD4 -> 0x8DDB: Encrypted Value
