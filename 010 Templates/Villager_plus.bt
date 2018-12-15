@@ -1,0 +1,108 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: Villager_plus.bt
+//   Authors: Slattz
+//   Version: 0.1
+//   Purpose: ACNL WA Villager Structure
+//  Category: 
+// File Mask: garden_plus.dat
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+/* STRUCTS */
+
+typedef struct TownID
+{
+	uint16 	 TID <format=hex, comment="Default is 0 (Player ctor)">;
+	wchar_t  DataTownName[9] <comment="Default is 0 (Player ctor)">;
+    ubyte Unknown01 <comment="Default is 0xA (Player ctor)">;
+    ubyte Unknown02 <comment="Default is 0 (Player ctor)">;;
+
+};
+
+typedef struct ACNL_Pattern
+{
+	wchar_t Title[21];
+	PersonalID CreatorData;
+	ubyte   Palette[15];
+	ubyte   Unknown2 <format=hex,comment="Default: 1, Set at 0x1B4F74 EUR 1.5">; //values are usually random - changing seems to have no effect
+	ubyte   TenConstant; //seems to always be 0x0A
+	ubyte   PatternType; //normal patterns: 0x09; dresses: 0x00; photo boards: 0x08
+	uint16  ZeroPad_2; //Zero Padding; Always 0x0000
+	ubyte   PatternData1[512]; //mandatory
+	ubyte   PatternData2[512]; //optional
+	ubyte   PatternData3[512]; //optional
+	ubyte   PatternData4[512]; //optional
+	uint32  ZeroPad_3; //Zero Padding; Optional
+
+};
+
+typedef struct ACNL_Letter
+{
+	PersonalID Reciever;
+	uint16  ZeroPad_1;
+	uint16   RecieverID; //
+	ubyte   ZeroPad_2[50];
+	uint16  Unknown2; //Some form of ID?
+	uint16  ZeroPad_3;
+	wchar_t Header[32]; //Max amount is 32 UTF-16 characters
+	uint16  ZeroPad_4;
+	wchar_t Body[192]; //Max amount is 192 UTF-16 characters
+	uint16  ZeroPad_5;
+	wchar_t Signature[32]; //Max amount is 32 UTF-16 characters
+	uint16  ZeroPad_6;
+    ubyte   RecieverNameIndent;
+    ubyte   PaperID;
+    ubyte   LetterFlag;
+    ubyte   StringIDOfSender;
+    ubyte   LetterType;
+    ubyte   Unknown2;
+    uint32  AttachedItem;
+    uint64  Unknown3;
+};
+
+/* VILLAGER STRUCT */
+
+typedef struct ACNL_Villager
+{
+    uint16 Id; // 0 - 1 (2)
+    ubyte Personality; // 2 (1)
+    ubyte Pad1; //3
+    ACNL_Pattern Pattern;
+    TownID  TownID1;
+    ubyte Unknown1[0xF5A];
+    ACNL_Letter Letter1;
+    ACNL_Letter Letter2;
+    ACNL_Letter Letter3;
+    ACNL_Letter Letter4;
+    ACNL_Letter Letter5;
+    uint16 Unknown2[5];
+    uint32 Shirt; // 246E - 2471
+    uint32 Song; // 2472 - 2475
+    uint32 Wallpaper; // 2476 - 2479
+    uint32 Carpet; // 247A - 247D
+    uint32 Umbrella; // 247E - 2481
+    uint32 Furniture[16]; // 2482 - 24C1
+    uint32 Unknown2; // 24C2 - 24C5
+    wchar_t Catchphrase[11]; // Last character is null terminator | 24C6 - 24DB
+    ubyte Unknown3[8]; // 24DC - 24E3
+    ubyte Status; // Also general flags? | 24E4
+    ubyte Unknown4[7]; // 24E5 - 24ED
+    TownID  TownID2;
+    TownID  TownID3;
+};
+
+//main
+FSkip(0x0292d0); //Skip to villager start offset of garden_plus.dat
+ACNL_Villager Villager1;
+ACNL_Villager Villager2;
+ACNL_Villager Villager3;
+ACNL_Villager Villager4;
+ACNL_Villager Villager5;
+ACNL_Villager Villager6;
+ACNL_Villager Villager7;
+ACNL_Villager Villager8;
+ACNL_Villager Villager9;
+ACNL_Villager Villager10;
