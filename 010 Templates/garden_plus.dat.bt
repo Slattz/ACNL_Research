@@ -735,7 +735,7 @@ typedef struct TownID
 	uint16 	 TID <format=hex, comment="Default is 0 (Player ctor)">;
 	wchar_t  DataTownName[9] <comment="Default is 0 (Player ctor)">;
     ubyte Unknown01 <comment="Default is 0xA (Player ctor)">;
-    ubyte Unknown02 <comment="Default is 0 (Player ctor)">;;
+    ubyte Unknown02 <comment="Just Padding??">;
 
 };
 
@@ -944,6 +944,14 @@ typedef struct Player_Letters
 
 };
 
+typedef struct Player_Dressers
+{
+    uint32 DrawerA[60];
+    uint32 DrawerB[60];
+    uint32 DrawerC[60];
+
+};
+
 typedef struct Player_Emotes
 {
     ubyte Emote1 <format=hex,comment=EmoteString>;
@@ -1097,6 +1105,115 @@ typedef struct UnknownStruct2
     uint32 Unknown30 <comment= "???; Set to 0 in player ctor">; //0x8DBC
 };
 
+typedef struct UnknownStruct3
+{
+    int64 Unknown1 <format=hex, comment= "???; Set to 0, then 0x7FFFFFFFFFFFFFFF in player ctor">; //0x8DEC
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //0x8DF4
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DF5
+    ubyte Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //0x8DF6
+    ubyte Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">; //0x8DF7
+    uint16 Unknown6 <format=hex, comment= "???; Set to 0x0000 in player ctor">; //0x8DF8
+    ubyte Unknown7 <format=hex, comment= "???; Set to 0x6 in player ctor">; //0x8DFA
+    ubyte Unknown8 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DFB
+};
+
+typedef struct UnknownStruct4 //Probably exact same struct as UnknownStruct3 but is set differently
+{
+    int64 Unknown1 <format=hex, comment= "???; Set to 0, then 0x7FFFFFFFFFFFFFFF in player ctor">; //0x8DEC
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //0x8DF4
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DF5
+    ubyte Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //0x8DF6
+    ubyte Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">; //0x8DF7
+    uint16 Unknown6 <format=hex, comment= "???; Set to 0x7ffe in player ctor">; //0x8DF8
+    ubyte Unknown7 <format=hex, comment= "???; Set to 0x4 in player ctor">; //0x8DFA
+    ubyte Unknown8 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DFB
+};
+
+typedef struct UnknownStruct5 //Similar to UnknownStruct3
+{
+    int64 Unknown1 <format=hex, comment= "???; Set to 0, then 0x7FFFFFFFFFFFFFFF in player ctor">; //0x8DEC
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //0x8DF4
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DF5
+    ubyte Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //0x8DF6
+    ubyte Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">; //0x8DF7
+    uint32 Unknown6 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">; //0x8DF8
+    uint32 Unknown7 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">; //0x8DFC
+    ubyte Unknown8 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8E00
+    ubyte Unknown9 <format=hex, comment= "???; Set to 0x7 in player ctor">; //0x8E01
+    ubyte Unknown10 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8E02
+    ubyte Unknown11 <format=hex, comment= "Not set in ctor; Probably padding.">;
+};
+
+
+typedef struct UnknownStruct6Mini
+{
+    TownID TownData1;
+    TownID TownData2;
+    uint16 Unknown1 <format=hex, comment= "???; Set to 0xFFFF in player ctor">;
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x8 in player ctor">;
+    ubyte Unknown3 <format=hex, comment= "Not set in ctor; Probably padding.">;
+};
+
+typedef struct UnknownStruct6
+{
+    int64 Unknown1 <format=hex, comment= "???; Set to 0, then 0x7FFFFFFFFFFFFFFF in player ctor">;
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">;
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">;
+    ubyte Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">;
+    ubyte Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    UnknownStruct6Mini Mini1;
+    UnknownStruct6Mini Mini2;
+    uint32 Unknown6 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">;
+    uint32 Unknown7 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">;
+    ubyte Unknown8 <format=hex, comment= "???; Set to 0 in player ctor">;
+    ubyte Unknown9 <format=hex, comment= "???; Set to 0 in player ctor">;
+};
+
+typedef struct UnknownStruct7 //Probably exact same struct as UnknownStruct4 but is set differently
+{
+    int64 Unknown1 <format=hex, comment= "???; Set to 0, then 0x7FFFFFFFFFFFFFFF in player ctor">;
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">;
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">;
+    ubyte Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">;
+    ubyte Unknown5 <format=hex, comment= "???; Set to 0xFF in player ctor">;
+    ubyte Unknown6 <format=hex, comment= "???; Set to 0xFF in player ctor">;
+    ubyte Unknown7 <format=hex, comment= "Not set in ctor; Probably padding.">;
+};
+
+typedef struct UnknownStruct8 //Similar to UnknownStruct3
+{
+    int64 Unknown1 <format=hex, comment= "???; Set to 0, then 0x7FFFFFFFFFFFFFFF in player ctor">; //
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //
+    ubyte Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //
+    ubyte Unknown7 <format=hex, comment= "Not set in ctor; Probably padding.">;
+};
+
+typedef struct UnknownStruct9
+{
+    uint16 Unknown1 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    ubyte Unknown2 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    ubyte Unknown3 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown4 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown5 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown6 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown7 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown8 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint16 Unknown9 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown10 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown11 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint32 Unknown12 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    uint16 Unknown13 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    ubyte Unknown14 <format=hex, comment= "???; Set to 0 in player ctor">; //
+    ubyte Unknown15 <format=hex, comment= "Not set in ctor; Probably padding.">;
+};
+
+typedef struct UnknownStruct10
+{
+    uint32 UnkItem1 <format=hex, comment= "Some Item; Set to 0x00007ffe in player ctor">;
+    uint16 Unknown2 <format=hex, comment= "???; Set to 0 in player ctor">;
+};
+
 typedef struct LyleFlags
 {
 
@@ -1122,7 +1239,7 @@ typedef struct ACNL_SaveHeader
 
 /* PLAYER STRUCT */
 
-typedef struct ACNL_Player
+typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
 {
     uint32 Checksum1 <format=hex,comment="Checksum of the first 0x6b84 of player data">;  //0xA0
     ubyte HairStyle <format=hex,comment=HairStyleString>;         //0xA4
@@ -1220,12 +1337,101 @@ typedef struct ACNL_Player
     uint64 Unk4 <format=hex,comment=DecryptACNLValue >;          //0x8DD4 -> 0x8DDB: Encrypted Value
     uint64 Unk5 <format=hex,comment=DecryptACNLValue >;          //0x8DDC -> 0x8DE3: Encrypted Value
     uint64 Unk6 <format=hex,comment=DecryptACNLValue >;          //0x8DE4 -> 0x8DEB: Encrypted Value
-    
+    UnknownStruct3 UnkBuffer3;                                   //
+    UnknownStruct4 UnkBuffer4;                                   //
+    UnknownStruct5 UnkBuffer5;                                   //
+    UnknownStruct6 UnkBuffer6;                                   //
+    UnknownStruct7 UnkBuffer7;                                   //
+    UnknownStruct8 UnkBuffer8;                                   //
+    ubyte UnknownNotSetYet[0xAA];
+    ubyte PlayerFFFF_Filler[0x16] <format=hex,comment="Always contains 0x16 0xFF bytes. ctor sets this." >;
+    ubyte UnknownNotSetYet2[0xC];
+    UnknownStruct9 UnkBuffer9;
+    uint32 UnkItem1 <format=hex>;
+    uint32 UnkItem2 <format=hex>;
+    ubyte UnknownNotSetYet3[0xE];
+    ubyte UnknownNotSetYet4[0xA];
+    uint16 Unk_u16_1 <format=hex, comment= "Set to 0x7DB in player ctor">;
+    uint16 Unk_u16_2 <format=hex, comment= "Set to 0x7DB in player ctor">;
+    uint16 Unk_u16_3 <format=hex, comment= "Set to 0 in player ctor">;
+    ubyte Unk_u8_1 <format=hex, comment= "Set to 0 in player ctor">;
+    ubyte Unk_u8_2 <format=hex, comment= "Set to 0 in player ctor">;
+    ubyte UnknownNotSetYet5[0x45];
+    ubyte UnkBuffer10[0x21] <format=binary, comment= "ctor unsets every bit except in last byte in buffer, it only unsets bits 0 to 5">;
+    ubyte ZeroPad_15;
+    ubyte Unk_u8_3 <format=hex, comment= "Set to 0 in player ctor">;
+    ubyte UnknownNotSetYet6[0xE];
+    uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
+    ubyte PlayerZero_Filler[0x320] <format=hex, comment="Always 0?? Game just memclr's in player ctor.">;
+    Player_Dressers Dressers <format=hex, comment="Each dresser is 60 long">;
+    wchar_t BDayWish[0x22];
+    ACNL_Letter Letter1;
+	ACNL_Letter Letter2;
+	ACNL_Letter Letter3;
+	ACNL_Letter Letter4;
+	ACNL_Letter Letter5;
+    ubyte UnknownNotSetYet7[0xC0];
+    ubyte UnkBuffer11[0x40];
+    ubyte UnkBuffer12[0x40];
+    ubyte UnknownNotSetYet8[0xA4];
+    UnknownStruct10 UnkStruct10_1;
+    UnknownStruct10 UnkStruct10_2;
+    UnknownStruct10 UnkStruct10_3;
+    uint32 UnkItem1 <format=hex, comment= "Some Item; Set to 0x00007ffe in player ctor">;
+    uint16 ZeroPad_16;
 
-    //uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
+};
 
+typedef struct ACNL_Villager
+{
+    uint16 Id; // 0 - 1 (2)
+    ubyte Personality; // 2 (1)
+    ubyte Pad1; //3
+    ACNL_Pattern Pattern;
+    TownID  TownID1;
+    ubyte Unknown1[0xF5A];
+    ACNL_Letter Letter1;
+    ACNL_Letter Letter2;
+    ACNL_Letter Letter3;
+    ACNL_Letter Letter4;
+    ACNL_Letter Letter5;
+    uint16 Unknown2[5];
+    uint32 Shirt; // 246E - 2471
+    uint32 Song; // 2472 - 2475
+    uint32 Wallpaper; // 2476 - 2479
+    uint32 Carpet; // 247A - 247D
+    uint32 Umbrella; // 247E - 2481
+    uint32 Furniture[16]; // 2482 - 24C1
+    uint32 Unknown2; // 24C2 - 24C5
+    wchar_t Catchphrase[11]; // Last character is null terminator | 24C6 - 24DB
+    ubyte Unknown3[8]; // 24DC - 24E3
+    ubyte Status; // Also general flags? | 24E4
+    ubyte Unknown4[7]; // 24E5 - 24ED
+    TownID  TownID2;
+    TownID  TownID3;
+};
+
+typedef struct ACNL_VillagerData
+{
+    uint32 Checksum <format=hex,comment="Checksum of the 0x22BC8 of this data">;
+    TownID  TownID1;
+    TownID  TownID2;
+    ACNL_Villager Villager1;
+    ACNL_Villager Villager2;
+    ACNL_Villager Villager3;
+    ACNL_Villager Villager4;
+    ACNL_Villager Villager5;
+    ACNL_Villager Villager6;
+    ACNL_Villager Villager7;
+    ACNL_Villager Villager8;
+    ACNL_Villager Villager9;
+    ACNL_Villager Villager10;
 };
 
 //main
 ACNL_SaveHeader Header;
 ACNL_Player Player1;
+ACNL_Player Player2;
+ACNL_Player Player3;
+ACNL_Player Player4;
+ACNL_VillagerData VillagerData;
