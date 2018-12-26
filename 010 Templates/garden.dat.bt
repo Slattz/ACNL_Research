@@ -1065,7 +1065,7 @@ typedef struct ACNL_Player
     uint32 SantaBagInv[10];                             //0x9048 -> 0x906F
     uint32 Unk4[100];
     Player_Dressers Dressers;
-    uint32 Unk5[17];
+    wchar_t BDayWish[0x22];
     ACNL_Letter Letter1;
 	ACNL_Letter Letter2;
 	ACNL_Letter Letter3;
