@@ -878,7 +878,7 @@ typedef struct ACNL_Pattern
 	wchar_t Title[21];
 	PersonalID CreatorData;
 	ubyte   Palette[15];
-	ubyte   Unknown2 <format=hex,comment="Default: 1, Set at 0x1B4F74 EUR 1.5">; //values are usually random - changing seems to have no effect
+	ubyte   UnusedChecksum <format=hex,comment="Default: 1, Set at 0x1B4F74 EUR 1.5">; //changing seems to have no effect
 	ubyte   TenConstant; //seems to always be 0x0A
 	ubyte   PatternType; //normal patterns: 0x09; dresses: 0x00; photo boards: 0x08
 	uint16  ZeroPad_2; //Zero Padding; Always 0x0000
@@ -912,6 +912,14 @@ typedef struct ACNL_Letter
     ubyte   Unknown2;
     uint32  AttachedItem;
     uint64  Unknown3;
+};
+
+typedef struct ACNL_Building
+{
+    ubyte ID <format=hex, comment="0xFC is none">;
+    ubyte Padding;
+    ubyte XCoord;
+    ubyte YCoord;
 };
 
 typedef struct Player_Patterns
@@ -994,6 +1002,68 @@ typedef struct Player_Emotes
     ubyte Emote38 <format=hex,comment=EmoteString>;
     ubyte Emote39 <format=hex,comment=EmoteString>;
     ubyte Emote40 <format=hex,comment=EmoteString>;
+};
+
+typedef struct Town_Buildings
+{
+    ACNL_Building Building1;
+    ACNL_Building Building2;
+    ACNL_Building Building3;
+    ACNL_Building Building4;
+    ACNL_Building Building5;
+    ACNL_Building Building6;
+    ACNL_Building Building7;
+    ACNL_Building Building8;
+    ACNL_Building Building9;
+    ACNL_Building Building10;
+    ACNL_Building Building11;
+    ACNL_Building Building12;
+    ACNL_Building Building13;
+    ACNL_Building Building14;
+    ACNL_Building Building15;
+    ACNL_Building Building16;
+    ACNL_Building Building17;
+    ACNL_Building Building18;
+    ACNL_Building Building19;
+    ACNL_Building Building20;
+    ACNL_Building Building21;
+    ACNL_Building Building22;
+    ACNL_Building Building23;
+    ACNL_Building Building24;
+    ACNL_Building Building25;
+    ACNL_Building Building26;
+    ACNL_Building Building27;
+    ACNL_Building Building28;
+    ACNL_Building Building29;
+    ACNL_Building Building30;
+    ACNL_Building Building31;
+    ACNL_Building Building32;
+    ACNL_Building Building33;
+    ACNL_Building Building34;
+    ACNL_Building Building35;
+    ACNL_Building Building36;
+    ACNL_Building Building37;
+    ACNL_Building Building38;
+    ACNL_Building Building39;
+    ACNL_Building Building40;
+    ACNL_Building Building41;
+    ACNL_Building Building42;
+    ACNL_Building Building43;
+    ACNL_Building Building44;
+    ACNL_Building Building45;
+    ACNL_Building Building46;
+    ACNL_Building Building47;
+    ACNL_Building Building48;
+    ACNL_Building Building49;
+    ACNL_Building Building50;
+    ACNL_Building Building51;
+    ACNL_Building Building52;
+    ACNL_Building Building53;
+    ACNL_Building Building54;
+    ACNL_Building Building55;
+    ACNL_Building Building56;
+    ACNL_Building EventPWP1;
+    ACNL_Building EventPWP2;
 };
 
 typedef struct UnknownStruct1
@@ -1428,6 +1498,39 @@ typedef struct ACNL_VillagerData
     ACNL_Villager Villager10;
 };
 
+
+typedef struct ACNL_BuildingData
+{
+    uint32 Checksum <format=hex,comment="Checksum of the 0x44B8 of this data">;
+    ubyte  NormalPWPsAmount;
+    ubyte  EventPWPsAmount;
+    ubyte  TownTreeSize <comment="1 <-> 7">;
+    ubyte  Padding1;
+    Town_Buildings Buildings;
+
+    //These are for the design stands I think; "FF_Padding1" is probably not padding but which pattern corresponds to which pwp???
+    ACNL_Pattern   UnkPattern1;
+    uint64 FF_Padding1;
+    ACNL_Pattern   UnkPattern2;
+    uint64 FF_Padding2;
+    ACNL_Pattern   UnkPattern3;
+    uint64 FF_Padding3;
+    ACNL_Pattern   UnkPattern4;
+    uint64 FF_Padding4;
+    ACNL_Pattern   UnkPattern5;
+    uint64 FF_Padding5;
+    ACNL_Pattern   UnkPattern6;
+    uint64 FF_Padding6;
+    ACNL_Pattern   UnkPattern7;
+    uint64 FF_Padding7;
+    ACNL_Pattern   UnkPattern8;
+    uint64 FF_Padding8;
+    uint64 FF_Padding9;
+    uint16 FF_Padding10;
+    ubyte  UnkByte;
+    ubyte  Padding2;
+};
+
 //main
 ACNL_SaveHeader Header;
 ACNL_Player Player1;
@@ -1435,3 +1538,5 @@ ACNL_Player Player2;
 ACNL_Player Player3;
 ACNL_Player Player4;
 ACNL_VillagerData VillagerData;
+FSkip(0xB8C0);
+ACNL_BuildingData BuildingData;
