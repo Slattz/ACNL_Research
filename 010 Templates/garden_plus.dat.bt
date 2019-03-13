@@ -57,6 +57,22 @@ uint64     EncryptACNLValue(uint32 decval) //Encrypt ACNL Numerical Values
     return ((uint64)enc << 0) | ((uint64)adjust << 32) | ((uint64)shift_val << 48) | ((uint64)chk << 56);
 }
 
+string ParsePlaytime(int64 PlayTime)
+{
+    string init = "Current Playtime: ";
+    string str;
+
+    int days = PlayTime / (24*60*60);
+    int hours = (PlayTime / (60*60)) % 24;
+    int minutes = (PlayTime / 60) % 60;
+    int seconds = PlayTime % 60;
+
+    SPrintf(str, "Days: %d | Hours: %d | Minutes %d | Seconds %d", days, hours, minutes, seconds);
+
+    init+=str;
+    return init+= " {Playtime value is in seconds}";
+}
+
 string HairStyleString(ubyte HairStyle)
 {
     string init = "Values: Male: 0x0 -> 0x10, Female: 0x11 -> 0x21 Current: ";
@@ -913,8 +929,7 @@ typedef struct ACNL_Letter
 
 typedef struct ACNL_Building
 {
-    ubyte ID <format=hex, comment="0xFC is none">;
-    ubyte Padding;
+    uint16 ID <format=hex, comment="0xFC is none, only below 0xFC considered valid">;
     ubyte XCoord;
     ubyte YCoord;
 };
@@ -1292,16 +1307,19 @@ typedef struct LyleFlags
 
 /* HEADER STRUCT */
 
+typedef struct SecureValueHeader
+{
+    uint64  SecureValue <format=hex,comment="Unused in ACNL WA">; //0x0
+    uint32  SaveInitalised <format=hex,comment="Has to be exactly 1">;
+    ubyte   HeaderPadding[0x74] <format=hex,comment="Always 0">;
+};
+
 typedef struct ACNL_SaveHeader
 {
-    uint64  SecureValue <format=hex,comment="Unused in ACNL WA">;
-    uint32  SaveInitalised <format=hex,comment="Has to be exactly 1">;
-    ubyte   HeadrerZeroPad0[0x74] <format=hex,comment="Always 0">;
-    //0x80 Onwards
     uint32  HeaderChecksum <format=hex,comment="Checksum of the next 0x1C of header data">;  //0x80
     uint16  SaveVerifier1 <format=hex,comment="Always 0x009E; 0x00F8 pre-WA">;
     ubyte   SaveVerifier2 <format=hex,comment="Has to be exactly 0x2; 0x2 pre-WA">;
-    ubyte   HeadrerZeroPad[0x19] <format=hex,comment="Always 0">;
+    ubyte   HeaderPadding[0x19] <format=hex,comment="Always 0">;
 };
 
 /* PLAYER STRUCT */
@@ -1362,8 +1380,7 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
     uint64 MedalAmount <format=hex,comment=DecryptACNLValue >; //0x6C3C -> 0x6C43: Encrypted Value
     uint64 BellsFromReeseAmount <format=hex,comment=DecryptACNLValue >; //0x6C44 -> 0x6C4B: Encrypted Value
     uint32 Padding_8;                                       //0x6C4C -> 0x6C4F
-    uint32 Playtime;                                        //0x6C50 -> 0x6C53
-    uint32 Padding_9;                                       //0x6C54 -> 0x6C57
+    int64 Playtime <comment=ParsePlaytime>;                 //0x6C50 -> 0x6C57
     TownID TownData2;                                       //0x6C68 -> 0x6C5D
     uint16 Padding_10;                                      //0x6C6E -> 0x6C6F
     uint32 Inventory[16] <format=hex>;                      //0x6C70 -> 0x6CAF
@@ -1494,6 +1511,7 @@ typedef struct ACNL_VillagerData
     ACNL_Villager Villager8;
     ACNL_Villager Villager9;
     ACNL_Villager Villager10;
+    ubyte Unknown[0xB8C0];
 };
 
 
@@ -1522,19 +1540,45 @@ typedef struct ACNL_BuildingData
     ACNL_Pattern   UnkPattern7;
     uint64 FF_Padding7;
     ACNL_Pattern   UnkPattern8;
-    uint64 FF_Padding8;
-    uint64 FF_Padding9;
-    uint16 FF_Padding10;
-    ubyte  UnkByte;
-    ubyte  Padding2;
+    ubyte UnlockedPWPs[20] <format=binary, comment="Devs use bitfield for unlocked PWPS">;
+};
+
+typedef struct ACNL_MinigameData
+{
+    uint32 Checksum <format=hex,comment="Checksum of the 0x28F0 of this data">;
+    ubyte Unknown[0x28F0];
+};
+
+
+typedef struct ACNL_UnknownData
+{
+    uint32 Checksum <format=hex,comment="Checksum of the 0x7F0 of this data">;
+    ubyte Unknown[0x7F0];
+};
+
+
+typedef struct ACNL_TownData
+{
+    uint32 Checksum <format=hex,comment="Checksum of the 0x1E4D8 of this data">;
+    ubyte Unk_ZeroPad[88];
+    ubyte OceanSide <comment="[0-1]; 0: Left, 1: Right; Museum and Camping Ground and the starting position of the train driving by are all on the opposite side to this.">;
+    ubyte GrassType <comment="[0-2]; 0: Triangle / Square (Winter) | 1: Circle / Star (Winter) | 2: Square / Circle (Winter)">;
+    ubyte CliffType <comment="[0-2]; This is unused/scrapped. All 3 cliff texture in the ROM are the exact same.">;
+    ubyte Padding1;
+    uint16 TownAcres[42] <comment="42 acres in total; 7 colunms, 6 rows. Game reads Acre IDs as u16.">;
+    ubyte Unknown[0x1E42A];
 };
 
 //main
+SecureValueHeader SecureValue;
 ACNL_SaveHeader Header;
 ACNL_Player Player1;
 ACNL_Player Player2;
 ACNL_Player Player3;
 ACNL_Player Player4;
 ACNL_VillagerData VillagerData;
-FSkip(0xB8C0);
 ACNL_BuildingData BuildingData;
+ACNL_MinigameData MinigameData;
+ACNL_UnknownData UnkData;
+ACNL_TownData TownData;
+ubyte lol;
