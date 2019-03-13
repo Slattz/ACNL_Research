@@ -1099,25 +1099,25 @@ typedef struct UnknownStruct1
     u32  Unk7 <format=hex, comment="Set to 0 in Player ctor (Set later, before 1st loop)">; //0xD
     u8  Unk8 <format=hex, comment="Set to 0 in Player ctor">; //0x11
     u8  Unk9 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x12
-    u8  UnkN10 <format=hex, comment="Not set in Player ctor">; //0x13
+    u8  Padding1 <format=hex, comment="Padding: Not set in Player ctor">; //0x13
     u16  Unk11 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x14
     u8  Unk12 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x16
-    u8  UnkN13 <format=hex, comment="Not set in Player ctor">; //0x17
+    u8  Padding2 <format=hex, comment="Padding: Not set in Player ctor">; //0x17
     u16  Unk14 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x18
     u8  Unk15 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x1A
-    u8  UnkN16 <format=hex, comment="Not set in Player ctor">; //0x1B
+    u8  Padding3 <format=hex, comment="Padding: Not set in Player ctor">; //0x1B
     u16  Unk17 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x1C
     u8  Unk18 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x1E
-    u8  UnkN19 <format=hex, comment="Not set in Player ctor">; //0x1F
+    u8  Padding4 <format=hex, comment="Padding: Not set in Player ctor">; //0x1F
     u16  Unk20 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x20
     u8  Unk21 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x22
-    u8  UnkN22 <format=hex, comment="Not set in Player ctor">; //0x23
+    u8  Padding5 <format=hex, comment="Padding: Not set in Player ctor">; //0x23
     u16  Unk23 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x24
     u8  Unk24 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x26
-    u8  UnkN25 <format=hex, comment="Not set in Player ctor">; //0x27
+    u8  Padding6 <format=hex, comment="Padding: Not set in Player ctor">; //0x27
     u16  Unk26 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x28
     u8  Unk27 <format=hex, comment="Set to 0 in Player ctor">; //0x2A
-    u8  UnkN28 <format=hex, comment="Not set in Player ctor">; //0x2B
+    u8  Padding7 <format=hex, comment="Padding: Not set in Player ctor">; //0x2B
     u16  Unk29 <format=hex, comment="Set to 0 in Player ctor (Set in 1st loop)">; //0x2C
     u8  Unk30 <format=hex, comment="Set to 0 in Player ctor">; //0x2E
     u8  Unk31 <format=hex, comment="Set to 0 in Player ctor">; //0x2F
@@ -1182,11 +1182,11 @@ typedef struct UnknownStruct2
     u8 Unknown15 <comment= "???; Set to 0x65 in player ctor">; //0x8B98
     u8 Unknown16 <comment= "???; Set to 0 in player ctor">; //0x8B99
     u8 Unknown17 <comment= "???; Set to 0 in player ctor">; //0x8B9A
-    u8 UnknownN18 <comment= "???; Not set in player ctor">; //0x8B9B
+    u8 Padding1 <comment= "Padding: Not set in player ctor">; //0x8B9B
     u8  Unknown19[0x198] <comment= "???; 0x198 buffer size set to 0 in player ctor">; //0x8B9C
     u8  Unknown20[0x66] <comment= "???; 0x66 buffer size set to 0 in player ctor">; //0x8D34
-    u8 UnknownN21 <comment= "???; Not set in player ctor">; //0x8B9A
-    u8 UnknownN22 <comment= "???; Not set in player ctor">; //0x8B9B
+    u8 Padding2 <comment= "Padding: Not set in player ctor">; //0x8B9A
+    u8 Padding3 <comment= "Padding: Not set in player ctor">; //0x8B9B
     u32 Unknown23 <comment= "???; Set to 0 in player ctor">; //0x8D9C
     u32 Unknown24 <comment= "???; Set to 0 in player ctor">; //0x8DA0
     u32 Unknown25 <comment= "???; Set to 0 in player ctor">; //0x8DA4
@@ -1203,7 +1203,7 @@ typedef struct UnknownStruct3
     u8 Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //0x8DF4
     u8 Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DF5
     u8 Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //0x8DF6
-    u8 Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">; //0x8DF7
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">; //0x8DF7
     u16 Unknown6 <format=hex, comment= "???; Set to 0x0000 in player ctor">; //0x8DF8
     u8 Unknown7 <format=hex, comment= "???; Set to 0x6 in player ctor">; //0x8DFA
     u8 Unknown8 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DFB
@@ -1215,7 +1215,7 @@ typedef struct UnknownStruct4 //Probably exact same struct as UnknownStruct3 but
     u8 Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //0x8DF4
     u8 Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DF5
     u8 Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //0x8DF6
-    u8 Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">; //0x8DF7
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">; //0x8DF7
     u16 Unknown6 <format=hex, comment= "???; Set to 0x7ffe in player ctor">; //0x8DF8
     u8 Unknown7 <format=hex, comment= "???; Set to 0x4 in player ctor">; //0x8DFA
     u8 Unknown8 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DFB
@@ -1227,13 +1227,13 @@ typedef struct UnknownStruct5 //Similar to UnknownStruct3
     u8 Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //0x8DF4
     u8 Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8DF5
     u8 Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //0x8DF6
-    u8 Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">; //0x8DF7
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">; //0x8DF7
     u32 Unknown6 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">; //0x8DF8
     u32 Unknown7 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">; //0x8DFC
     u8 Unknown8 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8E00
     u8 Unknown9 <format=hex, comment= "???; Set to 0x7 in player ctor">; //0x8E01
     u8 Unknown10 <format=hex, comment= "???; Set to 0xFF in player ctor">; //0x8E02
-    u8 Unknown11 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor;">;
 };
 
 
@@ -1243,7 +1243,7 @@ typedef struct UnknownStruct6Mini
     TownID TownData2;
     u16 Unknown1 <format=hex, comment= "???; Set to 0xFFFF in player ctor">;
     u8 Unknown2 <format=hex, comment= "???; Set to 0x8 in player ctor">;
-    u8 Unknown3 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">;
 };
 
 typedef struct UnknownStruct6
@@ -1252,7 +1252,7 @@ typedef struct UnknownStruct6
     u8 Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">;
     u8 Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">;
     u8 Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">;
-    u8 Unknown5 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">;
     UnknownStruct6Mini Mini1;
     UnknownStruct6Mini Mini2;
     u32 Unknown6 <format=hex, comment= "???; Set to 0x00007ffe in player ctor">;
@@ -1269,7 +1269,7 @@ typedef struct UnknownStruct7 //Probably exact same struct as UnknownStruct4 but
     u8 Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">;
     u8 Unknown5 <format=hex, comment= "???; Set to 0xFF in player ctor">;
     u8 Unknown6 <format=hex, comment= "???; Set to 0xFF in player ctor">;
-    u8 Unknown7 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">;
 };
 
 typedef struct UnknownStruct8 //Similar to UnknownStruct3
@@ -1278,7 +1278,7 @@ typedef struct UnknownStruct8 //Similar to UnknownStruct3
     u8 Unknown2 <format=hex, comment= "???; Set to 0x21 in player ctor">; //
     u8 Unknown3 <format=hex, comment= "???; Set to 0xFF in player ctor">; //
     u8 Unknown4 <format=hex, comment= "???; Set to 0x9 in player ctor">; //
-    u8 Unknown7 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    u8 Unknown7 <format=hex, comment= "Padding: Not set in ctor">;
 };
 
 typedef struct UnknownStruct9
@@ -1297,7 +1297,7 @@ typedef struct UnknownStruct9
     u32 Unknown12 <format=hex, comment= "???; Set to 0 in player ctor">; //
     u16 Unknown13 <format=hex, comment= "???; Set to 0 in player ctor">; //
     u8 Unknown14 <format=hex, comment= "???; Set to 0 in player ctor">; //
-    u8 Unknown15 <format=hex, comment= "Not set in ctor; Probably padding.">;
+    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">;
 };
 
 typedef struct UnknownStruct10
