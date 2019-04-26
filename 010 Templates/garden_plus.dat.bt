@@ -21,6 +21,13 @@ typedef int16 s16;
 typedef int32 s32;
 typedef int64 s64;
 
+typedef struct Item 
+{
+    u16 ID <format=hex>;
+    u16 Flags <format=hex>;
+};
+
+
 /* FUNCTIONS FOR STRINGS */
 
 string     DecryptACNLValue(u64 encval) //Decrypt ACNL Numerical Values
@@ -328,12 +335,12 @@ typedef struct MiiData
 
 typedef struct Mannequin
 {
-    u32 Hat  <format=hex,comment="Item ID < 0xXXXX">;
-    u32 Accessory <format=hex,comment="Item ID < 0xXXXX">;
-    u32 TopWear <format=hex,comment="Item ID < 0xXXXX">;
-    u32 BottomWear <format=hex,comment="Item ID < 0xXXXX">;
-    u32 Socks <format=hex,comment="Item ID < 0xXXXX">;
-    u32 Shoes <format=hex,comment="Item ID < 0xXXXX">;
+    Item Hat  <format=hex,comment="Item ID < 0xXXXX">;
+    Item Accessory <format=hex,comment="Item ID < 0xXXXX">;
+    Item TopWear <format=hex,comment="Item ID < 0xXXXX">;
+    Item BottomWear <format=hex,comment="Item ID < 0xXXXX">;
+    Item Socks <format=hex,comment="Item ID < 0xXXXX">;
+    Item Shoes <format=hex,comment="Item ID < 0xXXXX">;
 };
 
 typedef struct Player_Flags
@@ -933,7 +940,7 @@ typedef struct ACNL_Letter
     u8   StringIDOfSender;
     u8   LetterType;
     u8   Unknown2;
-    u32  AttachedItem;
+    Item AttachedItem;
     u64  Unknown3;
 };
 
@@ -976,9 +983,9 @@ typedef struct Player_Letters
 
 typedef struct Player_Dressers
 {
-    u32 DrawerA[60];
-    u32 DrawerB[60];
-    u32 DrawerC[60];
+    Item DrawerA[60];
+    Item DrawerB[60];
+    Item DrawerC[60];
 
 };
 
@@ -1241,9 +1248,9 @@ typedef struct UnknownStruct6Mini
 {
     TownID TownData1;
     TownID TownData2;
-    u16 Unknown1 <format=hex, comment= "???; Set to 0xFFFF in player ctor">;
-    u8 Unknown2 <format=hex, comment= "???; Set to 0x8 in player ctor">;
-    u8 Padding1 <format=hex, comment= "Padding: Not set in ctor">;
+    u16 VillagerID <format=hex, comment= "This struct used in Villager ctor, and this is VID in it; Set to 0xFFFF in player ctor">;
+    u8 VillagerPersonality <format=hex, comment= "This struct used in Villager ctor, and this is VP in it; Set to 0x8 in player ctor">;
+    u8 Padding <format=hex, comment= "Padding: Not set in ctor">;
 };
 
 typedef struct UnknownStruct6
@@ -1302,7 +1309,7 @@ typedef struct UnknownStruct9
 
 typedef struct UnknownStruct10
 {
-    u32 UnkItem1 <format=hex, comment= "Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem1 <format=hex, comment= "Some Item; Set to 0x00007ffe in player ctor">;
     u16 Unknown2 <format=hex, comment= "???; Set to 0 in player ctor">;
 };
 
@@ -1342,14 +1349,14 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
     u8 Face <format=hex,comment="Values: 0x0 -> 0xB">;         //0xA6
     u8 EyeColor <format=hex,comment="Values: 0x0 -> 0x5">;     //0xA7
     u16 Tan <format=hex,comment="Values: 0x0 -> 0xF">;         //0xA8
-    u32 Hat  <format=hex,comment="Item ID < 0xXXXX">;          //0xAA
-    u32 Accessory <format=hex,comment="Item ID < 0xXXXX">;     //0xAE
-    u32 TopWear <format=hex,comment="Item ID < 0xXXXX">;       //0xB2
-    u32 UnderTopWear <format=hex,comment="Item ID < 0xXXXX">;  //0xB6
-    u32 BottomWear <format=hex,comment="Item ID < 0xXXXX">;    //0xBA
-    u32 Socks <format=hex,comment="Item ID < 0xXXXX">;         //0xBE
-    u32 Shoes <format=hex,comment="Item ID < 0xXXXX">;         //0xC2
-    u32 HeldItem <format=hex,comment="Item ID < 0xXXXX">;      //0xC6
+    Item Hat  <format=hex,comment="Item ID < 0xXXXX">;          //0xAA
+    Item Accessory <format=hex,comment="Item ID < 0xXXXX">;     //0xAE
+    Item TopWear <format=hex,comment="Item ID < 0xXXXX">;       //0xB2
+    Item UnderTopWear <format=hex,comment="Item ID < 0xXXXX">;  //0xB6
+    Item BottomWear <format=hex,comment="Item ID < 0xXXXX">;    //0xBA
+    Item Socks <format=hex,comment="Item ID < 0xXXXX">;         //0xBE
+    Item Shoes <format=hex,comment="Item ID < 0xXXXX">;         //0xC2
+    Item HeldItem <format=hex,comment="Item ID < 0xXXXX">;      //0xC6
     u8 Unknown0 <format=hex,comment="Inverted gender(?): 1 for male, 0 for female. Default = 1 in PlayerConstructor (EUR 1.5 0x20D27C)">; //0xCA
     u8 Padding_0 <format=hex,comment="U8 Zero Padding; Always 0x00">; //0xCB
     Player_Patterns Patterns <comment="10 Patterns">;  //0xCC
@@ -1393,15 +1400,15 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
     s64 Playtime <comment=ParsePlaytime>;                 //0x6C50 -> 0x6C57
     TownID TownData2;                                       //0x6C68 -> 0x6C5D
     u16 Padding_10;                                      //0x6C6E -> 0x6C6F
-    u32 Inventory[16] <format=hex>;                      //0x6C70 -> 0x6CAF
+    Item Inventory[16] <format=hex>;                      //0x6C70 -> 0x6CAF
     u8 InventoryItemLocks[16] <format=hex>;              //0x6CB0 -> 0x6CBF
     u8 UnlockedItems[0x2E8] <format=binary, comment="Game uses one big bitfield for items 'unlocked'. Bits correspond to item ids. Used for catalog, encyclopedia, etc" >; //0x6CC0 -> 0x6FA7
     u64 PocketMoney <format=hex,comment=DecryptACNLValue >; //0x6FA8 -> 0x6FAF: Encrypted Value
-    u32 IslandBox[40] <format=hex>;                      //0x6FB0 -> 0x704F
-    u32 IslandInventory[16] <format=hex>;                //0x7050 -> 0x708F
+    Item IslandBox[40] <format=hex>;                      //0x6FB0 -> 0x704F
+    Item IslandInventory[16] <format=hex>;                //0x7050 -> 0x708F
     u8 IslandInventoryItemLocks[16];                     //0x7090 -> 0x709F: may be Padding also, needs testing
-    u32 UnknownItem1 <format=hex>;                       //0x70A0 -> 0x70A3
-    u32 UnknownItem2 <format=hex>;                       //0x70A4 -> 0x70A7
+    Item UnknownItem1 <format=hex>;                       //0x70A0 -> 0x70A3
+    Item UnknownItem2 <format=hex>;                       //0x70A4 -> 0x70A7
     Player_Letters Letters;                                 //0x70A8 -> 0x89A7
     wchar_t LetterHeader[0x20];                             //0x89A8 -> 0x89E7
     u16 Padding_11;                                      //0x89E8 -> 0x89E9
@@ -1442,8 +1449,8 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
     u8 PlayerFFFF_Filler[0x16] <format=hex,comment="Always contains 0x16 0xFF bytes. ctor sets this." >;
     u8 UnknownNotSetYet2[0xC];
     UnknownStruct9 UnkBuffer9;
-    u32 UnkItem1 <format=hex>;
-    u32 UnkItem2 <format=hex>;
+    Item UnkItem1 <format=hex>;
+    Item UnkItem2 <format=hex>;
     u8 UnknownNotSetYet3[0xE];
     u8 UnknownNotSetYet4[0xA];
     u16 Unk_u16_1 <format=hex, comment= "Set to 0x7DB in player ctor">;
@@ -1456,7 +1463,7 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
     u8 Padding_17;
     u8 Unk_u8_3 <format=hex, comment= "Set to 0 in player ctor">;
     u8 UnknownNotSetYet6[0xE];
-    u32 SantaBagInv[10];                             //0x9048 -> 0x906F
+    Item SantaBagInv[10];                             //0x9048 -> 0x906F
     u8 PlayerZero_Filler[0x320] <format=hex, comment="Always 0?? Game just memclr's in player ctor.">;
     Player_Dressers Dressers <format=hex, comment="Each dresser is 60 long">;
     wchar_t BDayWish[0x22];
@@ -1472,45 +1479,124 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
     UnknownStruct10 UnkStruct10_1;
     UnknownStruct10 UnkStruct10_2;
     UnknownStruct10 UnkStruct10_3;
-    u32 UnkItem1 <format=hex, comment= "Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem1 <format=hex, comment= "Some Item; Set to 0x00007ffe in player ctor">;
     u16 Padding_18;
 
 };
 
+typedef struct VillagerUnknownMiniStruct1
+{
+    u16 Unk1;
+    u8 Unk2;
+    u8 Unk3;
+};
+
+typedef struct VillagerUnknownStruct1
+{
+    PersonalID unknownPID;
+    u8 Zerod[34] <comment="Related to class script::WordPtrSv, technically same buffer as UnkName">;
+    wchar_t UnkName[9] <comment="Related to class script::WordPtrSv, technically same buffer as Zerod">;
+    Item UnkItem1 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem2 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem3 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem4 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem5 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem6 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem7 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem8 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem9 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem10 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem11 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem12 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem13 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem14 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem15 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem16 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem17 <format=hex, comment= "Group 3; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem18 <format=hex, comment= "Group 4; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem19 <format=hex, comment= "Group 5; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem20 <format=hex, comment= "Group 6; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem21 <format=hex, comment= "Group 7; Some Item; Set to 0x00007ffe in player ctor">;
+    u8 UnkBitfield[8] <format=binary>;
+    u16 unk;
+    TownID UnkTownID;
+    u64 Unknown22 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    VillagerUnknownMiniStruct1 MiniStruct1;
+    VillagerUnknownMiniStruct1 MiniStruct2;
+    VillagerUnknownMiniStruct1 MiniStruct3;
+    VillagerUnknownMiniStruct1 MiniStruct4;
+    u16 Unknown23 <comment="ctor sets to 0xFFFF">;
+    u8 Unk24 <comment="ctor sets to 0x31">;
+    u8 Padding;
+};
+
 typedef struct ACNL_Villager
 {
-    u16 Id; // 0 - 1 (2)
-    u8 Personality; // 2 (1)
-    u8 Pad1; //3
+    UnknownStruct6Mini Mini1;
     ACNL_Pattern Pattern;
     TownID  TownID1;
-    u8 Unknown1[0xF5A];
-    ACNL_Letter Letter1;
-    ACNL_Letter Letter2;
-    ACNL_Letter Letter3;
-    ACNL_Letter Letter4;
-    ACNL_Letter Letter5;
-    u16 Unknown2[5];
-    u32 Shirt; // 246E - 2471
-    u32 Song; // 2472 - 2475
-    u32 Wallpaper; // 2476 - 2479
-    u32 Carpet; // 247A - 247D
-    u32 Umbrella; // 247E - 2481
-    u32 Furniture[16]; // 2482 - 24C1
-    u32 Unknown2; // 24C2 - 24C5
+    u32 Unknown1[2] <comment="Game copies value from 0x6E29A, otherwise gens random number, gets u32 value then does something to it (EUR 1.5 IDA: 0x6BBBD4)">;
+    u64 Unknown2 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    Item UnkItem1 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem2 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem3 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem4 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem5 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem6 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem7 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem8 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem9 <format=hex, comment= "Group 3; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem10 <format=hex, comment= "Group 4; Some Item; Set to 0x00007ffe in player ctor">;
+    VillagerUnknownStruct1 StructUnknown1;
+    VillagerUnknownStruct1 StructUnknown2;
+    VillagerUnknownStruct1 StructUnknown3;
+    VillagerUnknownStruct1 StructUnknown4;
+    VillagerUnknownStruct1 StructUnknown5;
+    VillagerUnknownStruct1 StructUnknown6;
+    VillagerUnknownStruct1 StructUnknown7;
+    VillagerUnknownStruct1 StructUnknown8;
+    VillagerUnknownStruct1 StructUnknown9;
+    VillagerUnknownStruct1 StructUnknown10;
+    VillagerUnknownStruct1 StructUnknown11;
+    VillagerUnknownStruct1 StructUnknown12;
+    VillagerUnknownStruct1 StructUnknown13;
+    VillagerUnknownStruct1 StructUnknown14;
+    VillagerUnknownStruct1 StructUnknown15;
+    VillagerUnknownStruct1 StructUnknown16;
+    u16 Padding;
+    ACNL_Letter Letter1 <comment="Group 1">;
+    ACNL_Letter Letter2 <comment="Group 1">;
+    ACNL_Letter Letter3 <comment="Group 1">;
+    ACNL_Letter Letter4 <comment="Group 1">;
+    ACNL_Letter Letter5 <comment="Single">;
+    u16 UnkNum1 <comment="Single; Set to 2011 in ctor">;
+    u16 UnkNum2 <comment="Group 1; Set to 2011 in ctor">;
+    u16 UnkNum3 <comment="Group 1; Set to 2011 in ctor">;
+    u16 UnkNum4 <comment="Group 1; Set to 2011 in ctor">;
+    u16 UnkNum5 <comment="Group 1; Set to 2011 in ctor">;
+    Item Shirt; // 246E - 2471
+    Item Song; // 2472 - 2475
+    Item Wallpaper; // 2476 - 2479
+    Item Carpet; // 247A - 247D
+    Item Umbrella; // 247E - 2481
+    Item Furniture[16]; // 2482 - 24C1
+    VillagerUnknownMiniStruct1 MiniStruct1; // 24C2 - 24C5
     wchar_t Catchphrase[11]; // Last character is null terminator | 24C6 - 24DB
-    u8 Unknown3[8]; // 24DC - 24E3
-    u8 Status; // Also general flags? | 24E4
-    u8 Unknown4[7]; // 24E5 - 24ED
-    TownID  TownID2;
-    TownID  TownID3;
+    u8 Unknown3 <comment="ctor sets to 7">;
+    u8 Padding2;
+    VillagerUnknownMiniStruct1 MiniStruct2 <comment="This seems to be a date, maybe date last talked??">;
+    u8 Status <comment="ctor sets to 2">; // Also general flags? | 24E4
+    u8 Unknown4 <comment="ctor sets to 0x18">;
+    u32 Unknown5 <comment="ctor sets to 0">;
+    u8 Unknown6 <comment="ctor sets to 0xFF">;
+    u8 Unknown7 <comment="ctor sets to 0xFF">;
+    u8 Unknown8 <comment="ctor sets to 0xFF">;
+    u8 Unknown9 <comment="ctor sets to 0">;
 };
 
 typedef struct ACNL_VillagerData
 {
     u32 Checksum <format=hex,comment="Checksum of the 0x22BC8 of this data">;
-    TownID  TownID1;
-    TownID  TownID2;
     ACNL_Villager Villager1;
     ACNL_Villager Villager2;
     ACNL_Villager Villager3;
@@ -1521,7 +1607,13 @@ typedef struct ACNL_VillagerData
     ACNL_Villager Villager8;
     ACNL_Villager Villager9;
     ACNL_Villager Villager10;
-    u8 Unknown[0xB8C0];
+    u32 Unk1;
+    u8 Unknown[0x2474];
+    ACNL_Villager UnkVillager1;
+    ACNL_Villager UnkVillager2;
+    ACNL_Villager UnkVillager3;
+    ACNL_Villager UnkVillager4;
+    u8 Unknown2[0x14];
 };
 
 
