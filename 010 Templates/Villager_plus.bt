@@ -3,7 +3,7 @@
 //
 //      File: Villager_plus.bt
 //   Authors: Slattz
-//   Version: 0.1
+//   Version: 0.2
 //   Purpose: ACNL WA Villager Structure
 //  Category: 
 // File Mask: garden_plus.dat
@@ -11,14 +11,42 @@
 //   History: 
 //------------------------------------------------
 
+typedef ubyte bool;
+typedef ubyte u8;
+typedef uint16 u16;
+typedef uint32 u32;
+typedef uint64 u64;
+typedef byte s8;
+typedef int16 s16;
+typedef int32 s32;
+typedef int64 s64;
+
+typedef struct Item 
+{
+    u16 ID <format=hex>;
+    u16 Flags <format=hex>;
+};
+
 /* STRUCTS */
 
 typedef struct TownID
 {
-	uint16 	 TID <format=hex, comment="Default is 0 (Player ctor)">;
+	u16 	 TID <format=hex, comment="Default is 0 (Player ctor)">;
 	wchar_t  DataTownName[9] <comment="Default is 0 (Player ctor)">;
-    ubyte Unknown01 <comment="Default is 0xA (Player ctor)">;
-    ubyte Unknown02 <comment="Default is 0 (Player ctor)">;;
+    u8 Unknown01 <comment="Default is 0xA (Player ctor)">;
+    u8 Unknown02 <comment="Just Padding??">;
+
+};
+
+typedef struct PersonalID
+{
+	u16   PID <format=hex>;
+    wchar_t  PlayerName[9];
+	u8    Gender;
+    u8    ZeroPad;
+    TownID   TownData;
+    u8    TPC_Country;
+    u8    TPC_County;
 
 };
 
@@ -63,39 +91,130 @@ typedef struct ACNL_Letter
     uint64  Unknown3;
 };
 
+typedef struct VillagerUnknownMiniStruct1
+{
+    u16 Unk1;
+    u8 Unk2;
+    u8 Unk3;
+};
+
+typedef struct UnknownStruct6Mini
+{
+    TownID TownData1;
+    TownID TownData2;
+    u16 VillagerID <format=hex, comment= "This struct used in Villager ctor, and this is VID in it; Set to 0xFFFF in player ctor">;
+    u8 VillagerPersonality <format=hex, comment= "This struct used in Villager ctor, and this is VP in it; Set to 0x8 in player ctor">;
+    u8 Padding <format=hex, comment= "Padding: Not set in ctor">;
+};
+
+typedef struct VillagerUnknownStruct1
+{
+    PersonalID unknownPID;
+    u8 Zerod[34] <comment="Related to class script::WordPtrSv, technically same buffer as UnkName">;
+    wchar_t UnkName[9] <comment="Related to class script::WordPtrSv, technically same buffer as Zerod">;
+    Item UnkItem1 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem2 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem3 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem4 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem5 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem6 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem7 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem8 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem9 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem10 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem11 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem12 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem13 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem14 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem15 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem16 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem17 <format=hex, comment= "Group 3; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem18 <format=hex, comment= "Group 4; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem19 <format=hex, comment= "Group 5; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem20 <format=hex, comment= "Group 6; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem21 <format=hex, comment= "Group 7; Some Item; Set to 0x00007ffe in player ctor">;
+    u8 UnkBitfield[8] <format=binary>;
+    u16 unk;
+    TownID UnkTownID;
+    u64 Unknown22 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    VillagerUnknownMiniStruct1 MiniStruct1;
+    VillagerUnknownMiniStruct1 MiniStruct2;
+    VillagerUnknownMiniStruct1 MiniStruct3;
+    VillagerUnknownMiniStruct1 MiniStruct4;
+    u16 Unknown23 <comment="ctor sets to 0xFFFF">;
+    u8 Unk24 <comment="ctor sets to 0x31">;
+    u8 Padding;
+};
+
+
 /* VILLAGER STRUCT */
 
 typedef struct ACNL_Villager
 {
-    uint16 Id; // 0 - 1 (2)
-    ubyte Personality; // 2 (1)
-    ubyte Pad1; //3
+    UnknownStruct6Mini Mini1;
     ACNL_Pattern Pattern;
     TownID  TownID1;
-    ubyte Unknown1[0xF5A];
-    ACNL_Letter Letter1;
-    ACNL_Letter Letter2;
-    ACNL_Letter Letter3;
-    ACNL_Letter Letter4;
-    ACNL_Letter Letter5;
-    uint16 Unknown2[5];
-    uint32 Shirt; // 246E - 2471
-    uint32 Song; // 2472 - 2475
-    uint32 Wallpaper; // 2476 - 2479
-    uint32 Carpet; // 247A - 247D
-    uint32 Umbrella; // 247E - 2481
-    uint32 Furniture[16]; // 2482 - 24C1
-    uint32 Unknown2; // 24C2 - 24C5
+    u32 Unknown1[2] <comment="Game copies value from 0x6E29A, otherwise gens random number, gets u32 value then does something to it (EUR 1.5 IDA: 0x6BBBD4)">;
+    u64 Unknown2 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    Item UnkItem1 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem2 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem3 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem4 <format=hex, comment= "Group 1; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem5 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem6 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem7 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem8 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem9 <format=hex, comment= "Group 3; Some Item; Set to 0x00007ffe in player ctor">;
+    Item UnkItem10 <format=hex, comment= "Group 4; Some Item; Set to 0x00007ffe in player ctor">;
+    VillagerUnknownStruct1 StructUnknown1;
+    VillagerUnknownStruct1 StructUnknown2;
+    VillagerUnknownStruct1 StructUnknown3;
+    VillagerUnknownStruct1 StructUnknown4;
+    VillagerUnknownStruct1 StructUnknown5;
+    VillagerUnknownStruct1 StructUnknown6;
+    VillagerUnknownStruct1 StructUnknown7;
+    VillagerUnknownStruct1 StructUnknown8;
+    VillagerUnknownStruct1 StructUnknown9;
+    VillagerUnknownStruct1 StructUnknown10;
+    VillagerUnknownStruct1 StructUnknown11;
+    VillagerUnknownStruct1 StructUnknown12;
+    VillagerUnknownStruct1 StructUnknown13;
+    VillagerUnknownStruct1 StructUnknown14;
+    VillagerUnknownStruct1 StructUnknown15;
+    VillagerUnknownStruct1 StructUnknown16;
+    u16 Padding;
+    ACNL_Letter Letter1 <comment="Group 1">;
+    ACNL_Letter Letter2 <comment="Group 1">;
+    ACNL_Letter Letter3 <comment="Group 1">;
+    ACNL_Letter Letter4 <comment="Group 1">;
+    ACNL_Letter Letter5 <comment="Single">;
+    u16 UnkNum1 <comment="Single; Set to 2011 in ctor">;
+    u16 UnkNum2 <comment="Group 1; Set to 2011 in ctor">;
+    u16 UnkNum3 <comment="Group 1; Set to 2011 in ctor">;
+    u16 UnkNum4 <comment="Group 1; Set to 2011 in ctor">;
+    u16 UnkNum5 <comment="Group 1; Set to 2011 in ctor">;
+    Item Shirt; // 246E - 2471
+    Item Song; // 2472 - 2475
+    Item Wallpaper; // 2476 - 2479
+    Item Carpet; // 247A - 247D
+    Item Umbrella; // 247E - 2481
+    Item Furniture[16]; // 2482 - 24C1
+    VillagerUnknownMiniStruct1 MiniStruct1; // 24C2 - 24C5
     wchar_t Catchphrase[11]; // Last character is null terminator | 24C6 - 24DB
-    ubyte Unknown3[8]; // 24DC - 24E3
-    ubyte Status; // Also general flags? | 24E4
-    ubyte Unknown4[7]; // 24E5 - 24ED
-    TownID  TownID2;
-    TownID  TownID3;
+    u8 Unknown3 <comment="ctor sets to 7">;
+    u8 Padding2;
+    VillagerUnknownMiniStruct1 MiniStruct2 <comment="This seems to be a date, maybe date last talked??">;
+    u8 Status <comment="ctor sets to 2">; // Also general flags? | 24E4
+    u8 Unknown4 <comment="ctor sets to 0x18">;
+    u32 Unknown5 <comment="ctor sets to 0">;
+    u8 Unknown6 <comment="ctor sets to 0xFF">;
+    u8 Unknown7 <comment="ctor sets to 0xFF">;
+    u8 Unknown8 <comment="ctor sets to 0xFF">;
+    u8 Unknown9 <comment="ctor sets to 0">;
 };
 
 //main
-FSkip(0x0292d0); //Skip to villager start offset of garden_plus.dat
+FSkip(0x0292a4); //Skip to villager start offset of garden_plus.dat
 ACNL_Villager Villager1;
 ACNL_Villager Villager2;
 ACNL_Villager Villager3;
