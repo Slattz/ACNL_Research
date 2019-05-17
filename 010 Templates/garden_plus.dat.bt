@@ -343,6 +343,42 @@ typedef struct Mannequin
     Item Shoes <format=hex,comment="Item ID < 0xXXXX">;
 };
 
+typedef struct Villager_Status
+{
+    u8 IsBoxed : 1;
+    u8 HasMoved : 1;
+    u8 Unknown3 : 1;
+    u8 Unknown4 : 1;
+    u8 Unknown5 : 1;
+    u8 Unknown6 : 1;
+    u8 Unknown7 : 1;
+    u8 Unknown8 : 1;
+    u8 Unknown9 : 1;
+    u8 Unknown10 : 1;
+    u8 Unknown11 : 1;
+    u8 Unknown12 : 1;
+    u8 Unknown13 : 1;
+    u8 RealtedToBelowButUnk : 1;
+    u8 MovingToAnotherTown : 1;
+    u8 Unknown16 : 1;
+    u8 Unknown17 : 1;
+    u8 Unknown18 : 1;
+    u8 Unknown19 : 1;
+    u8 Unknown20 : 1;
+    u8 Unknown21 : 1;
+    u8 Unknown22 : 1;
+    u8 Unknown23 : 1;
+    u8 Unknown24 : 1;
+    u8 Unknown25 : 1;
+    u8 Unknown26 : 1;
+    u8 Unknown27 : 1;
+    u8 Unknown28 : 1;
+    u8 Unknown29 : 1;
+    u8 Unknown30 : 1;
+    u8 Unknown31 : 1;
+    u8 Unknown32 : 1;
+};
+
 typedef struct Player_Flags
 {
     u8 Unknown1 : 1;
@@ -1491,7 +1527,7 @@ typedef struct VillagerUnknownMiniStruct1
     u8 Unk3;
 };
 
-typedef struct VillagerUnknownStruct1
+typedef struct VillagerFutureHome
 {
     PersonalID unknownPID;
     u8 Zerod[34] <comment="Related to class script::WordPtrSv, technically same buffer as UnkName">;
@@ -1547,22 +1583,23 @@ typedef struct ACNL_Villager
     Item UnkItem8 <format=hex, comment= "Group 2; Some Item; Set to 0x00007ffe in player ctor">;
     Item UnkItem9 <format=hex, comment= "Group 3; Some Item; Set to 0x00007ffe in player ctor">;
     Item UnkItem10 <format=hex, comment= "Group 4; Some Item; Set to 0x00007ffe in player ctor">;
-    VillagerUnknownStruct1 StructUnknown1;
-    VillagerUnknownStruct1 StructUnknown2;
-    VillagerUnknownStruct1 StructUnknown3;
-    VillagerUnknownStruct1 StructUnknown4;
-    VillagerUnknownStruct1 StructUnknown5;
-    VillagerUnknownStruct1 StructUnknown6;
-    VillagerUnknownStruct1 StructUnknown7;
-    VillagerUnknownStruct1 StructUnknown8;
-    VillagerUnknownStruct1 StructUnknown9;
-    VillagerUnknownStruct1 StructUnknown10;
-    VillagerUnknownStruct1 StructUnknown11;
-    VillagerUnknownStruct1 StructUnknown12;
-    VillagerUnknownStruct1 StructUnknown13;
-    VillagerUnknownStruct1 StructUnknown14;
-    VillagerUnknownStruct1 StructUnknown15;
-    VillagerUnknownStruct1 StructUnknown16;
+    //This is the places the Villager has passed through, which is cool
+    VillagerFutureHome Home1; //This is the current home, or if the villager is moving somewhere, the next home.
+    VillagerFutureHome Home2; //This is the last home, or if the villager is moving somewhere, the current home.
+    VillagerFutureHome Home3;
+    VillagerFutureHome Home4;
+    VillagerFutureHome Home5;
+    VillagerFutureHome Home6;
+    VillagerFutureHome Home7;
+    VillagerFutureHome Home8;
+    VillagerFutureHome Home9;
+    VillagerFutureHome Home10;
+    VillagerFutureHome Home11;
+    VillagerFutureHome Home12;
+    VillagerFutureHome Home13;
+    VillagerFutureHome Home14;
+    VillagerFutureHome Home15;
+    VillagerFutureHome Home16;
     u16 Padding;
     ACNL_Letter Letter1 <comment="Group 1">;
     ACNL_Letter Letter2 <comment="Group 1">;
@@ -1585,9 +1622,9 @@ typedef struct ACNL_Villager
     u8 Unknown3 <comment="ctor sets to 7">;
     u8 Padding2;
     VillagerUnknownMiniStruct1 MiniStruct2 <comment="This seems to be a date, maybe date last talked??">;
-    u8 Status <comment="ctor sets to 2">; // Also general flags? | 24E4
-    u8 Unknown4 <comment="ctor sets to 0x18">;
-    u32 Unknown5 <comment="ctor sets to 0">;
+    u8 Unknown4 <comment="ctor sets to 2">; // Also general flags? | 24E4
+    u8 Unknown5 <comment="ctor sets to 0x18; 0x2 means they're at home">;
+    Villager_Status Status <comment="ctor sets to 0; bit 1 set: moving out, bit 2 set: moving in; bit 3 removed from all villagers when loading game, unk">;
     u8 Unknown6 <comment="ctor sets to 0xFF">;
     u8 Unknown7 <comment="ctor sets to 0xFF">;
     u8 Unknown8 <comment="ctor sets to 0xFF">;
