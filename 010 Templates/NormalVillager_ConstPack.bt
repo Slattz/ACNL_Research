@@ -65,8 +65,110 @@ string SpeciesString(u8 Species)
 
     switch (Species)
     {
+        case 0x00:
+            str += "Cat";
+            break;
+        case 0x01:
+            str += "Elephant";
+            break;
+        case 0x02:
+            str += "Sheep";
+            break;
+        case 0x03:
+            str += "Bear";
+            break;
+        case 0x04:
+            str += "Dog";
+            break;
+        case 0x05:
+            str += "Squirrel";
+            break;
+        case 0x06:
+            str += "Rabbit";
+            break;
+        case 0x07:
+            str += "Duck";
+            break;
+        case 0x08:
+            str += "Hippo";
+            break;  
+        case 0x09:
+            str += "Wolf";
+            break;
+        case 0x0A:
+            str += "Mouse";
+            break;
+         case 0x0B:
+            str += "Pig";
+            break;
+        case 0x0C:
+            str += "Chicken";
+            break;
+        case 0x0D:
+            str += "Bull";
+            break;
+        case 0x0E:
+            str += "Cow";
+            break;
+        case 0x0F:
+            str += "Bird";
+            break;
+        case 0x10:
+            str += "Frog";
+            break;
+        case 0x11:
+            str += "Crocodile";
+            break;
+        case 0x12:
+            str += "Goat";
+            break;
+        case 0x13:
+            str += "Tiger";
+            break;
         case 0x14:
             str += "Anteater";
+            break;
+        case 0x15:
+            str += "Koala Bear";
+            break;
+        case 0x16:
+            str += "Horse";
+            break;
+        case 0x17:
+            str += "Octopus";
+            break;
+        case 0x18:
+            str += "Lion";
+            break;
+        case 0x19:
+            str += "Cub";
+            break;
+        case 0x1A:
+            str += "Rhinoceros";
+            break;
+        case 0x1B:
+            str += "Gorilla";
+            break;
+        case 0x1C:
+            str += "Ostrich";
+            break;
+        case 0x1D:
+            str += "Kangaroo";
+            break;
+        case 0x1E:
+            str += "Eagle";
+            break;
+        case 0x1F:
+            str += "Penguin";
+            break;
+        case 0x20:
+            str += "Monkey";
+            break;
+        case 0x21:
+            str += "Hamster";
+            break;
+        case 0x22:
+            str += "Deer";
             break;
         default:
             str += "Unk";    
