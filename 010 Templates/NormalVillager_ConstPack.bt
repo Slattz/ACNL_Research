@@ -1,0 +1,105 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: NormalVillager_ConstPack.bt
+//   Authors: Slattz
+//   Version: 0.1
+//   Purpose: ACNL Normal Villagers ConstPack.bin File Structure
+//  Category: 
+// File Mask: romfs:/Npc/Normal/ConstPack.bin
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef ubyte bool;
+typedef ubyte u8;
+typedef uint16 u16;
+typedef uint32 u32;
+typedef uint64 u64;
+typedef byte s8;
+typedef int16 s16;
+typedef int32 s32;
+typedef int64 s64;
+
+string PersonalityString(u8 Personality)
+{
+    string str = "[Current: ";
+
+    switch (Personality)
+    {
+        case 0:
+            str += "Lazy";
+            break;
+        case 1:
+            str += "Jock";
+            break;
+        case 2:
+            str += "Cranky";
+            break;
+        case 3: 
+            str += "Smug";
+            break;
+        case 4: 
+            str += "Normal";
+            break;
+        case 5: 
+            str += "Peppy";
+            break;
+        case 6: 
+            str += "Snooty";
+            break;
+        case 7: 
+            str += "Uchi";
+            break;
+        default:
+            str += "Invalid";    
+            break;
+    }
+    str += "] {0: lazy; 1: jock; 2: cranky; 3: smug; 4: normal; 5: peppy; 6: snooty; 7: uchi}";
+    return str;
+}
+
+string SpeciesString(u8 Species)
+{
+    string str = "[Current: ";
+
+    switch (Species)
+    {
+        case 0x14:
+            str += "Anteater";
+            break;
+        default:
+            str += "Unk";    
+            break;
+    }
+    str += "]";
+    return str;
+}
+
+typedef struct VillagerConst
+{
+    u16 VillagerID;
+    u8 Species <comment=SpeciesString>;
+    u8 BirthDay;
+    u32 Unk2;
+    u16 Unk3;
+    char ModelFilename[6];
+    char UnkName1[4] <comment="Something to do with script???; If female, starts with 'f'; if male, starts with 'm'">;
+    char UnkName2[4] <comment="Something to do with script???; If female, starts with 'f'; if male, starts with 'm'">;
+    char UnkName3[4] <comment="Something to do with script???; If female, starts with 'f'; if male, starts with 'm'">;
+    u8 Unk4 : 4;
+    u8 Personality : 4 <comment=PersonalityString>;
+    u8 Unk5 : 4;
+    u8 BirthMonth : 4;
+    u16 Unk6;
+    u16 Unk7;
+};
+
+VillagerConst Villager00;
+VillagerConst Villager01;
+VillagerConst Villager02;
+VillagerConst Villager03;
+VillagerConst Villager04;
+VillagerConst Villager05;
+VillagerConst Villager06;
+VillagerConst Villager07;
