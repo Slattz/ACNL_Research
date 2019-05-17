@@ -197,11 +197,7 @@ typedef struct VillagerConst
     u16 Unk7;
 };
 
-VillagerConst Villager00;
-VillagerConst Villager01;
-VillagerConst Villager02;
-VillagerConst Villager03;
-VillagerConst Villager04;
-VillagerConst Villager05;
-VillagerConst Villager06;
-VillagerConst Villager07;
+local int i;
+for(i = 0; i < 399; i++) {
+    VillagerConst Villager;
+}
