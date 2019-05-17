@@ -1,12 +1,12 @@
 //------------------------------------------------
 //--- 010 Editor Binary Template
 //
-//      File: NormalVillager_ConstPack.bt
+//      File: NormalVillager_Package.bt
 //   Authors: Slattz
-//   Version: 0.1
-//   Purpose: ACNL Normal Villagers ConstPack.bin File Structure
+//   Version: 0.9
+//   Purpose: ACNL Normal Villagers Package.bin File Structure
 //  Category: 
-// File Mask: romfs:/Npc/Normal/ConstPack.bin
+// File Mask: romfs:/Npc/Normal/Package.bin
 //  ID Bytes: 
 //   History: 
 //------------------------------------------------
