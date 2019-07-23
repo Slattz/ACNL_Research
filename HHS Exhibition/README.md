@@ -9,7 +9,5 @@ Nintendo EUR only ever sent out one house, `Pikmin 3`. This house was just used 
 I'm currently unsure if Nintendo JPN ever sent out houses.
 
 Included in this repo is a `exhibition.dat` save file, aswell as the individual house files.
-This `exhibition.dat` save file includes the EUR `Pikmin 3`, aswell as the USA houses.
+This `exhibition.dat` save file includes the EUR `Pikmin 3`, aswell as the all USA houses.
 The individual house files can be imported into your own exhibition.dat using [NLSE](https://github.com/WemI0/NLSE/releases/latest).
-
-There is one USA house missing which I haven't been able to find, `Jeff from SB`, Released on  `September 30, 2013`. If anyone has this in their save, please contact me on Discord: `Slattz#0674`.
