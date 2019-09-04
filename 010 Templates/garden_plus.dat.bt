@@ -799,6 +799,145 @@ typedef struct Player_Flags
     u8 Unknown416 : 1;
 };
 
+typedef struct Town_Flags
+{
+    u8 Unknown1 : 1;
+    u8 EarlyBirdOrdinance : 1;
+    u8 NightOwlOrdinance  : 1;
+    u8 BellBoomOrdinance  : 1;
+    u8 BeautifulOrdinance : 1;
+    u8 Unknown6 : 1;
+    u8 Unknown7 : 1;
+    u8 Unknown8 : 1;
+    u8 Unknown9 : 1;
+    u8 Unknown10 : 1;
+    u8 Unknown11 : 1;
+    u8 Unknown12 : 1;
+    u8 Unknown13 : 1;
+    u8 Unknown14 : 1;
+    u8 Unknown15 : 1;
+    u8 Unknown16 : 1;
+    u8 Unknown17 : 1;
+    u8 Unknown18 : 1;
+    u8 Unknown19 : 1;
+    u8 Unknown20 : 1;
+    u8 Unknown21 : 1;
+    u8 Unknown22 : 1;
+    u8 Unknown23 : 1;
+    u8 Unknown24 : 1;
+    u8 Unknown25 : 1;
+    u8 Unknown26 : 1;
+    u8 Unknown27 : 1;
+    u8 Unknown28 : 1;
+    u8 Unknown29 : 1;
+    u8 Unknown30 : 1;
+    u8 Unknown31 : 1;
+    u8 Unknown32 : 1;
+    u8 Unknown33 : 1;
+    u8 Unknown34 : 1;
+    u8 Unknown35 : 1;
+    u8 Unknown36 : 1;
+    u8 Unknown37 : 1;
+    u8 Unknown38 : 1;
+    u8 Unknown39 : 1 <comment="ctor sets this bit">;
+    u8 Unknown40 : 1;
+    u8 Unknown41 : 1;
+    u8 Unknown42 : 1;
+    u8 Unknown43 : 1;
+    u8 Unknown44 : 1;
+    u8 Unknown45 : 1;
+    u8 Unknown46 : 1;
+    u8 Unknown47 : 1;
+    u8 Unknown48 : 1;
+    u8 Unknown49 : 1;
+    u8 Unknown50 : 1;
+    u8 Unknown51 : 1;
+    u8 Unknown52 : 1;
+    u8 Unknown53 : 1;
+    u8 Unknown54 : 1;
+    u8 Unknown55 : 1;
+    u8 Unknown56 : 1;
+    u8 Unknown57 : 1;
+    u8 Unknown58 : 1;
+    u8 Unknown59 : 1;
+    u8 Unknown60 : 1;
+    u8 Unknown61 : 1;
+    u8 Unknown62 : 1;
+    u8 Unknown63 : 1;
+    u8 Unknown64 : 1;
+    u8 Unknown65 : 1;
+    u8 Unknown66 : 1;
+    u8 Unknown67 : 1;
+    u8 Unknown68 : 1;
+    u8 Unknown69 : 1;
+    u8 Unknown70 : 1;
+    u8 Unknown71 : 1;
+    u8 Unknown72 : 1;
+    u8 Unknown73 : 1 <comment="ctor sets this bit">;
+    u8 Unknown74 : 1 <comment="ctor sets this bit">;
+    u8 Unknown75 : 1 <comment="ctor sets this bit">;
+    u8 Unknown76 : 1;
+    u8 Unknown77 : 1;
+    u8 Unknown78 : 1;
+    u8 Unknown79 : 1;
+    u8 Unknown80 : 1;
+    u8 Unknown81 : 1;
+    u8 Unknown82 : 1;
+    u8 Unknown83 : 1;
+    u8 Unknown84 : 1;
+    u8 Unknown85 : 1;
+    u8 Unknown86 : 1;
+    u8 Unknown87 : 1;
+    u8 Unknown88 : 1;
+    u8 Unknown89 : 1;
+    u8 Unknown90 : 1;
+    u8 Unknown91 : 1;
+    u8 Unknown92 : 1;
+    u8 Unknown93 : 1;
+    u8 Unknown94 : 1;
+    u8 Unknown95 : 1;
+    u8 Unknown96 : 1;
+    u8 Unknown97 : 1;
+    u8 Unknown98 : 1;
+    u8 Unknown99 : 1;
+    u8 Unknown100 : 1;
+    u8 Unknown101 : 1;
+    u8 Unknown102 : 1;
+    u8 Unknown103 : 1;
+    u8 Unknown104 : 1;
+    u8 Unknown105 : 1;
+    u8 Unknown106 : 1;
+    u8 Unknown107 : 1;
+    u8 Unknown108 : 1;
+    u8 Unknown109 : 1;
+    u8 Unknown110 : 1;
+    u8 Unknown111 : 1;
+    u8 Unknown112 : 1;
+    u8 Unknown113 : 1;
+    u8 Unknown114 : 1;
+    u8 Unknown115 : 1;
+    u8 Unknown116 : 1;
+    u8 Unknown117 : 1;
+    u8 Unknown118 : 1;
+    u8 Unknown119 : 1;
+    u8 Unknown120 : 1;
+    u8 Unknown121 : 1;
+    u8 Unknown122 : 1;
+    u8 Unknown123 : 1;
+    u8 Unknown124 : 1;
+    u8 Unknown125 : 1;
+    u8 Unknown126 : 1;
+    u8 Unknown127 : 1;
+    u8 Unknown128 : 1;
+    u8 Unknown129 : 1;
+    u8 Unknown130 : 1;
+    u8 Unknown131 : 1;
+    u8 Unused1 : 1;
+    u8 Unused2 : 1;
+    u8 Unused3 : 1;
+    u8 Unused4 : 1;
+};
+
 typedef struct TownID
 {
 	u16 	 TID <format=hex, comment="Default is 0 (Player ctor)">;
@@ -1520,11 +1659,11 @@ typedef struct ACNL_Player //UnknownNotSetYetX = Not set by player ctor
 
 };
 
-typedef struct VillagerUnknownMiniStruct1
+typedef struct ACNL_Date
 {
-    u16 Unk1;
-    u8 Unk2;
-    u8 Unk3;
+    u16 Year;
+    u8 Month;
+    u8 Day;
 };
 
 typedef struct VillagerFutureHome
@@ -1557,10 +1696,10 @@ typedef struct VillagerFutureHome
     u16 unk;
     TownID UnkTownID;
     u64 Unknown22 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
-    VillagerUnknownMiniStruct1 MiniStruct1;
-    VillagerUnknownMiniStruct1 MiniStruct2;
-    VillagerUnknownMiniStruct1 MiniStruct3;
-    VillagerUnknownMiniStruct1 MiniStruct4;
+    ACNL_Date Date1;
+    ACNL_Date Date2;
+    ACNL_Date Date3;
+    ACNL_Date Date3;
     u16 Unknown23 <comment="ctor sets to 0xFFFF">;
     u8 Unk24 <comment="ctor sets to 0x31">;
     u8 Padding;
@@ -1617,11 +1756,11 @@ typedef struct ACNL_Villager
     Item Carpet; // 247A - 247D
     Item Umbrella; // 247E - 2481
     Item Furniture[16]; // 2482 - 24C1
-    VillagerUnknownMiniStruct1 MiniStruct1; // 24C2 - 24C5
+    ACNL_Date Date1; // 24C2 - 24C5
     wchar_t Catchphrase[11]; // Last character is null terminator | 24C6 - 24DB
     u8 Unknown3 <comment="ctor sets to 7">;
     u8 Padding2;
-    VillagerUnknownMiniStruct1 MiniStruct2 <comment="This seems to be a date, maybe date last talked??">;
+    ACNL_Date Date2 <comment="This seems to be a date, maybe date last talked??">;
     u8 Unknown4 <comment="ctor sets to 2">; // Also general flags? | 24E4
     u8 Unknown5 <comment="ctor sets to 0x18; 0x2 means they're at home">;
     Villager_Status Status <comment="ctor sets to 0; bit 1 set: moving out, bit 2 set: moving in; bit 3 removed from all villagers when loading game, unk">;
@@ -1695,17 +1834,258 @@ typedef struct ACNL_UnknownData
     u8 Unknown[0x7F0];
 };
 
+typedef struct ACNL_MiniTownPlayerStruct //size=0x20
+{
+    u16 Unknown[0x10] <comment="ctor sets each to 0xFFFF">;
+};
+
+typedef struct ACNL_SmallTownPlayerStruct //size = 0x302
+{
+    u8 Unknown1[0x22];
+    ACNL_MiniTownPlayerStruct Unk1; //ctor inits these seperately then all at once, idk if it's two arrays or one
+    ACNL_MiniTownPlayerStruct Unk2;
+    Item UnkItems1[0x64];
+    Item UnkItems2[0x40];
+    Item UnkItem1;
+    Item UnkItem2;
+    Item UnkItem3;
+    Item UnkItem4;
+};
+
+typedef struct ACNL_SomeTownPlayerStruct
+{
+    u32 ZeroPad1;
+    u32 Unknown1;
+    u32 Unknown2;
+    u8  Unknown3;
+    u32 Unknown4;
+    u32 Unknown5;
+    u8  Unknown6;
+    u16 Padding1;
+    ACNL_SmallTownPlayerStruct Unk1;
+    ACNL_SmallTownPlayerStruct Unk2;
+    ACNL_SmallTownPlayerStruct Unk3;
+    ACNL_SmallTownPlayerStruct Unk4;
+    ACNL_SmallTownPlayerStruct Unk5;
+    ACNL_SmallTownPlayerStruct Unk6;
+    u16 Unk7;
+    u8 Unk8;
+    u8 Padding2;
+};
+
+typedef struct ACNL_MuseumExhibit //size = 0xB98
+{
+    u8 Unk1 <comment="Flag of some sort, ctor sets to 0xFF">;
+    u8 Padding;
+    ACNL_SmallTownPlayerStruct unkSmallTownPlayerStruct1;
+    ACNL_Pattern UnkPattern1;
+    wchar_t OwnerName[0x11];
+    u16 Padding2;
+};
+
+typedef struct ACNL_NewPWP //size = 0x10
+{
+    u8 Unk1 <comment="ctor sets to 0">;
+    u8 Unk2 <comment="ctor sets to 0">;
+    u8 Unk3 <comment="ctor sets to 0">;
+    u8 Padding;
+    u32 Unk4 <comment="Money accumulated???">;
+    u32 Unk5 <comment="Total cost amount???">;
+    ACNL_Building Building;
+};
+
+typedef struct ACNL_BulletinBoardMessage //size = 0x1AC
+{
+    u32 Unk1 <comment="ctor sets to 0">;
+    u32 Unk2 <comment="ctor sets to 0">;
+    u32 Unk3 <comment="ctor sets to 0">;
+    u32 Unk4 <comment="ctor sets to 0">;
+    u16 Unk5 <comment="ctor sets to 0">;
+
+    u32 Unk6 <comment="ctor sets to 0">;
+    u32 Unk7 <comment="ctor sets to 0">;
+    u32 Unk8 <comment="ctor sets to 0">;
+    u32 Unk9 <comment="ctor sets to 0">;
+    u16 Unk10 <comment="ctor sets to 0">;
+
+    wchar_t Message[0xC1];
+    ACNL_Date MessageDate;
+    u16 Unk11 <comment="ctor sets to 0">;
+};
 
 typedef struct ACNL_TownData
 {
     u32 Checksum <format=hex,comment="Checksum of the 0x1E4D8 of this data">;
-    u8 Unk_ZeroPad[88];
-    u8 OceanSide <comment="[0-1]; 0: Left, 1: Right; Museum and Camping Ground and the starting position of the train driving by are all on the opposite side to this.">;
-    u8 GrassType <comment="[0-2]; 0: Triangle / Square (Winter) | 1: Circle / Star (Winter) | 2: Square / Circle (Winter)">;
-    u8 CliffType <comment="[0-2]; This is unused/scrapped. All 3 cliff texture in the ROM are the exact same.">;
+    u8 Unknown1[88];
+    u8 OceanSide <comment="[0-1]; 0: Left, 1: Right; Museum and Camping Ground and the starting position of the train driving by are all on the opposite side to this.; Ctor sets to 3">;
+    u8 GrassType <comment="[0-2]; 0: Triangle / Square (Winter) | 1: Circle / Star (Winter) | 2: Square / Circle (Winter); Ctor sets to 2">;
+    u8 CliffType <comment="[0-2]; This is unused/scrapped. All 3 cliff texture in the ROM are the exact same.; Ctor sets to 2">;
     u8 Padding1;
-    u16 TownAcres[42] <comment="42 acres in total; 7 colunms, 6 rows. Game reads Acre IDs as u16.">;
-    u8 Unknown[0x1E42A];
+    u16 TownAcres[7*6] <comment="42 acres in total; 7 colunms, 6 rows. Game reads Acre IDs as u16; ctor sets each to 265 (0x109)">;
+    Item TownItems[(16*16)*(5*4)] <comment="16*16 items per acre; Items only cover map acres (5*4); 0x1400 of items">;
+    u8 MapGrassToday[(16*16)*(5*4)]  <comment="16*16 slots per acre; Grass deterioration only affects map acres (5*4); 0x1400 of grass">;
+    u8 Unused2[40] <comment="Town data ctor never initializes this, so likely not used. Where the code would branch to do so, there is a NOP (both in WA and Orig).">;
+    u8 MapGrass[(16*16)*(8*6)];
+    u8 Unused3[0x1000] <comment="Town data actually includes it with MapGrass (0x8000 in total), despite this portion not being used">;
+    ACNL_SomeTownPlayerStruct Player1;
+    ACNL_SomeTownPlayerStruct Player2;
+    ACNL_SomeTownPlayerStruct Player3;
+    ACNL_SomeTownPlayerStruct Player4;
+    u8 Unknown2[0x10];
+    s64 Playtime <comment=ParsePlaytime>;
+    TownID TownData1;
+    u8 Unknown3;
+    Town_Flags TownFlags;
+    u16 Unknown4; //Likely padding
+    Item LostAndFoundItems[16];
+    u8 Unknown5[16]; //likely padding
+    u64 Unknown6 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    Item TownFruit <comment="Yes, the game uses an item id to represent the town fruit lol">;
+    u16 DaysPlayed;
+    u8 Unknown7[0xC];
+    u8 Unknown8 <comment="Group 1">;
+    u8 Unknown9 <comment="Group 1">;
+    u8 Unknown10 <comment="Group 1">;
+    u8 Padding2;
+    u64 Unknown11 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u64 Unknown12 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u8 Unknown13[8];
+    u64 Unknown14 <format=hex,comment=DecryptACNLValue>;
+    Item NooklingsItems[24];
+    u8 Unknown15[28]; //likely padding
+    Item AblesItems[5];
+    Item AblesPatternItems[8];
+    u64 Unknown16 <format=hex,comment=DecryptACNLValue>;
+    u8 Unknown17[0x10]; //likely padding
+	ACNL_Pattern AbleDisplayPattern1;
+	ACNL_Pattern AbleDisplayPattern2;
+	ACNL_Pattern AbleDisplayPattern3;
+	ACNL_Pattern AbleDisplayPattern4;
+	ACNL_Pattern AbleDisplayPattern5;
+	ACNL_Pattern AbleDisplayPattern6;
+	ACNL_Pattern AbleDisplayPattern7;
+	ACNL_Pattern AbleDisplayPattern8;
+    Item LabellesItems[7] <comment="Accessories in right of shop">;
+    u8 Unknown18[8]; //likely padding
+    u64 Unknown19 <format=hex,comment=DecryptACNLValue>;
+    wchar_t ScrappedString[4];
+    u64 Unknown20 <format=hex,comment=DecryptACNLValue>;
+    u16 Unknown21;
+    Item LeifItems[11];
+    u8 Unknown22[14]; //likely padding
+    Item ReddItems[4];
+    u8 Unknown23[4]; //likely padding
+    PersonalID UnknownPID1; //unused?
+    PersonalID UnknownPID2; //unused?
+    PersonalID UnknownPID3; //unused?
+    PersonalID UnknownPID4; //unused?
+    u64 Unknown24 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown25 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown26 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown27 <format=hex,comment=DecryptACNLValue>;
+    u8 Unknown28[8];
+    u64 Unknown29 <format=hex,comment=DecryptACNLValue>;
+    u8 KickUnlockStatus <comment="0 = locked; 1 = Being Built; 2 = Built/Unlocked">;
+    u8 Padding4;
+    Item KicksItems[6];
+    u8 Unknown31[6];
+    Item UnkItems1[4]; //ctor does this and below seperately, 4 at a time
+    Item UnkItems2[4];
+    u32 Padding5;
+    u64 Unknown32 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u64 Unknown33 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u64 Unknown34 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u64 Unknown35 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u8 Unknown36[0x10]; //likely padding
+    Item UnkItems3[5];
+    Item UnkItems4[8];
+    u8 Unknown37[8];
+    u64 Unknown38 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown39 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown40 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown41 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown42 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown43 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown44 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown45 <format=hex,comment=DecryptACNLValue>;
+	ACNL_Pattern UnknownPattern1;
+	ACNL_Pattern UnknownPattern2;
+	ACNL_Pattern UnknownPattern3;
+	ACNL_Pattern UnknownPattern4;
+	ACNL_Pattern UnknownPattern5;
+	ACNL_Pattern UnknownPattern6;
+	ACNL_Pattern UnknownPattern7;
+	ACNL_Pattern UnknownPattern8;
+    u64 Unknown46 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown47 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown48 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown49 <format=hex,comment=DecryptACNLValue>;
+    u16 Unknown50;
+    Item MuseumItems[3];
+    u8 Unknown51[4]; //likely padding
+    Item NooksHomeItems[8];
+    u8 Unknown52[8]; //likely padding
+    u8 GracieUnlockStatus <comment="0 = locked??; 1 = Unlocked??">;
+    u8 Padding6;
+    Item GracieItems[18];
+    u8 Unknown53[18]; //likely padding
+    Mannequin UnkMannequin1;
+    Mannequin UnkMannequin2;
+    u8 Unknown54[0x10];
+    Item UnkItem1;
+    Item UnkItem2;
+    Item UnkItem3;
+    Item UnkItem4;
+    u8 Unknown55[0x16];
+    Item UnkItems5[4];
+    u64 Unknown56 <format=hex,comment=DecryptACNLValue>;
+    u64 Unknown57[0xE] <format=hex,comment=DecryptACNLValue>;
+    u8 Unknown58[8];
+    Item UnkItem6;
+    Item UnkItems7[2];
+    Item UnkItems8[2];
+    u8 Unknown59[0x10];
+    //This is likely town tree stuff
+    u16 Unknown60 <comment="year?">;
+    u8 Unknown61;
+    u8 Unknown62;
+    u16 Unknown63 <comment="year?">;
+    u8 Unknown64;
+    u8 Unknown65;
+    u8 Unknown66[0x44];
+    ACNL_Date TownTreeDates1[0x43];
+    ACNL_Date TownTreeDates2[0x48];
+    ACNL_Date TownTreeDates3[0x1E];
+    ACNL_Date TownTreeDates4[0x48];
+    ACNL_Date TownTreeDates5[0x19];
+    ACNL_Date TownTreeDates6[0x08];
+    u8 Unknown67[0x114];
+    ACNL_MuseumExhibit Exhibit1;
+    ACNL_MuseumExhibit Exhibit2;
+    ACNL_MuseumExhibit Exhibit3;
+    ACNL_MuseumExhibit Exhibit4;
+    u64 Unknown68 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u8 Unknown69[7];
+    u64 Unknown70 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u8 Unknown71[7];
+    u64 Unknown72 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u8 Unknown73[10];
+    ACNL_NewPWP NextPWPToBuild;
+    ACNL_Building UnknownBuilding1;
+    ACNL_BulletinBoardMessage BBoardMessages[0xF];
+    u64 Unknown74 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u8 Unknown75[0x14];
+    u16 Unknown76;
+    Item UnkItem9;
+    u64 Unknown77 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u64 Unknown78 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    u64 Unknown79 <format=hex, comment="ctor sets 0x7FFFFFFFFFFFFFFF (max positive U64)">;
+    PersonalID unknownPID1;
+    PersonalID unknownPID2;
+    PersonalID unknownPID3;
+    u8 Unknown80[0x96];
+    Item UnkItems10[3];
+    u8 unknown[0x1BCE];
 };
 
 //main
@@ -1717,7 +2097,7 @@ ACNL_Player Player3;
 ACNL_Player Player4;
 ACNL_VillagerData VillagerData;
 ACNL_BuildingData BuildingData;
-ACNL_MinigameData MinigameData;
-ACNL_UnknownData UnkData;
+ACNL_MinigameData MinigameData; //WA exclusive
+ACNL_UnknownData UnkData; //WA exclusive
 ACNL_TownData TownData;
 u8 lol;
