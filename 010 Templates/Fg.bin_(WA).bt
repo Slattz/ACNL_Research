@@ -1,0 +1,46 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: Fg.bin_(WA).bt
+//   Authors: Slattz
+//   Version: 0.1
+//   Purpose: ACNL 1.5 Fg.bin File Structure
+//  Category: 
+// File Mask: romfs:/Fg/Param/Fg.bin
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef ubyte bool;
+typedef ubyte u8;
+typedef uint16 u16;
+typedef uint32 u32;
+typedef uint64 u64;
+typedef byte s8;
+typedef int16 s16;
+typedef int32 s32;
+typedef int64 s64;
+
+typedef struct Item 
+{
+    u16 ID <format=hex>;
+    u16 Flags <format=hex>;
+};
+
+typedef struct FgBin_WA
+{
+    u16 Unk1;
+    Item WiltedFlowerID <comment="Provides item ID of wilted version of flower. Only applies to flowers that can wilt; Read @ 0x1151C2 EUR Orig 1.5">;
+    u16 Unk3;
+    Item FruitItemID <comment="Provides item ID of the fruit for the tree. Read @ 0x115184 EUR Orig 1.5">;
+    u8 Unk4;
+    s8 Unk5;
+    s8 Unk6 <comment="Only on flowers that can wilt; Read @ 0x115184 EUR Orig 1.5">;
+    u8 Flags_Unk7;
+};
+
+local int i;
+for(i = 0; i < 0xFD; i++)
+{
+    FgBin_WA FgSlot;
+}
