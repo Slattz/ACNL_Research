@@ -30,7 +30,7 @@ typedef struct Item
 typedef struct FgBin_WA
 {
     u16 Unk1;
-    Item WiltedFlowerID <comment="Provides item ID of wilted version of flower. Only applies to flowers that can wilt; Read @ 0x1151C2 EUR Orig 1.5">;
+    Item ExtraItemID <comment="Flags used for Normal Flower -> Wilted Flower; Item used for the Fruit in a Fruit Tree. Read @ 0x1151C2 EUR Orig 1.5 for flowers">;
     u16 Unk3;
     Item FruitItemID <comment="Provides item ID of the fruit for the tree. Read @ 0x115184 EUR Orig 1.5">;
     u8 Unk4;
