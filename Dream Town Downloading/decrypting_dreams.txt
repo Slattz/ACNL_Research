@@ -1,0 +1,7 @@
+Decrypting a ACNL dream town from the server:
+
+Key: gvskivgchsuj7ifc
+Algorithm: AES128CTR
+
+Once decrypted, you need to pad the save to it's proper size;
+    Nintendo doesn't upload the letters section at the end, likely for privacy and storage reasons
