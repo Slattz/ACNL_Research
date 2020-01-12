@@ -1,0 +1,225 @@
+ACNL Tag Parser Groups, Indexes, and Args
+
+Tag Structure:
+    u16 Command Character (0x000E) //0x000F is also in ACNL's code but leads to a stubbed function, presumably was debug
+    u16 Command Group (0x0000 - 0x0014, 0x00FF)
+    u16 Command Index
+    u16 Arguments Size
+    u8[Arguments Size] Arguments
+
+-- Group 0x0000: Unknown Name --
+    Indexes (0x5):
+        0: Unknown
+
+        1: Scrapped (nullsub)
+
+        2: Set Text Size (in pixels?)
+            Arg Size: 2
+            Arguments: 
+                0000 - FFFF ???
+                
+                0x64: default??? (100)
+
+        3: Coloured Text
+            Argument Size: 2
+            Argumuents:
+                0000: White
+                0001: Pink
+                0002: Blue
+                0003: Green
+                0004: Orange
+                0005: Grey
+                0006: Red
+                FFFF: Clear/White
+
+        4: Text Break (i.e. wait for user to press button then make new text window)
+            Argument Size: 0
+
+
+-- Group 0x0001: Scrapped (nullsub, but code specifically checks and lets you go back) -- 
+    Indexes (0):
+
+-- Group 0x0002: Unknown -- //Has something to do with specific sNPC dialog??
+    Indexes (0x8????):
+
+-- Group 0x0003: Villager Emotes --
+    Indexes (0x2F):
+        0 - 0x2E: https://pastebin.com/mNsNmQVq
+
+-- Group 0x0004: Unknown --
+    Indexes (0x15):
+        4: Current Time
+            Argument Size: 0
+            
+        C: Unknown //Used in Retail to get current price of display item
+            Argument Size: 2
+                Arg e.g.: 0000
+    
+        0 - 0x14: Unknown
+
+-- Group 0x0005: Unknown -- //For some reason all of these don't work all the time??? Even Town Name ones aren't interchangable
+    Indexes (0x26):
+        0: Current Player Name
+            Argument Size: 0
+            
+        5: Town Name in Town Conversations
+            Argument Size: 0
+
+        6: Town Name in Isabelle Startup Conversations
+            Argument Size: 0
+
+        1 - 0x25: Unknown
+
+-- Group 0x0006: Scrapped (nullsub) -- 
+    Indexes (0):
+
+-- Group 0x0007: Unknown --
+    Indexes (0x13):
+        0 - 0x12: Unknown
+        
+        0: Pause for X Time then continue text (measure in frames?? value of 59 = 1 second)
+            Arg Size: 4
+            
+        1: Pause until A or B Pressed
+            Argument Size: 0
+        
+        4: Unknown
+            Argument Size: 0
+            
+        5: Pause a few seconds and auto continue???
+            Argument Size: 0
+            
+        8: Wait X Time then auto go into next text
+            Arg Size: 4
+            
+        9: Wait X Time and auto continue ????
+            Arg Size: 4
+            
+        B: Unknown (pavé uses it)
+            Arg Size: 0
+            
+        C: Unknown
+            Arg Size: 0
+
+-- Group 0x0008: Unknown --
+    Indexes (0xB):
+        0 - 0xA: Unknown
+
+-- Group 0x0009: Unknown --
+    Indexes (0x7):
+        0 - 0x6: Unknown
+
+-- Group 0x000A: Unknown --
+    Indexes (0x20):
+        0 - 0x1F: Unknown
+
+-- Group 0x000B: Unknown --
+    Indexes (0x6):
+        0 - 0x5: Unknown
+
+-- Group 0x000C: Unknown --
+    Indexes (0xA):
+        0 - 0x9: Unknown
+
+-- Group 0x000D: Unknown --
+    Indexes (0xD):
+        0 - 0xC: Unknown
+        
+        8: Unknown
+            Argument Size: 2 //Game checks if lower byte (0x02 in e.g.) is less than 5
+                Arg e.g.: 0xCD02
+            
+        9: Unknown
+            Argument Size: 0 //Big Text Size??
+            
+        A: Unknown
+            Argument Size: 0 //Normal Text Size??
+
+-- Group 0x000E: Unknown --
+    Indexes (0x13):
+        0 - 0x12: Unknown
+        
+        0: Scrapped (nullsub) //Looks like it was something to do with item names; Still used in msbt but game's function is scrapped
+            Argument Size: 4
+                Arg e.g.: 0xCD030200
+        
+        3: Unknown
+            Argument Size: 0
+            
+        6: Word Based On Player Gender //Select between 2 words based on gender; Word 1 is male, Word 2 is female. Before each word, the UTF-16 word length (in bytes) is there
+            Argument Size: Structure Total Size (can be anything, for e.g.: 0x10 the words were "Mr." and "Ms.", and each word length was 0x6)
+            Argument Structure:
+                u16 Male Word Length In Bytes (MLength)
+                u16[MLength/2] Male Word
+                u16 Female Word Length In Bytes (FLength)
+                u16[FLength/2] Female Word
+
+-- Group 0x000F: Unknown --
+    Indexes (0xB):
+        0: Unknown
+            Argument Size: 4
+                Argument e.g.: 0x10100110
+        
+        1 - 0xA: Unknown
+        
+        1: Unknown (resetti uses it) //One must be chosen, can't 'back out' (i.e press B)
+            Argument Size: 6
+            
+        5: Unknown (reese in retail uses it)
+            Argument Size: 4
+                Arg e.g.: 0x280015
+            
+        6: Unknown //Can 'back out' (i.e press B)
+            Argument Size: 6
+        
+        7: Unknown
+            Argument Size: 8
+        
+        8: Unknown
+            Argument Size: 10
+        
+
+-- Group 0x0010: Unknown --
+    Indexes (0x4):
+        0 - 0x3: Unknown
+
+-- Group 0x0011: Unknown --
+    Indexes (0xB):
+        0 - 0xA: Unknown
+        
+        1: Get Owner Name (of house, of retail item, etc)
+            Argument Size: 2
+                Arg e.g.: 0000
+            
+        3: Unknown
+            Argument Size: 2
+                Arg e.g.: 0000
+            
+        5: Unknown
+            Argument Size: 0
+
+-- Group 0x0012: Unknown --
+    Indexes (0x23):
+        0 - 0x22: Unknown
+
+-- Group 0x0013: Scrapped (nullsub) -- 
+    Indexes (0):
+
+-- Group 0x0014: Unknown --
+    Indexes (0x5):
+        0 - 0x4: Unknown
+
+-- Group 0x00FF: Unknown -- //these seem to modify the internal data of your text or something
+    Indexes (0x7):
+        0: Scrapped (No func addr)
+        1: Scrapped (No func addr)
+        2: Unknown
+            Argument Size: 0
+
+        3: Unknown
+
+        4: Unknown //Same as 3??
+
+        5: Unknown
+
+        6: Scrapped (No func addr)
