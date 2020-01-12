@@ -1,0 +1,4527 @@
+ Item ID  |  Item Name
+
+  2000    |   Mii Mask
+  2001    |   Apple
+  2002    |   Orange
+  2003    |   Pear
+  2004    |   Peach
+  2005    |   Cherry
+  2006    |   Coconut
+  2007    |   Durian
+  2008    |   Lemon
+  2009    |   Lychee
+  200A    |   Mango
+  200B    |   Persimmon
+  200C    |   Banana
+  200D    |   Bamboo Shoot
+  200E    |   Perfect Apple
+  200F    |   Perfect Orange
+  2010    |   Perfect Pear
+  2011    |   Perfect Peach
+  2012    |   Perfect Cherry
+  2013    |   Rotten Apple
+  2014    |   Rotten Orange
+  2015    |   Rotten Pear
+  2016    |   Rotten Peach
+  2017    |   Rotten Cherry
+  2018    |   Apples
+  2019    |   Oranges
+  201A    |   Pears
+  201B    |   Peaches
+  201C    |   Cherries
+  201D    |   Coconuts
+  201E    |   Durians
+  201F    |   Lemons
+  2020    |   Lychees
+  2021    |   Mangoes
+  2022    |   Persimmons
+  2023    |   Bananas
+  2024    |   Bamboo Shoots
+  2025    |   Perfect Apples
+  2026    |   Perfect Oranges
+  2027    |   Perfect Pears
+  2028    |   Perfect Peaches
+  2029    |   Perfect Cherries
+  202A    |   Fossil
+  202B    |   Fertilizer
+  202C    |   Sapling
+  202D    |   Cedar Sapling
+  202E    |   Holly Shoot
+  202F    |   Pink Azalea Shoot
+  2030    |   White Azalea Shoot
+  2031    |   Blue Hydrangea Shoot
+  2032    |   Pink Hydrangea Shoot
+  2033    |   Red Hibiscus Shoot
+  2034    |   Y. Hibiscus Shoot
+  2035    |   Sweet Olive Shoot
+  2036    |   Present
+  2037    |   Present For Another Villager (Sprite)
+  2038    |   Red-Tulip Bag
+  2039    |   White-Tulip Bag
+  203A    |   Yellow-Tulip Bag
+  203B    |   Pink-Tulip Bag
+  203C    |   Purple-Tulip Bag
+  203D    |   Black-Tulip Bag
+  203E    |   Orange-Tulip Bag
+  203F    |   White-Pansy Bag
+  2040    |   Yellow-Pansy Bag
+  2041    |   Red-Pansy Bag
+  2042    |   Purple-Pansy Bag
+  2043    |   Orange-Pansy Bag
+  2044    |   Blue-Pansy Bag
+  2045    |   White-Cosmos Bag
+  2046    |   Red-Cosmos Bag
+  2047    |   Sun-Cosmos Bag
+  2048    |   Pink-Cosmos Bag
+  2049    |   Orange-Cosmos Bag
+  204A    |   Black-Cosmos Bag
+  204B    |   Red-Rose Bag
+  204C    |   White-Rose Bag
+  204D    |   Yellow-Rose Bag
+  204E    |   Pink-Rose Bag
+  204F    |   Orange-Rose Bag
+  2050    |   Purple-Rose Bag
+  2051    |   Black-Rose Bag
+  2052    |   Blue-Rose Bag
+  2053    |   Gold-Rose Bag
+  2054    |   Red-Carnation Bag
+  2055    |   Pink-Carnation Bag
+  2056    |   White-Carnation Bag
+  2057    |   White-Lily Bag
+  2058    |   Yellow-Lily Bag
+  2059    |   Red-Lily Bag
+  205A    |   Orange-Lily Bag
+  205B    |   Pink-Lily Bag
+  205C    |   Black-Lily Bag
+  205D    |   Purple-Violet Bag
+  205E    |   Blue-Violet Bag
+  205F    |   White-Violet Bag
+  2060    |   Yellow-Violet Bag
+  2061    |   Uni-Directional Chair (Invisible)
+  2062    |   Café Dining Chair (Invisible)
+  2063    |   Town Hall Chair (Invisible)
+  2064    |   ???
+  2065    |   ???
+  2066    |   Campsite Tree Stump (Invisible)
+  2067    |   Campsite Hammock (Invisible)
+  2068    |   Dream Suite Bed (Invisible)
+  2069    |   Dream Suite Couch (Invisible)
+  206A    |   ???
+  206B    |   Museum Cushion Chair (Invisible)
+  206C    |   ???
+  206D    |   ???
+  206E    |   ???
+  206F    |   DJ K.K. Table
+  2070    |   1x1 Museum Item Podium (Fossils)
+  2071    |   1x2 Museum Item Stand (Dinosaurs)
+  2072    |   2x2 Museum Item Stand (Dinosaurs)
+  2073    |   ???
+  2074    |   1x1 Shops Item Hangup
+  2075    |   1x2 Shops Item Hangup
+  2076    |   Retail Chair (Invisible)
+  2077    |   Island Hut Chair (Invisible)
+  2078    |   Harvey's Chair (Invisible)
+  2079    |   Moving Boxes
+  207A    |   Moving Boxes Medium
+  207B    |   Moving Boxes Large
+  207C    |   Train Station Locker
+  207D    |   Museum Locker
+  207E    |   General Sold-Out Sign
+  207F    |   Gracie Sold-Out Sign
+  2080    |   Retail Sold-Out Sign
+  2081    |   Nooklings Sold-Out Sign (Wall)
+  2082    |   Gracie Sold-Out Sign (Wall)
+  2083    |   Redd Sold-Out Sign
+  2084    |   Wrapping Paper
+  2085    |   Medicine
+  2086    |   Chocolate Heart
+  2087    |   Pearl-Oyster Shell
+  2088    |   Conch Shell
+  2089    |   Giant-Clam Shell
+  208A    |   Coral
+  208B    |   Venus-Comb Shell
+  208C    |   Scallop Shell
+  208D    |   Sea-Snail Shell
+  208E    |   Cowrie Shell
+  208F    |   Sand Dollar
+  2090    |   Oyster Shell
+  2091    |   Candy
+  2092    |   Lollipop
+  2093    |   Elegant Mushroom
+  2094    |   Round Mushroom
+  2095    |   Skinny Mushroom
+  2096    |   Flat Mushroom
+  2097    |   Rare Mushroom
+  2098    |   Famous Mushroom
+  2099    |   Beehive
+  209A    |   Pitfall Seed
+  209B    |   Tricky Pitfall Seed
+  209C    |   Gold Nugget
+  209D    |   Silver Nugget
+  209E    |   Ruby
+  209F    |   Sapphire
+  20A0    |   Emerald
+  20A1    |   Amethyst
+  20A2    |   Butter
+  20A3    |   Milk
+  20A4    |   Vinegar
+  20A5    |   Flour
+  20A6    |   Sugar
+  20A7    |   100 Bells
+  20A8    |   200 Bells
+  20A9    |   300 Bells
+  20AA    |   400 Bells
+  20AB    |   500 Bells
+  20AC    |   600 Bells
+  20AD    |   700 Bells
+  20AE    |   800 Bells
+  20AF    |   900 Bells
+  20B0    |   1,000 Bells
+  20B1    |   2,000 Bells
+  20B2    |   3,000 Bells
+  20B3    |   4,000 Bells
+  20B4    |   5,000 Bells
+  20B5    |   6,000 Bells
+  20B6    |   7,000 Bells
+  20B7    |   8,000 Bells
+  20B8    |   9,000 Bells
+  20B9    |   10,000 Bells
+  20BA    |   11,000 Bells
+  20BB    |   12,000 Bells
+  20BC    |   13,000 Bells
+  20BD    |   14,000 Bells
+  20BE    |   15,000 Bells
+  20BF    |   16,000 Bells
+  20C0    |   17,000 Bells
+  20C1    |   18,000 Bells
+  20C2    |   19,000 Bells
+  20C3    |   20,000 Bells
+  20C4    |   21,000 Bells
+  20C5    |   22,000 Bells
+  20C6    |   23,000 Bells
+  20C7    |   24,000 Bells
+  20C8    |   25,000 Bells
+  20C9    |   26,000 Bells
+  20CA    |   27,000 Bells
+  20CB    |   28,000 Bells
+  20CC    |   29,000 Bells
+  20CD    |   30,000 Bells
+  20CE    |   31,000 Bells
+  20CF    |   32,000 Bells
+  20D0    |   33,000 Bells
+  20D1    |   34,000 Bells
+  20D2    |   35,000 Bells
+  20D3    |   36,000 Bells
+  20D4    |   37,000 Bells
+  20D5    |   38,000 Bells
+  20D6    |   39,000 Bells
+  20D7    |   40,000 Bells
+  20D8    |   41,000 Bells
+  20D9    |   42,000 Bells
+  20DA    |   43,000 Bells
+  20DB    |   44,000 Bells
+  20DC    |   45,000 Bells
+  20DD    |   46,000 Bells
+  20DE    |   47,000 Bells
+  20DF    |   48,000 Bells
+  20E0    |   49,000 Bells
+  20E1    |   50,000 Bells
+  20E2    |   51,000 Bells
+  20E3    |   52,000 Bells
+  20E4    |   53,000 Bells
+  20E5    |   54,000 Bells
+  20E6    |   55,000 Bells
+  20E7    |   56,000 Bells
+  20E8    |   57,000 Bells
+  20E9    |   58,000 Bells
+  20EA    |   59,000 Bells
+  20EB    |   60,000 Bells
+  20EC    |   61,000 Bells
+  20ED    |   62,000 Bells
+  20EE    |   63,000 Bells
+  20EF    |   64,000 Bells
+  20F0    |   65,000 Bells
+  20F1    |   66,000 Bells
+  20F2    |   67,000 Bells
+  20F3    |   68,000 Bells
+  20F4    |   69,000 Bells
+  20F5    |   70,000 Bells
+  20F6    |   71,000 Bells
+  20F7    |   72,000 Bells
+  20F8    |   73,000 Bells
+  20F9    |   74,000 Bells
+  20FA    |   75,000 Bells
+  20FB    |   76,000 Bells
+  20FC    |   77,000 Bells
+  20FD    |   78,000 Bells
+  20FE    |   79,000 Bells
+  20FF    |   80,000 Bells
+  2100    |   81,000 Bells
+  2101    |   82,000 Bells
+  2102    |   83,000 Bells
+  2103    |   84,000 Bells
+  2104    |   85,000 Bells
+  2105    |   86,000 Bells
+  2106    |   87,000 Bells
+  2107    |   88,000 Bells
+  2108    |   89,000 Bells
+  2109    |   90,000 Bells
+  210A    |   91,000 Bells
+  210B    |   92,000 Bells
+  210C    |   93,000 Bells
+  210D    |   94,000 Bells
+  210E    |   95,000 Bells
+  210F    |   96,000 Bells
+  2110    |   97,000 Bells
+  2111    |   98,000 Bells
+  2112    |   99,000 Bells
+  2113    |   Earth Egg
+  2114    |   Tree Egg
+  2115    |   Stone Egg
+  2116    |   Sky Egg
+  2117    |   Winning Ticket
+  2118    |   Grand-Prize Ticket
+  2119    |   Forest Wall (Mushroomized)
+  211A    |   Forest Floor (Mushroomized)
+  211B    |   Mush Bed (Mushroomized)
+  211C    |   Mush Dresser (Mushroomized)
+  211D    |   Mush Closet (Mushroomized)
+  211E    |   Mush Chair (Mushroomized)
+  211F    |   Mush Stool (Mushroomized)
+  2120    |   Mush Table (Mushroomized)
+  2121    |   Mush End Table (Mushroomized)
+  2122    |   Mush Lamp (Mushroomized)
+  2123    |   Mush Wall Lamp (Mushroomized)
+  2124    |   Mush TV (Mushroomized)
+  2125    |   Mush Hanger (Mushroomized)
+  2126    |   K.K. Chorale
+  2127    |   K.K. March
+  2128    |   K.K. Waltz
+  2129    |   K.K. Swing
+  212A    |   K.K. Jazz
+  212B    |   K.K. Fusion
+  212C    |   K.K. Étude
+  212D    |   K.K. Lullaby
+  212E    |   K.K. Aria
+  212F    |   K.K. Samba
+  2130    |   K.K. Bossa
+  2131    |   K.K. Calypso
+  2132    |   K.K. Salsa
+  2133    |   K.K. Mambo
+  2134    |   K.K. Reggae
+  2135    |   K.K. Ska
+  2136    |   K.K. Tango
+  2137    |   K.K. Faire
+  2138    |   Aloha K.K.
+  2139    |   Lucky K.K.
+  213A    |   K.K. Condor
+  213B    |   K.K. Steppe
+  213C    |   Imperial K.K.
+  213D    |   K.K. Casbah
+  213E    |   K.K. Safari
+  213F    |   K.K. Folk
+  2140    |   K.K. Rock
+  2141    |   Rockin' K.K.
+  2142    |   K.K. Ragtime
+  2143    |   K.K. Gumbo
+  2144    |   The K. Funk
+  2145    |   K.K. Blues
+  2146    |   Soulful K.K.
+  2147    |   K.K. Soul
+  2148    |   K.K. Cruisin'
+  2149    |   K.K. Love Song
+  214A    |   K.K. D&B
+  214B    |   K.K. Technopop
+  214C    |   DJ K.K.
+  214D    |   Only Me
+  214E    |   K.K. Country
+  214F    |   Surfin' K.K.
+  2150    |   K.K. Ballad
+  2151    |   Comrade K.K.
+  2152    |   K.K. Lament
+  2153    |   Go K.K. Rider
+  2154    |   K.K. Dirge
+  2155    |   K.K. Western
+  2156    |   Mr. K.K.
+  2157    |   Café K.K.
+  2158    |   K.K. Parade
+  2159    |   Señor K.K.
+  215A    |   K.K. Song
+  215B    |   I Love You
+  215C    |   Two Days Ago
+  215D    |   My Place
+  215E    |   Forest Life
+  215F    |   To The Edge
+  2160    |   Pondering
+  2161    |   K.K. Dixie
+  2162    |   K.K. Marathon
+  2163    |   King K.K.
+  2164    |   Mountain Song
+  2165    |   Marine Song 2001
+  2166    |   Neapolitan
+  2167    |   Steep Hill
+  2168    |   K.K. Rockabilly
+  2169    |   Agent K.K.
+  216A    |   K.K. Rally
+  216B    |   K.K. Metal
+  216C    |   Stale Cupcakes
+  216D    |   Spring Blossoms
+  216E    |   Wandering
+  216F    |   K.K. House
+  2170    |   K.K. Sonata
+  2171    |   Hypno K.K.
+  2172    |   K.K. Stroll
+  2173    |   K.K. Island
+  2174    |   Space K.K.
+  2175    |   K.K. Adventure
+  2176    |   K.K. Oasis
+  2177    |   K.K. Bazaar
+  2178    |   K.K. Milonga
+  2179    |   K.K. Groove
+  217A    |   K.K. Jongara
+  217B    |   K.K. Flamenco
+  217C    |   K.K. Moody
+  217D    |   Bubblegum K.K.
+  217E    |   K.K. Synth
+  217F    |   K.K. Disco
+  2180    |   K.K. Birthday
+  2181    |   ???
+  2182    |   ???
+  2183    |   ???
+  2184    |   K.K. Chorale (Wall)
+  2185    |   K.K. March (Wall)
+  2186    |   K.K. Waltz (Wall)
+  2187    |   K.K. Swing (Wall)
+  2188    |   K.K. Jazz (Wall)
+  2189    |   K.K. Fusion (Wall)
+  218A    |   K.K. Étude (Wall)
+  218B    |   K.K. Lullaby (Wall)
+  218C    |   K.K. Aria (Wall)
+  218D    |   K.K. Samba (Wall)
+  218E    |   K.K. Bossa (Wall)
+  218F    |   K.K. Calypso (Wall)
+  2190    |   K.K. Salsa (Wall)
+  2191    |   K.K. Mambo (Wall)
+  2192    |   K.K. Reggae (Wall)
+  2193    |   K.K. Ska (Wall)
+  2194    |   K.K. Tango (Wall)
+  2195    |   K.K. Faire (Wall)
+  2196    |   Aloha K.K. (Wall)
+  2197    |   Lucky K.K. (Wall)
+  2198    |   K.K. Condor (Wall)
+  2199    |   K.K. Steppe (Wall)
+  219A    |   Imperial K.K. (Wall)
+  219B    |   K.K. Casbah (Wall)
+  219C    |   K.K. Safari (Wall)
+  219D    |   K.K. Folk (Wall)
+  219E    |   K.K. Rock (Wall)
+  219F    |   Rockin' K.K. (Wall)
+  21A0    |   K.K. Ragtime (Wall)
+  21A1    |   K.K. Gumbo (Wall)
+  21A2    |   The K. Funk (Wall)
+  21A3    |   K.K. Blues (Wall)
+  21A4    |   Soulful K.K. (Wall)
+  21A5    |   K.K. Soul (Wall)
+  21A6    |   K.K. Cruisin' (Wall)
+  21A7    |   K.K. Love Song (Wall)
+  21A8    |   K.K. D&B (Wall)
+  21A9    |   K.K. Technopop (Wall)
+  21AA    |   DJ K.K. (Wall)
+  21AB    |   Only Me (Wall)
+  21AC    |   K.K. Country (Wall)
+  21AD    |   Surfin' K.K. (Wall)
+  21AE    |   K.K. Ballad (Wall)
+  21AF    |   Comrade K.K. (Wall)
+  21B0    |   K.K. Lament (Wall)
+  21B1    |   Go K.K. Rider (Wall)
+  21B2    |   K.K. Dirge (Wall)
+  21B3    |   K.K. Western (Wall)
+  21B4    |   Mr. K.K. (Wall)
+  21B5    |   Café K.K. (Wall)
+  21B6    |   K.K. Parade (Wall)
+  21B7    |   Señor K.K. (Wall)
+  21B8    |   K.K. Song (Wall)
+  21B9    |   I Love You (Wall)
+  21BA    |   Two Days Ago (Wall)
+  21BB    |   My Place (Wall)
+  21BC    |   Forest Life (Wall)
+  21BD    |   To The Edge (Wall)
+  21BE    |   Pondering (Wall)
+  21BF    |   K.K. Dixie (Wall)
+  21C0    |   K.K. Marathon (Wall)
+  21C1    |   King K.K. (Wall)
+  21C2    |   Mountain Song (Wall)
+  21C3    |   Marine Song 2001 (Wall)
+  21C4    |   Neapolitan (Wall)
+  21C5    |   Steep Hill (Wall)
+  21C6    |   K.K. Rockabilly (Wall)
+  21C7    |   Agent K.K. (Wall)
+  21C8    |   K.K. Rally (Wall)
+  21C9    |   K.K. Metal (Wall)
+  21CA    |   Stale Cupcakes (Wall)
+  21CB    |   Spring Blossoms (Wall)
+  21CC    |   Wandering (Wall)
+  21CD    |   K.K. House (Wall)
+  21CE    |   K.K. Sonata (Wall)
+  21CF    |   Hypno K.K. (Wall)
+  21D0    |   K.K. Stroll (Wall)
+  21D1    |   K.K. Island (Wall)
+  21D2    |   Space K.K. (Wall)
+  21D3    |   K.K. Adventure (Wall)
+  21D4    |   K.K. Oasis (Wall)
+  21D5    |   K.K. Bazaar (Wall)
+  21D6    |   K.K. Milonga (Wall)
+  21D7    |   K.K. Groove (Wall)
+  21D8    |   K.K. Jongara (Wall)
+  21D9    |   K.K. Flamenco (Wall)
+  21DA    |   K.K. Moody (Wall)
+  21DB    |   Bubblegum K.K. (Wall)
+  21DC    |   K.K. Synth (Wall)
+  21DD    |   K.K. Disco (Wall)
+  21DE    |   K.K. Birthday (Wall)
+  21DF    |   K.K. Chorale (Music Box)
+  21E0    |   K.K. March (Music Box)
+  21E1    |   K.K. Waltz (Music Box)
+  21E2    |   K.K. Swing (Music Box)
+  21E3    |   K.K. Jazz (Music Box)
+  21E4    |   K.K. Fusion (Music Box)
+  21E5    |   K.K. Étude (Music Box)
+  21E6    |   K.K. Lullaby (Music Box)
+  21E7    |   K.K. Aria (Music Box)
+  21E8    |   K.K. Samba (Music Box)
+  21E9    |   K.K. Bossa (Music Box)
+  21EA    |   K.K. Calypso (Music Box)
+  21EB    |   K.K. Salsa (Music Box)
+  21EC    |   K.K. Mambo (Music Box)
+  21ED    |   K.K. Reggae (Music Box)
+  21EE    |   K.K. Ska (Music Box)
+  21EF    |   K.K. Tango (Music Box)
+  21F0    |   K.K. Faire (Music Box)
+  21F1    |   Aloha K.K. (Music Box)
+  21F2    |   Lucky K.K. (Music Box)
+  21F3    |   K.K. Condor (Music Box)
+  21F4    |   K.K. Steppe (Music Box)
+  21F5    |   Imperial K.K. (Music Box)
+  21F6    |   K.K. Casbah (Music Box)
+  21F7    |   K.K. Safari (Music Box)
+  21F8    |   K.K. Folk (Music Box)
+  21F9    |   K.K. Rock (Music Box)
+  21FA    |   Rockin' K.K. (Music Box)
+  21FB    |   K.K. Ragtime (Music Box)
+  21FC    |   K.K. Gumbo (Music Box)
+  21FD    |   The K. Funk (Music Box)
+  21FE    |   K.K. Blues (Music Box)
+  21FF    |   Soulful K.K. (Music Box)
+  2200    |   K.K. Soul (Music Box)
+  2201    |   K.K. Cruisin' (Music Box)
+  2202    |   K.K. Love Song (Music Box)
+  2203    |   K.K. D&B (Music Box)
+  2204    |   K.K. Technopop (Music Box)
+  2205    |   DJ K.K. (Music Box)
+  2206    |   Only Me (Music Box)
+  2207    |   K.K. Country (Music Box)
+  2208    |   Surfin' K.K. (Music Box)
+  2209    |   K.K. Ballad (Music Box)
+  220A    |   Comrade K.K. (Music Box)
+  220B    |   K.K. Lament (Music Box)
+  220C    |   Go K.K. Rider (Music Box)
+  220D    |   K.K. Dirge (Music Box)
+  220E    |   K.K. Western (Music Box)
+  220F    |   Mr. K.K. (Music Box)
+  2210    |   Café K.K. (Music Box)
+  2211    |   K.K. Parade (Music Box)
+  2212    |   Señor K.K. (Music Box)
+  2213    |   K.K. Song (Music Box)
+  2214    |   I Love You (Music Box)
+  2215    |   Two Days Ago (Music Box)
+  2216    |   My Place (Music Box)
+  2217    |   Forest Life (Music Box)
+  2218    |   To The Edge (Music Box)
+  2219    |   Pondering (Music Box)
+  221A    |   K.K. Dixie (Music Box)
+  221B    |   K.K. Marathon (Music Box)
+  221C    |   King K.K. (Music Box)
+  221D    |   Mountain Song (Music Box)
+  221E    |   Marine Song 2001 (Music Box)
+  221F    |   Neapolitan (Music Box)
+  2220    |   Steep Hill (Music Box)
+  2221    |   K.K. Rockabilly (Music Box)
+  2222    |   Agent K.K. (Music Box)
+  2223    |   K.K. Rally (Music Box)
+  2224    |   K.K. Metal (Music Box)
+  2225    |   Stale Cupcakes (Music Box)
+  2226    |   Spring Blossoms (Music Box)
+  2227    |   Wandering (Music Box)
+  2228    |   K.K. House (Music Box)
+  2229    |   K.K. Sonata (Music Box)
+  222A    |   Hypno K.K. (Music Box)
+  222B    |   K.K. Stroll (Music Box)
+  222C    |   K.K. Island (Music Box)
+  222D    |   Space K.K. (Music Box)
+  222E    |   K.K. Adventure (Music Box)
+  222F    |   K.K. Oasis (Music Box)
+  2230    |   K.K. Bazaar (Music Box)
+  2231    |   K.K. Milonga (Music Box)
+  2232    |   K.K. Groove (Music Box)
+  2233    |   K.K. Jongara (Music Box)
+  2234    |   K.K. Flamenco (Music Box)
+  2235    |   K.K. Moody (Music Box)
+  2236    |   Bubblegum K.K. (Music Box)
+  2237    |   K.K. Synth (Music Box)
+  2238    |   K.K. Disco (Music Box)
+  2239    |   K.K. Birthday (Music Box)
+  223A    |   Butterfly Paper
+  223B    |   Airmail Paper
+  223C    |   New Year's Cards
+  223D    |   Lacy Paper
+  223E    |   Cloudy Paper
+  223F    |   Petal Paper
+  2240    |   Snowy Paper
+  2241    |   Maple-Leaf Paper
+  2242    |   Lined Paper
+  2243    |   Notebook Paper
+  2244    |   Flowery Paper
+  2245    |   Polka-Dot Paper
+  2246    |   Weathered Paper
+  2247    |   Ribbon Paper
+  2248    |   Sparkly Paper
+  2249    |   Vine Paper
+  224A    |   Formal Paper
+  224B    |   Snowman Paper
+  224C    |   Card Paper
+  224D    |   Leopard Paper
+  224E    |   Cow Paper
+  224F    |   Camouflage Paper
+  2250    |   Hamburger Paper
+  2251    |   Piano Paper
+  2252    |   Nook Paper
+  2253    |   Birthday Card
+  2254    |   Four-Leaf Paper
+  2255    |   Academy Paper
+  2256    |   Lovely Paper
+  2257    |   Rainbow Paper
+  2258    |   Hieroglyph Paper
+  2259    |   Lotus Paper
+  225A    |   Tile Paper
+  225B    |   Mosaic Paper
+  225C    |   Elegant Paper
+  225D    |   Town-View Paper
+  225E    |   Imperial Paper
+  225F    |   Ocean Paper
+  2260    |   Industrial Paper
+  2261    |   Fireworks Paper
+  2262    |   Floral Paper
+  2263    |   Mushroom Paper
+  2264    |   Star Paper
+  2265    |   Composer Paper
+  2266    |   Bathtub Paper
+  2267    |   SMB3 Paper
+  2268    |   Cool Paper
+  2269    |   Forest Paper
+  226A    |   Bubble Paper
+  226B    |   Buttercup Paper
+  226C    |   Tartan Paper
+  226D    |   Plaid Paper
+  226E    |   Lemon-Lime Paper
+  226F    |   Crater Paper
+  2270    |   Bejeweled Paper
+  2271    |   Geometric Paper
+  2272    |   Southwest Paper
+  2273    |   Night-Sky Paper
+  2274    |   Chic Paper
+  2275    |   Goldfish Paper
+  2276    |   Halloween Paper
+  2277    |   Gallery Paper
+  2278    |   Museum Paper
+  2279    |   Post-Office Paper
+  227A    |   Melody Paper
+  227B    |   10 Turnips
+  227C    |   20 Turnips
+  227D    |   30 Turnips
+  227E    |   40 Turnips
+  227F    |   50 Turnips
+  2280    |   60 Turnips
+  2281    |   70 Turnips
+  2282    |   80 Turnips
+  2283    |   90 Turnips
+  2284    |   100 Turnips
+  2285    |   Spoiled Turnips
+  2286    |   Common Butterfly
+  2287    |   Yellow Butterfly
+  2288    |   Tiger Butterfly
+  2289    |   Peacock Butterfly
+  228A    |   Monarch Butterfly
+  228B    |   Emperor Butterfly
+  228C    |   Agrias Butterfly
+  228D    |   Raja B. Butterfly
+  228E    |   Birdwing Butterfly
+  228F    |   Moth
+  2290    |   Oak Silk Moth
+  2291    |   Honeybee
+  2292    |   Bee
+  2293    |   Long Locust
+  2294    |   Migratory Locust
+  2295    |   Rice Grasshopper
+  2296    |   Mantis
+  2297    |   Orchid Mantis
+  2298    |   Brown Cicada
+  2299    |   Robust Cicada
+  229A    |   Giant Cicada
+  229B    |   Walker Cicada
+  229C    |   Evening Cicada
+  229D    |   Cicada Shell
+  229E    |   Lantern Fly
+  229F    |   Red Dragonfly
+  22A0    |   Darner Dragonfly
+  22A1    |   Banded Dragonfly
+  22A2    |   Petaltail Dragonfly
+  22A3    |   Ant
+  22A4    |   Pondskater
+  22A5    |   Diving Beetle
+  22A6    |   Stinkbug
+  22A7    |   Snail
+  22A8    |   Cricket
+  22A9    |   Bell Cricket
+  22AA    |   Grasshopper
+  22AB    |   Mole Cricket
+  22AC    |   Walking Leaf
+  22AD    |   Walking Stick
+  22AE    |   Bagworm
+  22AF    |   Ladybug
+  22B0    |   Violin Beetle
+  22B1    |   Longhorn Beetle
+  22B2    |   Tiger Beetle
+  22B3    |   Dung Beetle
+  22B4    |   Wharf Roach
+  22B5    |   Hermit Crab
+  22B6    |   Firefly
+  22B7    |   Fruit Beetle
+  22B8    |   Scarab Beetle
+  22B9    |   Jewel Beetle
+  22BA    |   Miyama Stag
+  22BB    |   Saw Stag
+  22BC    |   Giant Stag
+  22BD    |   Rainbow Stag
+  22BE    |   Cyclommatus Stag
+  22BF    |   Golden Stag
+  22C0    |   Horned Dynastid
+  22C1    |   Horned Atlas
+  22C2    |   Horned Elephant
+  22C3    |   Horned Hercules
+  22C4    |   Goliath Beetle
+  22C5    |   Flea
+  22C6    |   Pill Bug
+  22C7    |   Mosquito
+  22C8    |   Fly
+  22C9    |   House Centipede
+  22CA    |   Centipede
+  22CB    |   Spider
+  22CC    |   Tarantula
+  22CD    |   Scorpion
+  22CE    |   Snowflake
+  22CF    |   Red Feather
+  22D0    |   Blue Feather
+  22D1    |   Green Feather
+  22D2    |   Yellow Feather
+  22D3    |   Purple Feather
+  22D4    |   White Feather
+  22D5    |   Pink Feather
+  22D6    |   Rainbow Feather
+  22D7    |   Bitterling
+  22D8    |   Pale Chub
+  22D9    |   Crucian Carp
+  22DA    |   Dace
+  22DB    |   Barbel Steed
+  22DC    |   Carp
+  22DD    |   Koi
+  22DE    |   Goldfish
+  22DF    |   Pop-Eyed Goldfish
+  22E0    |   Killifish
+  22E1    |   Crawfish
+  22E2    |   Soft-Shelled Turtle
+  22E3    |   Tadpole
+  22E4    |   Frog
+  22E5    |   Freshwater Goby
+  22E6    |   Loach
+  22E7    |   Catfish
+  22E8    |   Eel
+  22E9    |   Giant Snakehead
+  22EA    |   Bluegill
+  22EB    |   Yellow Perch
+  22EC    |   Black Bass
+  22ED    |   Pike
+  22EE    |   Pond Smelt
+  22EF    |   Sweetfish
+  22F0    |   Cherry Salmon
+  22F1    |   Char
+  22F2    |   Rainbow Trout
+  22F3    |   Stringfish
+  22F4    |   Salmon
+  22F5    |   King Salmon
+  22F6    |   Mitten Crab
+  22F7    |   Guppy
+  22F8    |   Nibble Fish
+  22F9    |   Angelfish
+  22FA    |   Neon Tetra
+  22FB    |   Piranha
+  22FC    |   Arowana
+  22FD    |   Dorado
+  22FE    |   Gar
+  22FF    |   Arapaima
+  2300    |   Saddled Bichir
+  2301    |   Sea Butterfly
+  2302    |   Sea Horse
+  2303    |   Clown Fish
+  2304    |   Surgeonfish
+  2305    |   Butterfly Fish
+  2306    |   Napoleonfish
+  2307    |   Zebra Turkeyfish
+  2308    |   Blowfish
+  2309    |   Puffer Fish
+  230A    |   Horse Mackerel
+  230B    |   Barred Knifejaw
+  230C    |   Sea Bass
+  230D    |   Red Snapper
+  230E    |   Dab
+  230F    |   Olive Flounder
+  2310    |   Squid
+  2311    |   Moray Eel
+  2312    |   Ribbon Eel
+  2313    |   Football Fish
+  2314    |   Tuna
+  2315    |   Blue Marlin
+  2316    |   Giant Trevally
+  2317    |   Ray
+  2318    |   Ocean Sunfish
+  2319    |   Hammerhead Shark
+  231A    |   Shark
+  231B    |   Saw Shark
+  231C    |   Whale Shark
+  231D    |   Oarfish
+  231E    |   Coelacanth
+  231F    |   Empty Can
+  2320    |   Boot
+  2321    |   Old Tire
+  2322    |   Water Egg
+  2323    |   Seaweed
+  2324    |   Sea Grapes
+  2325    |   Sea Urchin
+  2326    |   Acorn Barnacle
+  2327    |   Oyster
+  2328    |   Turban Shell
+  2329    |   Abalone
+  232A    |   Ear Shell
+  232B    |   Clam
+  232C    |   Pearl Oyster
+  232D    |   Scallop
+  232E    |   Sea Anemone
+  232F    |   Sea Star
+  2330    |   Sea Cucumber
+  2331    |   Sea Slug
+  2332    |   Flatworm
+  2333    |   Mantis Shrimp
+  2334    |   Sweet Shrimp
+  2335    |   Tiger Prawn
+  2336    |   Spiny Lobster
+  2337    |   Lobster
+  2338    |   Snow Crab
+  2339    |   Horsehair Crab
+  233A    |   Red King Crab
+  233B    |   Spider Crab
+  233C    |   Octopus
+  233D    |   Spotted Garden Eel
+  233E    |   Chambered Nautilus
+  233F    |   Horseshoe Crab
+  2340    |   Giant Isopod
+  2341    |   Deep-Sea Egg
+  2342    |   Exotic Wall
+  2343    |   Lovely Wall
+  2344    |   Classic Wall
+  2345    |   Ranch Wall
+  2346    |   Cabana Wall
+  2347    |   Blue Wall
+  2348    |   Modern Wall
+  2349    |   Regal Wall
+  234A    |   Green Wall
+  234B    |   Cabin Wall
+  234C    |   Kiddie Wall
+  234D    |   Robo-Wall
+  234E    |   Snowman Wall
+  234F    |   Forest Wall
+  2350    |   Pavé Wall
+  2351    |   Egg Wall
+  2352    |   Spooky Wall
+  2353    |   Harvest Wall
+  2354    |   Jingle Wall
+  2355    |   Princess Wall
+  2356    |   Gracie Wallpaper
+  2357    |   Sweets Wall
+  2358    |   Gorgeous Wall
+  2359    |   Western Vista
+  235A    |   Lunar Horizon
+  235B    |   Blue Tarp
+  235C    |   Ringside Seating
+  235D    |   Backyard Fence
+  235E    |   Playroom Wall
+  235F    |   Sea View
+  2360    |   Lab Wall
+  2361    |   Classroom Wall
+  2362    |   Bathhouse Wall
+  2363    |   Pastel-Dot Wall
+  2364    |   Parlor Wall
+  2365    |   Mod Wall
+  2366    |   Kitschy Wall
+  2367    |   Groovy Wall
+  2368    |   Backgammon Wall
+  2369    |   Mosaic Wall
+  236A    |   Blue-Trim Wall
+  236B    |   Plaster Wall
+  236C    |   Chic Wall
+  236D    |   Ornate Wall
+  236E    |   Citrus Wall
+  236F    |   Rose Wall
+  2370    |   Old Brick Wall
+  2371    |   Shoji Screen
+  2372    |   Gold Screen Wall
+  2373    |   Tearoom Wall
+  2374    |   Modern Screen
+  2375    |   Garden Wall
+  2376    |   Mortar Wall
+  2377    |   Stone Wall
+  2378    |   Concrete Wall
+  2379    |   Basement Wall
+  237A    |   Shanty Wall
+  237B    |   Wood Paneling
+  237C    |   Floral Wall
+  237D    |   Kitchen Wall
+  237E    |   Music-Room Wall
+  237F    |   Manor Wall
+  2380    |   Office Wall
+  2381    |   Plaza Wall
+  2382    |   Lattice Wall
+  2383    |   Stately Wall
+  2384    |   Imperial Wall
+  2385    |   Arched Window
+  2386    |   Bamboo Wall
+  2387    |   Ivy Wall
+  2388    |   Ancient Wall
+  2389    |   Exquisite Wall
+  238A    |   Tent Wall
+  238B    |   Industrial Wall
+  238C    |   Library Wall
+  238D    |   Illusion Wall
+  238E    |   Meadow Vista
+  238F    |   Tropical Vista
+  2390    |   Desert Vista
+  2391    |   Chain-Link Fence
+  2392    |   Tree-Lined Wall
+  2393    |   Sky Wall
+  2394    |   Cityscape Wall
+  2395    |   Dirt-Clod Wall
+  2396    |   Common Wall
+  2397    |   Old Wallpaper
+  2398    |   Mushroom Mural
+  2399    |   Creepy Wall
+  239A    |   Dotted Wall
+  239B    |   Ramshackle Wall
+  239C    |   Sporty Wall
+  239D    |   Golden Wall
+  239E    |   Jungle Wall
+  239F    |   Underwater Wall
+  23A0    |   Dig-Site Wall
+  23A1    |   Paintball Wall
+  23A2    |   Marine Pop Wall
+  23A3    |   Ice Wall
+  23A4    |   Sloppy Wall
+  23A5    |   Sci-Fi Wall
+  23A6    |   Rococo Wall
+  23A7    |   Butterfly Wall
+  23A8    |   Modern Wood Wall
+  23A9    |   Mermaid Wall
+  23AA    |   Sleek Wall
+  23AB    |   Card Wall
+  23AC    |   Stripe Wall
+  23AD    |   Alpine Wall
+  23AE    |   Neutral Wall
+  23AF    |   Ski-Slope Wall
+  23B0    |   Balloon Wall
+  23B1    |   Astro Wall
+  23B2    |   Flower Pop Wall
+  23B3    |   Cheese Wall
+  23B4    |   Red Tile Wall
+  23B5    |   Maze Wall
+  23B6    |   Autumn Wall
+  23B7    |   Palace Wall
+  23B8    |   Party Wall
+  23B9    |   Paw-Print Wall
+  23BA    |   Summit Wall
+  23BB    |   Skyscraper Wall
+  23BC    |   Exhibit-Room Wall
+  23BD    |   Museum Wall
+  23BE    |   Notebook Wall
+  23BF    |   Recycle-Shop Wall
+  23C0    |   Convenient Wall
+  23C1    |   Supermarket Wall
+  23C2    |   Home-Center Wall
+  23C3    |   Department Wall
+  23C4    |   Gracie Wall
+  23C5    |   Gracie Wall (2)
+  23C6    |   Gracie Wall (3)
+  23C7    |   Exotic Rug
+  23C8    |   Lovely Carpet
+  23C9    |   Classic Carpet
+  23CA    |   Ranch Flooring
+  23CB    |   Cabana Flooring
+  23CC    |   Blue Flooring
+  23CD    |   Modern Tile
+  23CE    |   Regal Carpet
+  23CF    |   Green Rug
+  23D0    |   Cabin Rug
+  23D1    |   Kiddie Carpet
+  23D2    |   Robo-Floor
+  23D3    |   Snowman Carpet
+  23D4    |   Forest Floor
+  23D5    |   Pavé Floor
+  23D6    |   Egg Floor
+  23D7    |   Spooky Carpet
+  23D8    |   Harvest Rug
+  23D9    |   Jingle Carpet
+  23DA    |   Princess Carpet
+  23DB    |   Gracie Carpet
+  23DC    |   Sweets Floor
+  23DD    |   Gorgeous Floor
+  23DE    |   Western Desert
+  23DF    |   Lunar Surface
+  23E0    |   Closed Road
+  23E1    |   Boxing-Ring Mat
+  23E2    |   Backyard Lawn
+  23E3    |   Playroom Rug
+  23E4    |   Ship Deck
+  23E5    |   Lab Floor
+  23E6    |   Classroom Floor
+  23E7    |   Bath Tile
+  23E8    |   Pastel-Dot Rug
+  23E9    |   Checkered Tile
+  23EA    |   Ceramic Tile
+  23EB    |   Diner Tile
+  23EC    |   Kitschy Tile
+  23ED    |   Red Tile
+  23EE    |   Mosaic Tile
+  23EF    |   Chessboard Rug
+  23F0    |   Plaza Tile
+  23F1    |   Palace Tile
+  23F2    |   Imperial Tile
+  23F3    |   Kitchen Tile
+  23F4    |   Stone Tile
+  23F5    |   Charcoal Tile
+  23F6    |   Tatami
+  23F7    |   Planked Tatami
+  23F8    |   Mossy Carpet
+  23F9    |   Sand Garden
+  23FA    |   Slate Flooring
+  23FB    |   Concrete Floor
+  23FC    |   Basement Floor
+  23FD    |   Parquet Floor
+  23FE    |   Old Board Floor
+  23FF    |   Kitchen Flooring
+  2400    |   Music-Room Floor
+  2401    |   Office Flooring
+  2402    |   Opulent Rug
+  2403    |   Plush Carpet
+  2404    |   Ornate Rug
+  2405    |   Fancy Carpet
+  2406    |   Exquisite Rug
+  2407    |   Tent Rug
+  2408    |   Tartan Rug
+  2409    |   Round Carpet
+  240A    |   Citrus Carpet
+  240B    |   Cowhide Rug
+  240C    |   Birch Flooring
+  240D    |   Plank Flooring
+  240E    |   Bamboo Flooring
+  240F    |   Steel Flooring
+  2410    |   Shanty Mat
+  2411    |   Ancient Tile
+  2412    |   Illusion Floor
+  2413    |   Daisy Meadow
+  2414    |   Tropical Floor
+  2415    |   Saharah's Desert
+  2416    |   Sandlot
+  2417    |   Sidewalk
+  2418    |   Cloud Flooring
+  2419    |   Common Floor
+  241A    |   Old Flooring
+  241B    |   Block Floor
+  241C    |   Creepy Floor
+  241D    |   Ramshackle Floor
+  241E    |   Sporty Floor
+  241F    |   Golden Carpet
+  2420    |   Hopscotch Floor
+  2421    |   Wildflower Floor
+  2422    |   Jungle Floor
+  2423    |   Underwater Floor
+  2424    |   Dig-Site Floor
+  2425    |   Paintball Floor
+  2426    |   Ladybug Carpet
+  2427    |   Ice Floor
+  2428    |   Sloppy Carpet
+  2429    |   Sci-Fi Floor
+  242A    |   Modern Wood Flooring
+  242B    |   Mermaid Carpet
+  242C    |   Sleek Carpet
+  242D    |   Card Carpet
+  242E    |   Stripe Carpet
+  242F    |   Neutral Floor
+  2430    |   Ski-Slope Floor
+  2431    |   Balloon Floor
+  2432    |   Astro Floor
+  2433    |   Flower Pop Carpet
+  2434    |   Marine Pop Floor
+  2435    |   Cheese Floor
+  2436    |   Maze Floor
+  2437    |   Autumn Floor
+  2438    |   Rococo Floor
+  2439    |   Alpine Rug
+  243A    |   Notebook Floor
+  243B    |   Dotted Rug
+  243C    |   Exhibit-Room Floor
+  243D    |   Museum Floor
+  243E    |   Recycle-Shop Floor
+  243F    |   Convenient Floor
+  2440    |   Market Floor
+  2441    |   Home-Center Floor
+  2442    |   Department Floor
+  2443    |   Gracie Floor
+  2444    |   Gracie Floor (2)
+  2445    |   Gracie Floor (3)
+  2446    |   Male Vest (Unused)
+  2447    |   Female Vest (Unused)
+  2448    |   One-Ball Tee
+  2449    |   Two-Ball Tee
+  244A    |   Three-Ball Tee
+  244B    |   Four-Ball Tee
+  244C    |   Five-Ball Tee
+  244D    |   Six-Ball Tee
+  244E    |   Seven-Ball Tee
+  244F    |   Eight-Ball Tee
+  2450    |   Nine-Ball Tee
+  2451    |   Paw Tee
+  2452    |   Daisy Tee
+  2453    |   Tulip Tee
+  2454    |   Cherry Tee
+  2455    |   Skull Tee
+  2456    |   U-R-Here Tee
+  2457    |   Lightning Tee
+  2458    |   MVP Tee
+  2459    |   BB Tee
+  245A    |   Fish Tee
+  245B    |   Frog Tee
+  245C    |   Bear Tee
+  245D    |   Bunny Tee
+  245E    |   Bunny Shirt
+  245F    |   Elephant Tee
+  2460    |   Spade Tee
+  2461    |   Diamond Tee
+  2462    |   Club Tee
+  2463    |   Heart Tee
+  2464    |   Big-Star Tee
+  2465    |   Bright Tee
+  2466    |   A Tee
+  2467    |   No. 1 Shirt
+  2468    |   No. 2 Shirt
+  2469    |   No. 3 Shirt
+  246A    |   No. 4 Shirt
+  246B    |   No. 5 Shirt
+  246C    |   No. 23 Shirt
+  246D    |   No. 67 Shirt
+  246E    |   Big Bro's Tee
+  246F    |   Li'l Bro's Tee
+  2470    |   Cloudy Tee
+  2471    |   Fresh Tee
+  2472    |   Dawn Tee
+  2473    |   Misty Tee
+  2474    |   Sunset Tee
+  2475    |   Deep-Blue Tee
+  2476    |   Peachy Tee
+  2477    |   Rainbow Tee
+  2478    |   Sno-Cone Tee
+  2479    |   Orange Tie-Dye Tee
+  247A    |   Purple Tie-Dye Tee
+  247B    |   Green Tie-Dye Tee
+  247C    |   Blue Tie-Dye Tee
+  247D    |   Red Tie-Dye Tee
+  247E    |   Bold-Check Tee
+  247F    |   Café Tee
+  2480    |   Checkered Tee
+  2481    |   Blue-Check Tee
+  2482    |   Red-Check Tee
+  2483    |   Dogtooth Tee
+  2484    |   Tan Dogtooth Tee
+  2485    |   Rugby Tee
+  2486    |   Green-Bar Tee
+  2487    |   Yellow-Bar Tee
+  2488    |   Grape-Stripe Tee
+  2489    |   Beatnik Tee
+  248A    |   Red-Bar Tee
+  248B    |   Blue-Stripe Tee
+  248C    |   Blue-Stripe Shirt
+  248D    |   Gelato Tee
+  248E    |   Chain-Gang Tee
+  248F    |   Speedway Tee
+  2490    |   Yellow Tartan Tee
+  2491    |   Fall Plaid Tee
+  2492    |   Blue Tartan Tee
+  2493    |   Dapper Tee
+  2494    |   Natty Tee
+  2495    |   Blue-Grid Tee
+  2496    |   Red-Grid Tee
+  2497    |   Dazed Tee
+  2498    |   Checkerboard Tee
+  2499    |   Toad Tee
+  249A    |   Dark Polka Tee
+  249B    |   Lite Polka Tee
+  249C    |   Bubble-Gum Tee
+  249D    |   Funky-Dot Tee
+  249E    |   Gumdrop Tee
+  249F    |   Big-Dot Tee
+  24A0    |   Aqua Polka Tee
+  24A1    |   Blue-Bar Tee
+  24A2    |   Gold-Bar Tee
+  24A3    |   Brown-Bar Tee
+  24A4    |   Vegetarian Tee
+  24A5    |   Racer Tee
+  24A6    |   Pastel-Stripe Tee
+  24A7    |   Rally Tee
+  24A8    |   Racer 6 Tee
+  24A9    |   Vertigo Tee
+  24AA    |   Barber Tee
+  24AB    |   Jade Plaid Tee
+  24AC    |   Blue Plaid Tee
+  24AD    |   Mint Gingham Tee
+  24AE    |   Picnic Tee
+  24AF    |   Candy Gingham Tee
+  24B0    |   Lemon Gingham Tee
+  24B1    |   Melon Gingham Tee
+  24B2    |   Bad Plaid Tee
+  24B3    |   Pink Tartan Tee
+  24B4    |   Waffle Tee
+  24B5    |   Gray Tartan Tee
+  24B6    |   Gray Tartan Shirt
+  24B7    |   Red Argyle Shirt
+  24B8    |   Red Argyle Tee
+  24B9    |   Blue Argyle Shirt
+  24BA    |   Blue Argyle Tee
+  24BB    |   Pink Argyle Shirt
+  24BC    |   Pink Argyle Tee
+  24BD    |   Cyan Argyle Shirt
+  24BE    |   Cyan Argyle Tee
+  24BF    |   Chevron Shirt
+  24C0    |   Icy Shirt
+  24C1    |   Aurora Knit Shirt
+  24C2    |   Winter Sweater
+  24C3    |   Folk Shirt
+  24C4    |   Argyle Knit Shirt
+  24C5    |   Uncommon Shirt
+  24C6    |   Comfy Sweater
+  24C7    |   Beige Knit Shirt
+  24C8    |   Earthy Knit Shirt
+  24C9    |   Spring Shirt
+  24CA    |   Lively Knit Shirt
+  24CB    |   Deer Shirt
+  24CC    |   Monkey Shirt
+  24CD    |   Chocomint Tee
+  24CE    |   Fern Tee
+  24CF    |   Leaf Tee
+  24D0    |   Fall Leaf Tee
+  24D1    |   Straw Shirt
+  24D2    |   Grass Tee
+  24D3    |   Snow Shirt
+  24D4    |   Lovely Tee
+  24D5    |   Bubble Tee
+  24D6    |   Chichi-Print Tee
+  24D7    |   Coral Tee
+  24D8    |   Groovy Tee
+  24D9    |   Flame Tee
+  24DA    |   Danger Tee
+  24DB    |   Gracie Tank
+  24DC    |   Future Tank
+  24DD    |   Optical Shirt
+  24DE    |   Twinkle Tee
+  24DF    |   Star Tee
+  24E0    |   Night-Sky Tee
+  24E1    |   Amethyst Tank
+  24E2    |   Nebula Tee
+  24E3    |   Dice Tank
+  24E4    |   Kiddie Tee
+  24E5    |   Airy Tee
+  24E6    |   Crossing Shirt
+  24E7    |   Splendid Tee
+  24E8    |   Jagged Tee
+  24E9    |   Subdued-Print Tee
+  24EA    |   Sharp Outfit
+  24EB    |   Painter's Tee
+  24EC    |   Jungle-Camo Tee
+  24ED    |   Arctic-Camo Tee
+  24EE    |   Desert-Camo Tee
+  24EF    |   Circuit Tank
+  24F0    |   Pulse Tank
+  24F1    |   Zebra Tee
+  24F2    |   Tiger Tee
+  24F3    |   Cow Tee
+  24F4    |   Leopard Tee
+  24F5    |   Giraffe Tee
+  24F6    |   Ladybug Tank
+  24F7    |   Spiderweb Tee
+  24F8    |   Caterpillar Tank
+  24F9    |   Fiendish Shirt
+  24FA    |   Citrus Tee
+  24FB    |   Kiwi Tee
+  24FC    |   Watermelon Tee
+  24FD    |   Strawberry Tee
+  24FE    |   Grape Tee
+  24FF    |   Melon Tee
+  2500    |   Pink Wave Tank
+  2501    |   Flan Tank
+  2502    |   Hot-Dog Tank
+  2503    |   Sandwich Tank
+  2504    |   Noodle Tee
+  2505    |   Sundae Tank
+  2506    |   Dragon Suit
+  2507    |   Periwinkle Tee
+  2508    |   Hot Spring Tee
+  2509    |   New Spring Tee
+  250A    |   Crewel Tee
+  250B    |   Tropical Tee
+  250C    |   Corseted Shirt
+  250D    |   Noble Shirt
+  250E    |   Red Aloha Tee
+  250F    |   Blue Aloha Tee
+  2510    |   Western Shirt
+  2511    |   Royal Shirt
+  2512    |   Firefighter Shirt
+  2513    |   Doctor's Coat
+  2514    |   Bone Shirt
+  2515    |   Zipper Shirt
+  2516    |   Mummy Shirt
+  2517    |   Military Uniform
+  2518    |   Sailor's Tee
+  2519    |   Reggae Tee
+  251A    |   Camel Shirt
+  251B    |   Concierge Shirt
+  251C    |   Tuxedo
+  251D    |   Explorer Tee
+  251E    |   Soccer Tee
+  251F    |   Red Down Jacket
+  2520    |   Blue Down Jacket
+  2521    |   Cavalier Shirt
+  2522    |   Beaded Shirt
+  2523    |   Wrap Shirt
+  2524    |   Wrestler Tank
+  2525    |   Security Tee
+  2526    |   Bear Costume
+  2527    |   Frog Costume
+  2528    |   Kappa Costume
+  2529    |   Imperial Shirt
+  252A    |   Racing Shirt
+  252B    |   Orange Jacket
+  252C    |   Tin Shirt
+  252D    |   Scale-Armor Suit
+  252E    |   Armor Suit
+  252F    |   Gold-Armor Suit
+  2530    |   Striking Outfit
+  2531    |   Red Warm-Up Suit
+  2532    |   Baseball Shirt
+  2533    |   Red Gym Tee
+  2534    |   Blue Gym Tee
+  2535    |   Space Suit
+  2536    |   Caveman Tank
+  2537    |   Kung-Fu Tee
+  2538    |   Pleather Vest
+  2539    |   Cycling Shirt
+  253A    |   Cycling Tee
+  253B    |   Chef's Outfit
+  253C    |   Genie Shirt
+  253D    |   Folk Tunic
+  253E    |   Red-Zap Suit
+  253F    |   Blue-Zap Suit
+  2540    |   Green-Zap Suit
+  2541    |   Samurai Shirt
+  2542    |   Patched Shirt
+  2543    |   Hero's Clothes
+  2544    |   Varia Suit
+  2545    |   Team NTDO Tee
+  2546    |   Gray Parka
+  2547    |   Fishing Vest
+  2548    |   Captain's Jacket
+  2549    |   Ninja Shirt
+  254A    |   Detective Outfit
+  254B    |   Santa Coat
+  254C    |   Chick Tee
+  254D    |   Scale-Print Tee
+  254E    |   Jinbei Top
+  254F    |   Kanji Tee
+  2550    |   Raglan Shirt
+  2551    |   Happi Tee
+  2552    |   Red Letter Jacket
+  2553    |   Blue Letter Jacket
+  2554    |   Black Letter Jacket
+  2555    |   Tiger Jacket
+  2556    |   Dragon Jacket
+  2557    |   Red Flannel Shirt
+  2558    |   Blue Flannel Shirt
+  2559    |   Black Flannel Shirt
+  255A    |   Pink-Bud Tank
+  255B    |   Garden Tank
+  255C    |   Lacy White Tank
+  255D    |   Pink Tank
+  255E    |   Hanten Shirt
+  255F    |   Work Shirt
+  2560    |   Tan Puffy Vest
+  2561    |   After-School Jacket
+  2562    |   Kids' Smock
+  2563    |   School Jacket
+  2564    |   Mint Shirt
+  2565    |   Denim Jacket
+  2566    |   Prism Tee
+  2567    |   Denim Vest
+  2568    |   Green Gym Tee
+  2569    |   Green Emblem Blazer
+  256A    |   Acid-Washed Jacket
+  256B    |   Red Ringmaster Coat
+  256C    |   White Tuxedo Jacket
+  256D    |   Black-Denim Jacket
+  256E    |   Basketball Tank
+  256F    |   Iberian Jacket
+  2570    |   Pink Parka
+  2571    |   Jockey Shirt
+  2572    |   Blue Track Jacket
+  2573    |   Sweater-Vest
+  2574    |   Waistcoat
+  2575    |   Black Track Jacket
+  2576    |   Beige Emblem Blazer
+  2577    |   Clerk's Shirt
+  2578    |   Green Warm-Up Jacket
+  2579    |   Blue Ringmaster Coat
+  257A    |   Relay Tank
+  257B    |   Snowy Sweater
+  257C    |   Red Jacket
+  257D    |   Blue Jacket
+  257E    |   Floral Knit Tee
+  257F    |   Dreamy Tee
+  2580    |   Pop Bloom Tee
+  2581    |   Silk Bloom Tee
+  2582    |   Blossom Tee
+  2583    |   Yellow Aloha Tee
+  2584    |   Loud Bloom Tee
+  2585    |   Rose-Sky Tee
+  2586    |   Blue Diamond Shirt
+  2587    |   Lotus Tee
+  2588    |   Rose Tee
+  2589    |   Pep-Squad Tee
+  258A    |   Jester Shirt
+  258B    |   Swell Shirt
+  258C    |   Go-Go Shirt
+  258D    |   Festivale Tank
+  258E    |   Pink Pj Shirt
+  258F    |   Blue Pj Shirt
+  2590    |   Canary Shirt
+  2591    |   Flight-Crew Shirt
+  2592    |   Café Uniform
+  2593    |   Peacoat
+  2594    |   Shearling Coat
+  2595    |   Mod Shirt
+  2596    |   Tacky Sweater
+  2597    |   Sunflower Tee
+  2598    |   Green-Stripe Tank
+  2599    |   Gray Tank
+  259A    |   Preppy Shirt
+  259B    |   Flowery Tee
+  259C    |   HHA Tee
+  259D    |   HHA Jacket
+  259E    |   Dr. Shrunk's Jacket
+  259F    |   24-hour-Shop Uniform
+  25A0    |   Swell Tee
+  25A1    |   Blue Diamond Tee
+  25A2    |   Raglan Tee
+  25A3    |   MVP Shirt
+  25A4    |   Jade Plaid Shirt
+  25A5    |   Red-Check Shirt
+  25A6    |   Rugby Shirt
+  25A7    |   Painter's Shirt
+  25A8    |   Pulse Shirt
+  25A9    |   Toad Shirt
+  25AA    |   Sailor's Shirt
+  25AB    |   Frog Shirt
+  25AC    |   Blue-Grid Shirt
+  25AD    |   Kung-Fu Shirt
+  25AE    |   Tan Dogtooth Shirt
+  25AF    |   Bad Plaid Shirt
+  25B0    |   Fern Shirt
+  25B1    |   Arctic-Camo Shirt
+  25B2    |   Fall Leaf Shirt
+  25B3    |   Elephant Shirt
+  25B4    |   Red-Grid Shirt
+  25B5    |   Chain-Gang Shirt
+  25B6    |   Dogtooth Shirt
+  25B7    |   Moldy Shirt
+  25B8    |   Waffle Shirt
+  25B9    |   Vegetarian Shirt
+  25BA    |   Blue-Check Shirt
+  25BB    |   Picnic Shirt
+  25BC    |   Natty Shirt
+  25BD    |   Pink Tartan Shirt
+  25BE    |   Checkerboard Shirt
+  25BF    |   Dark Polka Shirt
+  25C0    |   Lemon Gingham Shirt
+  25C1    |   Brown-Bar Shirt
+  25C2    |   Dazed Shirt
+  25C3    |   Nebula Shirt
+  25C4    |   Bubble-Gum Shirt
+  25C5    |   Blue-Bar Shirt
+  25C6    |   Lite Polka Shirt
+  25C7    |   Yellow-Bar Shirt
+  25C8    |   Yellow Tartan Shirt
+  25C9    |   Amethyst Shirt
+  25CA    |   Soccer Shirt
+  25CB    |   Grape-Stripe Shirt
+  25CC    |   Red-Bar Shirt
+  25CD    |   Candy Gingham Shirt
+  25CE    |   Skull Shirt
+  25CF    |   Flame Shirt
+  25D0    |   Vertigo Shirt
+  25D1    |   Green-Bar Shirt
+  25D2    |   Gelato Shirt
+  25D3    |   Dapper Shirt
+  25D4    |   Desert-Camo Shirt
+  25D5    |   Jungle-Camo Shirt
+  25D6    |   Beatnik Shirt
+  25D7    |   Gold-Bar Shirt
+  25D8    |   Fall Plaid Shirt
+  25D9    |   Blue Tartan Shirt
+  25DA    |   Mint Gingham Shirt
+  25DB    |   Bear Shirt
+  25DC    |   Melon Gingham Shirt
+  25DD    |   Blue Plaid Shirt
+  25DE    |   Melon Shirt
+  25DF    |   Watermelon Shirt
+  25E0    |   Zipper Tank
+  25E1    |   Misty Tank
+  25E2    |   Purple Tie-Dye Tank
+  25E3    |   Jester Tank
+  25E4    |   Grape Tank
+  25E5    |   Sno-Cone Tank
+  25E6    |   Aqua Polka Tank
+  25E7    |   Strawberry Tank
+  25E8    |   Peachy Tank
+  25E9    |   Reggae Tank
+  25EA    |   Blue Argyle Tank
+  25EB    |   Twinkle Tank
+  25EC    |   Green Tie-Dye Tank
+  25ED    |   Cool Tank
+  25EE    |   Optical Tank
+  25EF    |   Jagged Tank
+  25F0    |   Rally Tank
+  25F1    |   Bubble Tank
+  25F2    |   Deep-Blue Tank
+  25F3    |   Beaded Tank
+  25F4    |   Coral Tank
+  25F5    |   Pink Argyle Tank
+  25F6    |   Funky-Dot Tank
+  25F7    |   Groovy Tank
+  25F8    |   Fresh Tank
+  25F9    |   Tropical Tank
+  25FA    |   Sunset Tank
+  25FB    |   Citrus Tank
+  25FC    |   Blue Tie-Dye Tank
+  25FD    |   Giraffe Tank
+  25FE    |   Orange Tie-Dye Tank
+  25FF    |   Zebra Tank
+  2600    |   Tiger Tank
+  2601    |   Kiwi Tank
+  2602    |   Red Tie-Dye Tank
+  2603    |   Pep-Squad Tank
+  2604    |   Dawn Tank
+  2605    |   Beatnik Tank
+  2606    |   Big-Dot Tank
+  2607    |   Rainbow Tank
+  2608    |   Leopard Tank
+  2609    |   Cow Tank
+  260A    |   Genie Vest
+  260B    |   Cyan Argyle Tank
+  260C    |   Festive Dress
+  260D    |   Muumuu
+  260E    |   Blue Dotted Dress
+  260F    |   Tan Dogtooth Dress
+  2610    |   Prim Outfit
+  2611    |   Overall Dress
+  2612    |   Pink Lace-Up Dress
+  2613    |   Academy Uniform
+  2614    |   Prep-School Uniform
+  2615    |   Blue Party Dress
+  2616    |   Pink Party Dress
+  2617    |   Yellow Dotted Dress
+  2618    |   Pinafore
+  2619    |   Plaid Cami Dress
+  261A    |   Green Dress
+  261B    |   Butterfly Dress
+  261C    |   Gaudy Dress
+  261D    |   Sea Captain's Coat
+  261E    |   Pink-Zap Suit
+  261F    |   Fleece Dress
+  2620    |   Vogue Dress
+  2621    |   Citrus Gingham Dress
+  2622    |   Floral Knit Dress
+  2623    |   Dreamy Tank Dress
+  2624    |   Silk Bloom Dress
+  2625    |   Pop Bloom Dress
+  2626    |   Blossom Dress
+  2627    |   Loud Bloom Dress
+  2628    |   Rose Tank Dress
+  2629    |   Rose-Sky Tank Dress
+  262A    |   Lotus Tank Dress
+  262B    |   Blue Retro Dress
+  262C    |   Orange Retro Dress
+  262D    |   Cool Dress
+  262E    |   Moldy Dress
+  262F    |   Blossoming Dress
+  2630    |   Ribbon Dress
+  2631    |   Blue Lace-Up Dress
+  2632    |   Orange Lace-Up Dress
+  2633    |   Green Lace-Up Dress
+  2634    |   Lime Dress
+  2635    |   Turnip Dress
+  2636    |   Yodel Dress
+  2637    |   Red Riding Dress
+  2638    |   Witch's Robe
+  2639    |   Graduation Gown
+  263A    |   Sky Dress
+  263B    |   Alpinist Dress
+  263C    |   Kimono
+  263D    |   Milkmaid Dress
+  263E    |   Toga
+  263F    |   Cake Dress
+  2640    |   Waitress Dress
+  2641    |   Princess Dress
+  2642    |   Fairy-Tale Dress
+  2643    |   Pink Polka Dress
+  2644    |   Palatial Tank Dress
+  2645    |   Poncho
+  2646    |   Fluffy Dress
+  2647    |   Cat Dress
+  2648    |   Plum Coat
+  2649    |   Frock Coat
+  264A    |   Casual Outfit
+  264B    |   Maid Dress
+  264C    |   Trench Coat
+  264D    |   Pharaoh's Outfit
+  264E    |   Bathrobe
+  264F    |   Polka-Dot Dress
+  2650    |   Patched Dress
+  2651    |   Black-Velvet Dress
+  2652    |   Dazed Dress
+  2653    |   Dogtooth Dress
+  2654    |   Nurse's Uniform
+  2655    |   Embroidered Dress
+  2656    |   Festivale Tank Dress
+  2657    |   Tartan-Plaid Outfit
+  2658    |   Sweater Dress
+  2659    |   Shirtdress
+  265A    |   Red Dress
+  265B    |   Yellow Raincoat
+  265C    |   Dollhouse Dress
+  265D    |   Festive-Tree Dress
+  265E    |   Ballet Outfit
+  265F    |   Classic Dress
+  2660    |   U-R-Here Dress
+  2661    |   Natty Dress
+  2662    |   Dapper Dress
+  2663    |   Gumdrop Dress
+  2664    |   Chima Jeogori Dress
+  2665    |   Spring Kimono
+  2666    |   Caveman Tank Dress
+  2667    |   Star Tank Dress
+  2668    |   Twinkle Tank Dress
+  2669    |   Pastel-Stripe Dress
+  266A    |   Cat Tank Dress
+  266B    |   Cake Tank Dress
+  266C    |   Fluffy Tank Dress
+  266D    |   Lovely Dress
+  266E    |   Rental Wet Suit
+  266F    |   Black Wet Suit
+  2670    |   Pink Wet Suit
+  2671    |   Striped Wet Suit
+  2672    |   Green Wet Suit
+  2673    |   Orange Wet Suit
+  2674    |   Red Wet Suit
+  2675    |   White Wet Suit
+  2676    |   Blue Wet Suit
+  2677    |   ???
+  2678    |   ???
+  2679    |   Jungle-Camo Shorts
+  267A    |   Jungle-Camo Pants
+  267B    |   Cargo Pants
+  267C    |   Dogtooth Pants
+  267D    |   Tan Dogtooth Pants
+  267E    |   Patched Pants
+  267F    |   Santa Pants
+  2680    |   Hero's Pants
+  2681    |   Leopard Pants
+  2682    |   Leopard Skirt
+  2683    |   Denim Skirt
+  2684    |   Lite Polka Skirt
+  2685    |   Cow Pants
+  2686    |   Giraffe Pants
+  2687    |   Tiger Pants
+  2688    |   Zebra Pants
+  2689    |   Armor Pants
+  268A    |   Gold-Armor Pants
+  268B    |   Iberian Pants
+  268C    |   Baseball Pants
+  268D    |   Bone Pants
+  268E    |   Arctic-Camo Pants
+  268F    |   Desert-Camo Pants
+  2690    |   Caveman Shorts
+  2691    |   Blue Boxing Shorts
+  2692    |   Red Boxing Shorts
+  2693    |   Pep-Squad Skirt
+  2694    |   New Spring Skirt
+  2695    |   Hot Spring Skirt
+  2696    |   Imperial Pants
+  2697    |   Bear-Costume Pants
+  2698    |   Frog-Costume Pants
+  2699    |   Kappa-Costume Pants
+  269A    |   Gray Sweatpants
+  269B    |   Western Pants
+  269C    |   Funky-Dot Skirt
+  269D    |   Flame Pants
+  269E    |   Green Plaid Shorts
+  269F    |   Dragon Leggings
+  26A0    |   Explorer Pants
+  26A1    |   Firefighter Pants
+  26A2    |   Checkerboard Skirt
+  26A3    |   Picnic Skirt
+  26A4    |   Brown Plaid Shorts
+  26A5    |   Rainbow Plaid Shorts
+  26A6    |   Mint Gingham Skirt
+  26A7    |   Blue Polka Shorts
+  26A8    |   Corseted Skirt
+  26A9    |   Blue-Grid Skirt
+  26AA    |   Patched-Knee Pants
+  26AB    |   Red-Grid Skirt
+  26AC    |   Blue Gym Shorts
+  26AD    |   Green Gym Shorts
+  26AE    |   Red Gym Shorts
+  26AF    |   Blue-Zap Pants
+  26B0    |   Green-Zap Pants
+  26B1    |   Red-Zap Pants
+  26B2    |   Blue Warm-Up Pants
+  26B3    |   Green Warm-Up Pants
+  26B4    |   Red Warm-Up Pants
+  26B5    |   Jester Pants
+  26B6    |   Kung-Fu Pants
+  26B7    |   Pleather Pants
+  26B8    |   Military Pants
+  26B9    |   Mummy Pants
+  26BA    |   Varia Suit Pants
+  26BB    |   Ninja Pants
+  26BC    |   Genie Pants
+  26BD    |   Dark Polka Skirt
+  26BE    |   Racing Pants
+  26BF    |   White-Lace Skirt
+  26C0    |   Sailor Skirt
+  26C1    |   Samurai Pants
+  26C2    |   Jinbei Shorts
+  26C3    |   Space Pants
+  26C4    |   Cuffed Pants
+  26C5    |   Kilt
+  26C6    |   Pink Sweatpants
+  26C7    |   Chino Pants
+  26C8    |   Gray Tartan Skirt
+  26C9    |   Two-Tone Pants
+  26CA    |   Natty Skirt
+  26CB    |   Dapper Skirt
+  26CC    |   Soccer Shorts
+  26CD    |   Orange Pants
+  26CE    |   Wrestler Pants
+  26CF    |   Black Track Pants
+  26D0    |   Running Pants
+  26D1    |   Gray Formal Pants
+  26D2    |   Navy Formal Pants
+  26D3    |   Black Formal Pants
+  26D4    |   White Formal Pants
+  26D5    |   Red-Stripe Pants
+  26D6    |   Red Plaid Skirt
+  26D7    |   Pastel-Check Skirt
+  26D8    |   Grass Skirt
+  26D9    |   Red Tartan Pants
+  26DA    |   Red Polka Skirt
+  26DB    |   Dry-Denim Pants
+  26DC    |   Black-Denim Skirt
+  26DD    |   Acid-Washed Pants
+  26DE    |   Gray-Stripe Pants
+  26DF    |   Black-Denim Pants
+  26E0    |   Worn-Out Jeans
+  26E1    |   Emerald Polka Skirt
+  26E2    |   Brown Argyle Skirt
+  26E3    |   Pink Argyle Skirt
+  26E4    |   Green Tartan Pants
+  26E5    |   Dry-Denim Skirt
+  26E6    |   Aloha Shorts
+  26E7    |   Blue-Stripe Pants
+  26E8    |   Festivale Pants
+  26E9    |   Pink Pj Bottoms
+  26EA    |   Blue Pj Bottoms
+  26EB    |   Basketball Shorts
+  26EC    |   Relay Shorts
+  26ED    |   Brown Formal Pants
+  26EE    |   Royal Shorts
+  26EF    |   Scale-Armor Pants
+  26F0    |   Black Formal Skirt
+  26F1    |   Gray Formal Skirt
+  26F2    |   Navy Formal Skirt
+  26F3    |   Crocheted Tights
+  26F4    |   Brown-Stripe Socks
+  26F5    |   Black Stockings
+  26F6    |   Heart-Print Tights
+  26F7    |   Rainbow Tights
+  26F8    |   Black Ankle Socks
+  26F9    |   Star Tights
+  26FA    |   Purple-Stripe Tights
+  26FB    |   Dress Socks
+  26FC    |   Gray Tights
+  26FD    |   Navy Socks
+  26FE    |   Hiking Gaiters
+  26FF    |   White-Lace Socks
+  2700    |   Tube Socks
+  2701    |   Argyle Socks
+  2702    |   Bobby Socks
+  2703    |   Red Tights
+  2704    |   Purple Star Socks
+  2705    |   Gray Leggings
+  2706    |   White Socks
+  2707    |   Black Tights
+  2708    |   Beige Tights
+  2709    |   Colorful Socks
+  270A    |   Checkered Socks
+  270B    |   Brown Socks
+  270C    |   Argyle Tights
+  270D    |   Green-Stripe Socks
+  270E    |   Leg Warmers
+  270F    |   White Ankle Socks
+  2710    |   Soccer Socks
+  2711    |   Black Leggings
+  2712    |   Polka-Dot Socks
+  2713    |   White Stockings
+  2714    |   Gray Socks
+  2715    |   Blue-Stripe Tights
+  2716    |   Green Tights
+  2717    |   Blue Sneakers
+  2718    |   White Patent Shoes
+  2719    |   Purple Pumps
+  271A    |   Shearling Boots
+  271B    |   Basketball Shoes
+  271C    |   Santa Boots
+  271D    |   Hero's Boots
+  271E    |   Lace-Up Boots
+  271F    |   White Leather Shoes
+  2720    |   Hiking Boots
+  2721    |   Kimono Sandals
+  2722    |   Snow Boots
+  2723    |   Flip-Flops
+  2724    |   Green Polka Pumps
+  2725    |   Leopard Pumps
+  2726    |   Tropical Sandals
+  2727    |   Polka-Dot Rain Boots
+  2728    |   Yellow Rain Boots
+  2729    |   Cleats
+  272A    |   Wooden Clogs
+  272B    |   Brown Loafers
+  272C    |   Slippers
+  272D    |   Monochrome Shoes
+  272E    |   Green Sandals
+  272F    |   Tasseled Loafers
+  2730    |   Purple High-Tops
+  2731    |   Flower Loafers
+  2732    |   Patched Shoes
+  2733    |   Clogs
+  2734    |   Climbing Shoes
+  2735    |   Gladiator Sandals
+  2736    |   Ninja Sandals
+  2737    |   Steel-Toed Boots
+  2738    |   Zap Boots
+  2739    |   Black Rain Boots
+  273A    |   Stripe Shoes
+  273B    |   Ballet Slippers
+  273C    |   Cowboy Boots
+  273D    |   Jester's Shoes
+  273E    |   School Shoes
+  273F    |   Armor Shoes
+  2740    |   Gold-Armor Shoes
+  2741    |   Blue Wrestling Shoes
+  2742    |   Red Wrestling Shoes
+  2743    |   Varia Suit Shoes
+  2744    |   Green Buckled Shoes
+  2745    |   Black Loafers
+  2746    |   Pink Slip-Ons
+  2747    |   Blue Pumps
+  2748    |   Colorful Sneakers
+  2749    |   Red Boat Shoes
+  274A    |   Red Shoes
+  274B    |   Orange Sandals
+  274C    |   Brown Slip-Ons
+  274D    |   Yellow Buckled Shoes
+  274E    |   Purple Dot Shoes
+  274F    |   Black Pumps
+  2750    |   Green-Stripe Shoes
+  2751    |   Pink Sneakers
+  2752    |   Brown Pumps
+  2753    |   Yellow Sneakers
+  2754    |   Orange Shoes
+  2755    |   Gelato Umbrella
+  2756    |   Bat Umbrella
+  2757    |   Lacy Parasol
+  2758    |   Leaf Umbrella
+  2759    |   Paper Parasol
+  275A    |   Ribbon Umbrella
+  275B    |   Red Umbrella
+  275C    |   Blue Umbrella
+  275D    |   Yellow Umbrella
+  275E    |   Green Umbrella
+  275F    |   Candy Umbrella
+  2760    |   Melon Umbrella
+  2761    |   Mint Umbrella
+  2762    |   Picnic Umbrella
+  2763    |   Lemon Umbrella
+  2764    |   Toad Parasol
+  2765    |   Eggy Parasol
+  2766    |   Blue Dot Parasol
+  2767    |   Daisy Umbrella
+  2768    |   Paw Umbrella
+  2769    |   Petal Parasol
+  276A    |   Busted Umbrella
+  276B    |   Sunny Parasol
+  276C    |   Beach Umbrella
+  276D    |   Elegant Umbrella
+  276E    |   Modern Umbrella
+  276F    |   Leopard Umbrella
+  2770    |   Zebra Umbrella
+  2771    |   Forest Umbrella
+  2772    |   Flame Umbrella
+  2773    |   Camo Umbrella
+  2774    |   Spider Umbrella
+  2775    |   Gracie Umbrella
+  2776    |   Peach's Parasol
+  2777    |   Ghost Umbrella
+  2778    |   Maple Umbrella
+  2779    |   Red Cap
+  277A    |   Yellow Cap
+  277B    |   Light-Blue Cap
+  277C    |   Green Cap
+  277D    |   Star Cap
+  277E    |   1-Up Cap
+  277F    |   Purple Cap
+  2780    |   Blue Cap
+  2781    |   Blue Pom-Pom Hat
+  2782    |   Green Knit Hat
+  2783    |   Orange Knit Hat
+  2784    |   Pink Knit Hat
+  2785    |   Purple Knit Hat
+  2786    |   Red Pom-Pom Hat
+  2787    |   Badge Hat
+  2788    |   Straw Hat
+  2789    |   Grandpa Hat
+  278A    |   Paperboy Cap
+  278B    |   Beret
+  278C    |   Dandy Hat
+  278D    |   Hunter's Cap
+  278E    |   Detective Hat
+  278F    |   Top Hat
+  2790    |   Puffy Hat
+  2791    |   Gracie Hat
+  2792    |   Elegant Hat
+  2793    |   Bandana
+  2794    |   Tulip Hat
+  2795    |   Do-Rag
+  2796    |   Swimming Cap
+  2797    |   Wizard's Cap
+  2798    |   Newsprint Helmet
+  2799    |   Santa Hat
+  279A    |   Big Bro's Hat
+  279B    |   Li'l Bro's Hat
+  279C    |   Wario Hat
+  279D    |   Bicycle Helmet
+  279E    |   Chef's Hat
+  279F    |   Combat Helmet
+  27A0    |   Scholar's Hat
+  27A1    |   Safety Helmet
+  27A2    |   Police Cap
+  27A3    |   Explorer's Hat
+  27A4    |   Captain's Hat
+  27A5    |   Sailor's Hat
+  27A6    |   Silk Hat
+  27A7    |   Outback Hat
+  27A8    |   Milkmaid Hat
+  27A9    |   Sombrero
+  27AA    |   Alpinist Hat
+  27AB    |   Viking Helmet
+  27AC    |   Cavalier Hat
+  27AD    |   Pirate's Hat
+  27AE    |   Jester's Cap
+  27AF    |   Witch's Hat
+  27B0    |   Melon Hat
+  27B1    |   Strawberry Hat
+  27B2    |   Kiwi Hat
+  27B3    |   Mandarin Hat
+  27B4    |   Watermelon Hat
+  27B5    |   Grape Hat
+  27B6    |   Red Ribbon
+  27B7    |   Blue Ribbon
+  27B8    |   Yellow Ribbon
+  27B9    |   Heart Hairpin
+  27BA    |   Star Hairpin
+  27BB    |   Moon Hairpin
+  27BC    |   Halo
+  27BD    |   Shamrock Hat
+  27BE    |   Student Cap
+  27BF    |   Flamenco Hat
+  27C0    |   Red-Team Cap
+  27C1    |   White-Team Cap
+  27C2    |   Hot-Dog Hat
+  27C3    |   Celebration Hat
+  27C4    |   Emperor's Cap
+  27C5    |   Banana-Split Hat
+  27C6    |   School Cap
+  27C7    |   White School Cap
+  27C8    |   White Police Cap
+  27C9    |   Royal Crown
+  27CA    |   Crown
+  27CB    |   Patched Hat
+  27CC    |   Birthday Hat
+  27CD    |   Red New Year's Hat
+  27CE    |   Y. New Year's Hat
+  27CF    |   Blue New Year's Hat
+  27D0    |   Green New Year's Hat
+  27D1    |   White Cap
+  27D2    |   Ribboned Straw Hat
+  27D3    |   Nurse's Cap
+  27D4    |   Pink Nightcap
+  27D5    |   Blue Plaid Fedora
+  27D6    |   Hibiscus Hairpin
+  27D7    |   Straw Umbrella Hat
+  27D8    |   Conical Straw Hat
+  27D9    |   Iberian Hat
+  27DA    |   Balloon Hat
+  27DB    |   Blue Nightcap
+  27DC    |   Straw Boater
+  27DD    |   Terry-Cloth Do-Rag
+  27DE    |   Shower Cap
+  27DF    |   Floppy Hat
+  27E0    |   Flashy Hairpin
+  27E1    |   Festivale Accessory
+  27E2    |   Cloche Hat
+  27E3    |   Pilot's Hat
+  27E4    |   School Hat
+  27E5    |   Bulb Bopper
+  27E6    |   Flower Bopper
+  27E7    |   Heart Bopper
+  27E8    |   Star Bopper
+  27E9    |   Mailman's Hat
+  27EA    |   Plain Black Cap
+  27EB    |   Small Silk Hat
+  27EC    |   Stripe Knit Cap
+  27ED    |   Pilot's Cap
+  27EE    |   Fireman's Hat
+  27EF    |   Baby's Hat
+  27F0    |   Turban
+  27F1    |   Warbonnet
+  27F2    |   Kaffiyeh
+  27F3    |   Cow Bone
+  27F4    |   Samurai Wig
+  27F5    |   Geisha Wig
+  27F6    |   Ninja Hood
+  27F7    |   Powdered Wig
+  27F8    |   Afro Wig
+  27F9    |   Regent Wig
+  27FA    |   Mohawk Wig
+  27FB    |   Pigtail
+  27FC    |   Bun Wig
+  27FD    |   Tiara Hair
+  27FE    |   Bridal Veil
+  27FF    |   Headband
+  2800    |   Bunny Hood
+  2801    |   Cat Cap
+  2802    |   Bear Cap
+  2803    |   Frog Cap
+  2804    |   Kappa Cap
+  2805    |   Samurai Helmet
+  2806    |   Hero's Cap
+  2807    |   Racing Helmet
+  2808    |   Motocross Helmet
+  2809    |   Football Helmet
+  280A    |   Knight's Helmet
+  280B    |   Roman Helmet
+  280C    |   Diving Mask
+  280D    |   Space Helmet
+  280E    |   Ski Mask
+  280F    |   Wrestling Mask
+  2810    |   Retro Helmet
+  2811    |   Red-Zap Helmet
+  2812    |   Blue-Zap Helmet
+  2813    |   Green-Zap Helmet
+  2814    |   Pink-Zap Helmet
+  2815    |   Red Ogre Mask
+  2816    |   Blue Ogre Mask
+  2817    |   Majora's Mask
+  2818    |   Samus Mask
+  2819    |   Midna's Mask
+  281A    |   Toad Hat
+  281B    |   Pumpkin Head
+  281C    |   King Tut Mask
+  281D    |   Ghost Mask
+  281E    |   Monster Mask
+  281F    |   Bug Mask
+  2820    |   Mummy Mask
+  2821    |   Red Pikmin
+  2822    |   Blue Pikmin
+  2823    |   Yellow Pikmin
+  2824    |   Girl's Day Updo
+  2825    |   Green Headgear
+  2826    |   Red Headgear
+  2827    |   Snowman Head
+  2828    |   Tsunokakushi
+  2829    |   Kintaro Wig
+  282A    |   Tam-O'-shanter
+  282B    |   Red-Horned Hat
+  282C    |   Red Hood
+  282D    |   Funky Wig
+  282E    |   Makar's Mask
+  282F    |   Fencing Mask
+  2830    |   Topknot Wig
+  2831    |   DJ Cap
+  2832    |   Lion-Dance Mask
+  2833    |   Hair-Bow Wig
+  2834    |   Tingle Hood
+  2835    |   Purple-Imp Hood
+  2836    |   Stagehand Hat
+  2837    |   Matronly Bun
+  2838    |   Skeleton Hood
+  2839    |   Black Veil
+  283A    |   Afro Cap
+  283B    |   Werewolf Hood
+  283C    |   Ogre's Wig
+  283D    |   Diver's Hood
+  283E    |   Headkerchief
+  283F    |   Fi Mask
+  2840    |   Coin Headpiece
+  2841    |   Batter's Helmet
+  2842    |   Jockey's Helmet
+  2843    |   Catcher's Mask
+  2844    |   Blue Headgear
+  2845    |   Braided Wig
+  2846    |   Purple-Pumpkin Head
+  2847    |   Yellow-Pumpkin Head
+  2848    |   Green-Pumpkin Head
+  2849    |   Red-Pumpkin Head
+  284A    |   Birthday Shades
+  284B    |   Blue Frames
+  284C    |   Red Glasses
+  284D    |   Yellow Glasses
+  284E    |   Mint Glasses
+  284F    |   Purple Glasses
+  2850    |   Green Glasses
+  2851    |   Brown Glasses
+  2852    |   Pink Glasses
+  2853    |   Thick Glasses
+  2854    |   Silver Frames
+  2855    |   Rimmed Glasses
+  2856    |   Funky Glasses
+  2857    |   Tortoise Specs
+  2858    |   Gracie Glasses
+  2859    |   Pilot Shades
+  285A    |   Sporty Shades
+  285B    |   Huge Shades
+  285C    |   Triangle Shades
+  285D    |   Tiny Shades
+  285E    |   Heart Shades
+  285F    |   Star Shades
+  2860    |   3D Glasses
+  2861    |   Ballroom Mask
+  2862    |   Superhero Mask
+  2863    |   Goggles
+  2864    |   Snorkel Mask
+  2865    |   Eye Mask
+  2866    |   HMD
+  2867    |   Monocle
+  2868    |   Doctor's Mirror
+  2869    |   Eye Patch
+  286A    |   Post-Op Patch
+  286B    |   Gas Mask
+  286C    |   Hockey Mask
+  286D    |   Jester's Mask
+  286E    |   Red Nose
+  286F    |   Stache & Glasses
+  2870    |   Big Bro's Mustache
+  2871    |   Bad Bro's Stache
+  2872    |   Curly Mustache
+  2873    |   King's Beard
+  2874    |   Doctor's Mask
+  2875    |   Pacifier
+  2876    |   Beak
+  2877    |   Lemon Pack
+  2878    |   Cucumber Pack
+  2879    |   Bandage
+  287A    |   Ladder Shades
+  287B    |   Santa Beard
+  287C    |   Round Glasses
+  287D    |   Cyber Shades
+  287E    |   Masquerade Mask
+  287F    |   Funny Glasses
+  2880    |   Leaf
+  2881    |   Steampunk Glasses
+  2882    |   Aviator Shades
+  2883    |   Facial Mask
+  2884    |   Oval Shades
+  2885    |   Red Tulips
+  2886    |   White Tulips
+  2887    |   Yellow Tulips
+  2888    |   Pink Tulips
+  2889    |   Purple Tulips
+  288A    |   Black Tulips
+  288B    |   Orange Tulips
+  288C    |   White Pansies
+  288D    |   Yellow Pansies
+  288E    |   Red Pansies
+  288F    |   Purple Pansies
+  2890    |   Orange Pansies
+  2891    |   Blue Pansies
+  2892    |   White Cosmos
+  2893    |   Red Cosmos
+  2894    |   Yellow Cosmos
+  2895    |   Pink Cosmos
+  2896    |   Orange Cosmos
+  2897    |   Black Cosmos
+  2898    |   Red Roses
+  2899    |   White Roses
+  289A    |   Yellow Roses
+  289B    |   Pink Roses
+  289C    |   Orange Roses
+  289D    |   Purple Roses
+  289E    |   Black Roses
+  289F    |   Blue Roses
+  28A0    |   Gold Roses
+  28A1    |   Red Carnations
+  28A2    |   Pink Carnations
+  28A3    |   White Carnations
+  28A4    |   White Lilies
+  28A5    |   Yellow Lilies
+  28A6    |   Red Lilies
+  28A7    |   Orange Lilies
+  28A8    |   Pink Lilies
+  28A9    |   Black Lilies
+  28AA    |   Purple Violets
+  28AB    |   Blue Violets
+  28AC    |   White Violets
+  28AD    |   Yellow Violets
+  28AE    |   Jacob's Ladder
+  28AF    |   Lucky Clovers
+  28B0    |   Dandelions
+  28B1    |   Dandelion Puffs
+  28B2    |   Mega Clankoid
+  28B3    |   Clankoid
+  28B4    |   Mini Clankoid
+  28B5    |   Tall Clankoid
+  28B6    |   Squat Dingloid
+  28B7    |   Mega Dingloid
+  28B8    |   Dingloid
+  28B9    |   Mini Dingloid
+  28BA    |   Wee Dingloid
+  28BB    |   Tall Dingloid
+  28BC    |   Mega Percoloid
+  28BD    |   Tall Percoloid
+  28BE    |   Mega Oombloid
+  28BF    |   Oombloid
+  28C0    |   Mini Oombloid
+  28C1    |   Tall Oombloid
+  28C2    |   Rhythmoid
+  28C3    |   Mini Rhythmoid
+  28C4    |   Mega Puffoid
+  28C5    |   Mini Puffoid
+  28C6    |   Tall Puffoid
+  28C7    |   Mega Lullaboid
+  28C8    |   Lullaboid
+  28C9    |   Mini Lullaboid
+  28CA    |   Tall Lullaboid
+  28CB    |   Mega Sproid
+  28CC    |   Sproid
+  28CD    |   Mini Sproid
+  28CE    |   Tall Sproid
+  28CF    |   Mega Bowtoid
+  28D0    |   Bowtoid
+  28D1    |   Mini Bowtoid
+  28D2    |   Tall Bowtoid
+  28D3    |   Mega Tootoid
+  28D4    |   Tootoid
+  28D5    |   Mini Tootoid
+  28D6    |   Mega Plinkoid
+  28D7    |   Plinkoid
+  28D8    |   Mini Plinkoid
+  28D9    |   Mega Dekkoid
+  28DA    |   Dekkoid
+  28DB    |   Mini Dekkoid
+  28DC    |   Mega Buzzoid
+  28DD    |   Buzzoid
+  28DE    |   Mini Buzzoid
+  28DF    |   Tall Buzzoid
+  28E0    |   Mega Drilloid
+  28E1    |   Drilloid
+  28E2    |   Mini Drilloid
+  28E3    |   Mega Echoid
+  28E4    |   Mini Echoid
+  28E5    |   Tall Echoid
+  28E6    |   Mega Lamentoid
+  28E7    |   Lamentoid
+  28E8    |   Mini Lamentoid
+  28E9    |   Tall Lamentoid
+  28EA    |   Mega Strumboid
+  28EB    |   Strumboid
+  28EC    |   Mini Strumboid
+  28ED    |   Tall Strumboid
+  28EE    |   Mega Croakoid
+  28EF    |   Croakoid
+  28F0    |   Mini Croakoid
+  28F1    |   Tall Croakoid
+  28F2    |   Mega Fizzoid
+  28F3    |   Mini Fizzoid
+  28F4    |   Mega Squelchoid
+  28F5    |   Squelchoid
+  28F6    |   Mini Squelchoid
+  28F7    |   Mega Howloid
+  28F8    |   Howloid
+  28F9    |   Mini Howloid
+  28FA    |   Mega Nebuloid
+  28FB    |   Squat Nebuloid
+  28FC    |   Nebuloid
+  28FD    |   Mini Nebuloid
+  28FE    |   Tall Nebuloid
+  28FF    |   Slim Nebuloid
+  2900    |   Mega Gongoid
+  2901    |   Gongoid
+  2902    |   Mini Gongoid
+  2903    |   Tall Gongoid
+  2904    |   Mega Poltergoid
+  2905    |   Poltergoid
+  2906    |   Mini Poltergoid
+  2907    |   Tall Poltergoid
+  2908    |   Metatoid
+  2909    |   Mini Metatoid
+  290A    |   Mega Bovoid
+  290B    |   Tall Bovoid
+  290C    |   Mega Oboid
+  290D    |   Oboid
+  290E    |   Tall Oboid
+  290F    |   Mega Dinkoid
+  2910    |   Mini Dinkoid
+  2911    |   Mega Harmonoid
+  2912    |   Harmonoid
+  2913    |   Mini Harmonoid
+  2914    |   Tall Harmonoid
+  2915    |   Tall Droploid
+  2916    |   Mega Sputnoid
+  2917    |   Sputnoid
+  2918    |   Mini Sputnoid
+  2919    |   Tall Sputnoid
+  291A    |   Mega Alloid
+  291B    |   Mini Alloid
+  291C    |   Tall Alloid
+  291D    |   Mega Timpanoid
+  291E    |   Timpanoid
+  291F    |   Mini Timpanoid
+  2920    |   Tall Timpanoid
+  2921    |   Gargloid
+  2922    |   Mini Gargloid
+  2923    |   Tall Gargloid
+  2924    |   Warbloid
+  2925    |   Mini Warbloid
+  2926    |   Tall Warbloid
+  2927    |   Mega Freakoid
+  2928    |   Mini Freakoid
+  2929    |   Mega Quazoid
+  292A    |   Quazoid
+  292B    |   Mini Quazoid
+  292C    |   Tall Quazoid
+  292D    |   Slim Quazoid
+  292E    |   Mega Rustoid
+  292F    |   Rustoid
+  2930    |   Mini Rustoid
+  2931    |   Mega Brewstoid
+  2932    |   Mini Brewstoid
+  2933    |   Tall Brewstoid
+  2934    |   Brewstoid
+  2935    |   Exotic Bed
+  2936    |   Exotic Bureau
+  2937    |   Exotic Wardrobe
+  2938    |   Exotic Bench
+  2939    |   Exotic Chair
+  293A    |   Exotic Table
+  293B    |   Exotic End Table
+  293C    |   Exotic Lamp
+  293D    |   Exotic Screen
+  293E    |   Exotic Chest
+  293F    |   Exotic Wall Shelf
+  2940    |   Ranch Bed
+  2941    |   Ranch Dresser
+  2942    |   Ranch Wardrobe
+  2943    |   Ranch Couch
+  2944    |   Ranch Armchair
+  2945    |   Ranch Chair
+  2946    |   Ranch Table
+  2947    |   Ranch Tea Table
+  2948    |   Ranch Bookcase
+  2949    |   Ranch Hutch
+  294A    |   Ranch Wall Rack
+  294B    |   Classic Bed
+  294C    |   Classic Vanity
+  294D    |   Classic Wardrobe
+  294E    |   Classic Chair
+  294F    |   Classic Sofa
+  2950    |   Classic Table
+  2951    |   Classic Bookcase
+  2952    |   Classic Buffet
+  2953    |   Classic Desk
+  2954    |   Classic Clock
+  2955    |   Classic Wall Shelf
+  2956    |   Regal Bed
+  2957    |   Regal Dresser
+  2958    |   Regal Armoire
+  2959    |   Regal Chair
+  295A    |   Regal Sofa
+  295B    |   Regal Table
+  295C    |   Regal Lamp
+  295D    |   Regal Clock
+  295E    |   Regal Bookcase
+  295F    |   Regal Vanity
+  2960    |   Regal Wall Lamp
+  2961    |   Blue Bed
+  2962    |   Blue Bureau
+  2963    |   Blue Wardrobe
+  2964    |   Blue Chair
+  2965    |   Blue Bench
+  2966    |   Blue Table
+  2967    |   Blue Bookcase
+  2968    |   Blue Cabinet
+  2969    |   Blue Clock
+  296A    |   Blue Dresser
+  296B    |   Blue Wall Shelf
+  296C    |   Cabana Bed
+  296D    |   Cabana Dresser
+  296E    |   Cabana Wardrobe
+  296F    |   Cabana Chair
+  2970    |   Cabana Armchair
+  2971    |   Cabana Table
+  2972    |   Cabana Lamp
+  2973    |   Cabana Bookcase
+  2974    |   Cabana Vanity
+  2975    |   Cabana Screen
+  2976    |   Cabana Wall Radio
+  2977    |   Green Bed
+  2978    |   Green Dresser
+  2979    |   Green Wardrobe
+  297A    |   Green Chair
+  297B    |   Green Bench
+  297C    |   Green Table
+  297D    |   Green Desk
+  297E    |   Green Lamp
+  297F    |   Green Counter
+  2980    |   Green Pantry
+  2981    |   Green Wall Clock
+  2982    |   Cabin Bed
+  2983    |   Cabin Dresser
+  2984    |   Cabin Wardrobe
+  2985    |   Cabin Chair
+  2986    |   Cabin Armchair
+  2987    |   Cabin Couch
+  2988    |   Cabin Table
+  2989    |   Cabin Low Table
+  298A    |   Cabin Bookcase
+  298B    |   Cabin Clock
+  298C    |   Cabin Wall Clock
+  298D    |   Modern Bed
+  298E    |   Modern Dresser
+  298F    |   Modern Wardrobe
+  2990    |   Modern Chair
+  2991    |   Modern Sofa
+  2992    |   Modern End Table
+  2993    |   Modern Desk
+  2994    |   Modern Table
+  2995    |   Modern Cabinet
+  2996    |   Modern Lamp
+  2997    |   Modern Wall Clock
+  2998    |   Kiddie Bed
+  2999    |   Kiddie Dresser
+  299A    |   Kiddie Wardrobe
+  299B    |   Kiddie Couch
+  299C    |   Kiddie Chair
+  299D    |   Kiddie Table
+  299E    |   Kiddie Bureau
+  299F    |   Kiddie Bookcase
+  29A0    |   Kiddie Clock
+  29A1    |   Kiddie Stereo
+  29A2    |   Kiddie Wall Clock
+  29A3    |   Lovely Bed
+  29A4    |   Lovely Dresser
+  29A5    |   Lovely Armoire
+  29A6    |   Lovely Chair
+  29A7    |   Lovely Love Seat
+  29A8    |   Lovely End Table
+  29A9    |   Lovely Table
+  29AA    |   Lovely Vanity
+  29AB    |   Lovely Kitchen
+  29AC    |   Lovely Lamp
+  29AD    |   Lovely Wall Clock
+  29AE    |   Robo-Bed
+  29AF    |   Robo-Dresser
+  29B0    |   Robo-Closet
+  29B1    |   Robo-Sofa
+  29B2    |   Robo-Chair
+  29B3    |   Robo-Table
+  29B4    |   Robo-Stereo
+  29B5    |   Robo-TV
+  29B6    |   Robo-Clock
+  29B7    |   Robo-Lamp
+  29B8    |   Robo-Wall Clock
+  29B9    |   Polka-Dot Bed
+  29BA    |   Polka-Dot Dresser
+  29BB    |   Polka-Dot Closet
+  29BC    |   Polka-Dot Chair
+  29BD    |   Polka-Dot Sofa
+  29BE    |   Polka-Dot Table
+  29BF    |   Polka-Dot Lamp
+  29C0    |   Polka-Dot Stool
+  29C1    |   Polka-Dot Low Table
+  29C2    |   Polka-Dot TV
+  29C3    |   Polka-Dot Clock
+  29C4    |   Snowman Bed
+  29C5    |   Snowman Dresser
+  29C6    |   Snowman Wardrobe
+  29C7    |   Snowman Chair
+  29C8    |   Snowman Sofa
+  29C9    |   Snowman Table
+  29CA    |   Snowman Fridge
+  29CB    |   Snowman TV
+  29CC    |   Snowman Clock
+  29CD    |   Snowman Lamp
+  29CE    |   Snowman Vanity
+  29CF    |   Mush Bed
+  29D0    |   Mush Dresser
+  29D1    |   Mush Closet
+  29D2    |   Mush Chair
+  29D3    |   Mush Stool
+  29D4    |   Mush Table
+  29D5    |   Mush End Table
+  29D6    |   Mush Lamp
+  29D7    |   Mush Wall Lamp
+  29D8    |   Mush TV
+  29D9    |   Mush Hanger
+  29DA    |   Pavé Bed
+  29DB    |   Pavé Chest
+  29DC    |   Pavé Closet
+  29DD    |   Pavé Sofa
+  29DE    |   Pavé Chair
+  29DF    |   Pavé Table
+  29E0    |   Pavé End Table
+  29E1    |   Pavé Bookshelf
+  29E2    |   Pavé Bureau
+  29E3    |   Pavé Lamp
+  29E4    |   Pavé Clock
+  29E5    |   Egg Bed
+  29E6    |   Egg Dresser
+  29E7    |   Egg Wardrobe
+  29E8    |   Egg Chair
+  29E9    |   Egg Bench
+  29EA    |   Egg Table
+  29EB    |   Egg Stereo
+  29EC    |   Egg Toy Set
+  29ED    |   Egg Clock
+  29EE    |   Egg Lamp
+  29EF    |   Egg TV
+  29F0    |   Spooky Bed
+  29F1    |   Spooky Dresser
+  29F2    |   Spooky Wardrobe
+  29F3    |   Spooky Sofa
+  29F4    |   Spooky Chair
+  29F5    |   Spooky Table
+  29F6    |   Spooky Vanity
+  29F7    |   Spooky Bookcase
+  29F8    |   Spooky Clock
+  29F9    |   Spooky Lamp
+  29FA    |   Spooky Wall Lamp
+  29FB    |   Harvest Bed
+  29FC    |   Harvest Dresser
+  29FD    |   Harvest Bureau
+  29FE    |   Harvest Sofa
+  29FF    |   Harvest Chair
+  2A00    |   Harvest Table
+  2A01    |   Harvest Mirror
+  2A02    |   Harvest TV
+  2A03    |   Harvest Clock
+  2A04    |   Harvest Lamp
+  2A05    |   Harvest Wall Lamp
+  2A06    |   Jingle Bed
+  2A07    |   Jingle Dresser
+  2A08    |   Jingle Wardrobe
+  2A09    |   Jingle Sofa
+  2A0A    |   Jingle Chair
+  2A0B    |   Jingle Table
+  2A0C    |   Jingle Shelves
+  2A0D    |   Jingle Piano
+  2A0E    |   Jingle Clock
+  2A0F    |   Jingle Lamp
+  2A10    |   Jingle TV
+  2A11    |   Princess Bed
+  2A12    |   Princess Chest
+  2A13    |   Princess Closet
+  2A14    |   Princess Sofa
+  2A15    |   Princess Chair
+  2A16    |   Princess Table
+  2A17    |   Princess Curio
+  2A18    |   Princess Dresser
+  2A19    |   Princess Cage
+  2A1A    |   Princess Lamp
+  2A1B    |   Princess Clock
+  2A1C    |   Gracie Bed
+  2A1D    |   Gracie Chest
+  2A1E    |   Gracie Wardrobe
+  2A1F    |   Gracie Bench
+  2A20    |   Gracie Chair
+  2A21    |   Gracie Low Table
+  2A22    |   Gracie Desk
+  2A23    |   Gracie Wagon
+  2A24    |   Gracie Shelf
+  2A25    |   Gracie Lamp
+  2A26    |   Gracie Wall Clock
+  2A27    |   Sweets Bed
+  2A28    |   Sweets Dresser
+  2A29    |   Sweets Closet
+  2A2A    |   Sweets Sofa
+  2A2B    |   Sweets Chair
+  2A2C    |   Sweets Table
+  2A2D    |   Sweets Minitable
+  2A2E    |   Sweets Bookcase
+  2A2F    |   Sweets Lamp
+  2A30    |   Sweets Minilamp
+  2A31    |   Sweets Player
+  2A32    |   Gorgeous Bed
+  2A33    |   Gorgeous Chest
+  2A34    |   Gorgeous Closet
+  2A35    |   Gorgeous Sofa
+  2A36    |   Gorgeous Seat
+  2A37    |   Gorgeous Stool
+  2A38    |   Gorgeous Table
+  2A39    |   Gorgeous Desk
+  2A3A    |   Gorgeous Counter
+  2A3B    |   Gorgeous Lamp
+  2A3C    |   Gorgeous Wall Clock
+  2A3D    |   Minimalist Bed
+  2A3E    |   Minimalist Sofa
+  2A3F    |   Minimalist Chair
+  2A40    |   Minimalist Dresser
+  2A41    |   Minimalist Wardrobe
+  2A42    |   Minimalist Clock
+  2A43    |   Minimalist Lamp
+  2A44    |   Minimalist Ottoman
+  2A45    |   Minimalist Table
+  2A46    |   Minimalist Minitable
+  2A47    |   Minimalist Vanity
+  2A48    |   Golden Bed
+  2A49    |   Golden Dresser
+  2A4A    |   Golden Closet
+  2A4B    |   Golden Chair
+  2A4C    |   Golden Bench
+  2A4D    |   Golden Table
+  2A4E    |   Golden Clock
+  2A4F    |   Golden Man
+  2A50    |   Golden Woman
+  2A51    |   Golden Screen
+  2A52    |   Golden Wall Torch
+  2A53    |   Cow Skull
+  2A54    |   Desert Cactus
+  2A55    |   Western Fence
+  2A56    |   Saddle Fence
+  2A57    |   Storefront
+  2A58    |   Covered Wagon
+  2A59    |   Watering Trough
+  2A5A    |   Tumbleweed
+  2A5B    |   Well
+  2A5C    |   Wagon Wheel
+  2A5D    |   Asteroid
+  2A5E    |   Moon
+  2A5F    |   Lunar Lander
+  2A60    |   Rocket
+  2A61    |   Lunar Rover
+  2A62    |   Satellite
+  2A63    |   Space Shuttle
+  2A64    |   Spaceman Sam
+  2A65    |   Space Station
+  2A66    |   Flying Saucer
+  2A67    |   Detour Arrow
+  2A68    |   Handcart
+  2A69    |   Iron Frame
+  2A6A    |   Manhole Cover
+  2A6B    |   Orange Cone
+  2A6C    |   Traffic Cone
+  2A6D    |   Sawhorse
+  2A6E    |   Wet-Road Sign
+  2A6F    |   Steamroller
+  2A70    |   Jackhammer
+  2A71    |   Striped Cone
+  2A72    |   Cement Mixer
+  2A73    |   Oil Barrel
+  2A74    |   Boxing Barricade
+  2A75    |   Red Corner
+  2A76    |   Blue Corner
+  2A77    |   Neutral Corner
+  2A78    |   Judge's Bell
+  2A79    |   Boxing Mat
+  2A7A    |   Ringside Table
+  2A7B    |   Weight Bench
+  2A7C    |   Sandbag
+  2A7D    |   Speed Bag
+  2A7E    |   Birdhouse
+  2A7F    |   Mr. Flamingo
+  2A80    |   Mrs. Flamingo
+  2A81    |   Garden Gnome
+  2A82    |   Bug Zapper
+  2A83    |   Hammock
+  2A84    |   Birdbath
+  2A85    |   Picnic Table
+  2A86    |   Bird Feeder
+  2A87    |   Lawn Chair
+  2A88    |   Lawn Mower
+  2A89    |   Barbecue
+  2A8A    |   Backyard Pool
+  2A8B    |   Sprinkler
+  2A8C    |   Tiki Torch
+  2A8D    |   Elephant Slide
+  2A8E    |   Stroller
+  2A8F    |   Cradle
+  2A90    |   Baby Bed
+  2A91    |   Clackercart
+  2A92    |   Merry-Go-Round
+  2A93    |   Rocking Horse
+  2A94    |   Train Set
+  2A95    |   Wobbelina
+  2A96    |   Dolly
+  2A97    |   Lab Bench
+  2A98    |   Lab Chair
+  2A99    |   Medicine Chest
+  2A9A    |   Florence Flask
+  2A9B    |   Amazing Machine
+  2A9C    |   Unknown Machine
+  2A9D    |   Complex Machine
+  2A9E    |   Helm
+  2A9F    |   Barrel
+  2AA0    |   Keg
+  2AA1    |   Ship Cannon
+  2AA2    |   Anchor
+  2AA3    |   Ship Compass
+  2AA4    |   Creepy Skeleton
+  2AA5    |   Creepy Cauldron
+  2AA6    |   Creepy Bat Stone
+  2AA7    |   Creepy Stone
+  2AA8    |   Creepy Coffin
+  2AA9    |   Creepy Crystal
+  2AAA    |   Creepy Clock
+  2AAB    |   Creepy Statue
+  2AAC    |   Pawn
+  2AAD    |   Bishop
+  2AAE    |   King
+  2AAF    |   Knight
+  2AB0    |   Queen
+  2AB1    |   Rook
+  2AB2    |   Right Platform
+  2AB3    |   Left Platform
+  2AB4    |   Podium
+  2AB5    |   Teacher's Desk
+  2AB6    |   Teacher's Chair
+  2AB7    |   School Desk
+  2AB8    |   School Chair
+  2AB9    |   Cubbyhole
+  2ABA    |   Chalkboard
+  2ABB    |   Mop
+  2ABC    |   Skeleton
+  2ABD    |   Anatomical Model
+  2ABE    |   Clear Model
+  2ABF    |   Hamster Cage
+  2AC0    |   Science Table
+  2AC1    |   Vaulting Horse
+  2AC2    |   Ball Catcher
+  2AC3    |   High-Jump Mat
+  2AC4    |   Hurdle
+  2AC5    |   Scoreboard
+  2AC6    |   Folding Chair
+  2AC7    |   Vision Tester
+  2AC8    |   Trunk Measure
+  2AC9    |   Stadiometer
+  2ACA    |   Scale
+  2ACB    |   Hospital Bed
+  2ACC    |   Hospital Screen
+  2ACD    |   IV Drip
+  2ACE    |   Washbasin
+  2ACF    |   Writing Desk
+  2AD0    |   Writing Chair
+  2AD1    |   Globe
+  2AD2    |   Office Desk
+  2AD3    |   Office Chair
+  2AD4    |   Office Locker
+  2AD5    |   Coffeemaker
+  2AD6    |   Checkout Counter
+  2AD7    |   Cash Register
+  2AD8    |   Jukebox
+  2AD9    |   Siphon
+  2ADA    |   Giant Dharma
+  2ADB    |   Dharma
+  2ADC    |   Mini Dharma
+  2ADD    |   Papa Bear
+  2ADE    |   Mama Bear
+  2ADF    |   Baby Bear
+  2AE0    |   Mama Polar Bear
+  2AE1    |   Papa Panda
+  2AE2    |   Mama Panda
+  2AE3    |   Baby Panda
+  2AE4    |   Tall Cactus
+  2AE5    |   Cactus
+  2AE6    |   Round Cactus
+  2AE7    |   Golf Bag
+  2AE8    |   Simple Armchair
+  2AE9    |   Simple Love Seat
+  2AEA    |   Bear Pole
+  2AEB    |   Eagle Pole
+  2AEC    |   Frog-Woman Pole
+  2AED    |   Raven Pole
+  2AEE    |   Lava Lamp
+  2AEF    |   Tea Table
+  2AF0    |   Hearth
+  2AF1    |   Screen
+  2AF2    |   Hibachi
+  2AF3    |   Tea Tansu
+  2AF4    |   Paper Lantern
+  2AF5    |   Paper Wall Lamp
+  2AF6    |   Paulownia Closet
+  2AF7    |   Stair Dresser
+  2AF8    |   Low Screen
+  2AF9    |   Paper Tiger
+  2AFA    |   Lucky Frog
+  2AFB    |   Sword
+  2AFC    |   Bow
+  2AFD    |   Samurai Suit
+  2AFE    |   Black Katana
+  2AFF    |   White Katana
+  2B00    |   Ninja Sword
+  2B01    |   Deer Scare
+  2B02    |   Tall Lantern
+  2B03    |   Spa Chair
+  2B04    |   Bath Mat
+  2B05    |   Bucket
+  2B06    |   Bathtub
+  2B07    |   Milk Case
+  2B08    |   Ice-Cream Case
+  2B09    |   Wash Station
+  2B0A    |   Tea Vase
+  2B0B    |   Red Vase
+  2B0C    |   Blue Vase
+  2B0D    |   Lucky Cat
+  2B0E    |   Lefty Lucky Cat
+  2B0F    |   Lucky Black Cat
+  2B10    |   Lucky Gold Cat
+  2B11    |   Grapefruit Table
+  2B12    |   Lemon Table
+  2B13    |   Tangerine Chair
+  2B14    |   Kiwi Stool
+  2B15    |   Pear Wardrobe
+  2B16    |   Pear Dresser
+  2B17    |   Watermelon Chair
+  2B18    |   Watermelon Table
+  2B19    |   Juicy-Apple TV
+  2B1A    |   Juicy-Apple Clock
+  2B1B    |   Lily-Pad Table
+  2B1C    |   Froggy Chair
+  2B1D    |   Pine Chair
+  2B1E    |   Pine Table
+  2B1F    |   Flower Chair
+  2B20    |   Flower Table
+  2B21    |   Ponderosa Bonsai
+  2B22    |   Pine Bonsai
+  2B23    |   Mugho Bonsai
+  2B24    |   Plum Bonsai
+  2B25    |   Holly Bonsai
+  2B26    |   Azalea Bonsai
+  2B27    |   Maple Bonsai
+  2B28    |   Hawthorn Bonsai
+  2B29    |   Quince Bonsai
+  2B2A    |   Jasmine Bonsai
+  2B2B    |   Pothos
+  2B2C    |   Coconut Palm
+  2B2D    |   Pachira
+  2B2E    |   Caladium
+  2B2F    |   Croton
+  2B30    |   Dracaena
+  2B31    |   Lady Palm
+  2B32    |   Aloe
+  2B33    |   Rubber Tree
+  2B34    |   Snake Plant
+  2B35    |   Fan Palm
+  2B36    |   Corn Plant
+  2B37    |   Bromeliaceae
+  2B38    |   Weeping Fig
+  2B39    |   Conga Drum
+  2B3A    |   Djimbe Drum
+  2B3B    |   Timpano Drum
+  2B3C    |   Violin
+  2B3D    |   Cello
+  2B3E    |   Bass
+  2B3F    |   Folk Guitar
+  2B40    |   Country Guitar
+  2B41    |   Rock Guitar
+  2B42    |   Electric Guitar
+  2B43    |   Ukulele
+  2B44    |   Ebony Piano
+  2B45    |   Upright Piano
+  2B46    |   Taiko Drum
+  2B47    |   Vibraphone
+  2B48    |   Biwa Lute
+  2B49    |   Harp
+  2B4A    |   Metronome
+  2B4B    |   Trash Can
+  2B4C    |   Garbage Pail
+  2B4D    |   Garbage Can
+  2B4E    |   Trash Bin
+  2B4F    |   Pantheon Post
+  2B50    |   Ionian Post
+  2B51    |   Corinthian Post
+  2B52    |   Broken Post
+  2B53    |   Pyramid
+  2B54    |   Sphinx
+  2B55    |   Mummy's Casket
+  2B56    |   Jomon Pottery
+  2B57    |   Tennis Table
+  2B58    |   Bowling Pins
+  2B59    |   Ball Return
+  2B5A    |   Basketball Hoop
+  2B5B    |   Billiard Table
+  2B5C    |   Mahjong Table
+  2B5D    |   Dartboard
+  2B5E    |   Pinball Machine
+  2B5F    |   Arcade Machine
+  2B60    |   Tabletop Game
+  2B61    |   Stool
+  2B62    |   Shogi Board
+  2B63    |   Go Board
+  2B64    |   Arc De Triomphe
+  2B65    |   Plate Armor
+  2B66    |   Tower Of Pisa
+  2B67    |   Compass
+  2B68    |   Box Of Chocolates
+  2B69    |   Backpack
+  2B6A    |   Mountain Bike
+  2B6B    |   Propane Stove
+  2B6C    |   Kayak
+  2B6D    |   Lantern
+  2B6E    |   Sleeping Bag
+  2B6F    |   Campfire
+  2B70    |   Bonfire
+  2B71    |   TV With VCR
+  2B72    |   Wide-Screen TV
+  2B73    |   Retro TV
+  2B74    |   Kitchen Sink
+  2B75    |   Kitchen Corner
+  2B76    |   Deluxe Range
+  2B77    |   Range
+  2B78    |   Stove
+  2B79    |   Sink
+  2B7A    |   Tea Set
+  2B7B    |   Shaved-Ice Maker
+  2B7C    |   Refrigerator
+  2B7D    |   Retro Fridge
+  2B7E    |   Microwave
+  2B7F    |   Toaster
+  2B80    |   Mixer
+  2B81    |   Clothesline Pole
+  2B82    |   Doghouse
+  2B83    |   Beach Chair
+  2B84    |   Wave Breaker
+  2B85    |   Surfboard
+  2B86    |   Diver Dan
+  2B87    |   Beach Table
+  2B88    |   Treasure Chest
+  2B89    |   Life Ring
+  2B8A    |   Snowboard
+  2B8B    |   Sleigh
+  2B8C    |   Snowman
+  2B8D    |   Sunflower
+  2B8E    |   Daffodil
+  2B8F    |   Gerbera
+  2B90    |   Toilet
+  2B91    |   Super Toilet
+  2B92    |   Men's Toilet
+  2B93    |   Game Shelf
+  2B94    |   Safe
+  2B95    |   Deluxe Washer
+  2B96    |   Automatic Washer
+  2B97    |   Washer/dryer
+  2B98    |   Potbelly Stove
+  2B99    |   Space Heater
+  2B9A    |   Fireplace
+  2B9B    |   Radiator
+  2B9C    |   Phonograph
+  2B9D    |   Turntable
+  2B9E    |   Reel-To-Reel
+  2B9F    |   Retro Stereo
+  2BA0    |   Gold Stereo
+  2BA1    |   Hi-Fi Stereo
+  2BA2    |   High-End Stereo
+  2BA3    |   Dice Stereo
+  2BA4    |   Tape Deck
+  2BA5    |   CD Player
+  2BA6    |   Cassette Player
+  2BA7    |   Round Clock
+  2BA8    |   Kitschy Clock
+  2BA9    |   Antique Clock
+  2BAA    |   Cube Clock
+  2BAB    |   Odd Clock
+  2BAC    |   Oval Clock
+  2BAD    |   Owl Clock
+  2BAE    |   Alarm Clock
+  2BAF    |   Common Chair
+  2BB0    |   Rocking Chair
+  2BB1    |   Lefty Desk
+  2BB2    |   Righty Desk
+  2BB3    |   Gas Pump
+  2BB4    |   Extinguisher
+  2BB5    |   Fire Hydrant
+  2BB6    |   Raccoon Figurine
+  2BB7    |   Barber's Pole
+  2BB8    |   Candy Machine
+  2BB9    |   Scarecrow
+  2BBA    |   Birdcage
+  2BBB    |   Phone Box
+  2BBC    |   Outdoor Bath
+  2BBD    |   Wheat Field
+  2BBE    |   Computer
+  2BBF    |   Pineapple Bed
+  2BC0    |   Glass-Top Table
+  2BC1    |   Kotatsu
+  2BC2    |   Cream Sofa
+  2BC3    |   Storage Case
+  2BC4    |   Clothes Closet
+  2BC5    |   Claw-Foot Tub
+  2BC6    |   Shower
+  2BC7    |   Massage Chair
+  2BC8    |   Vacuum Cleaner
+  2BC9    |   Bottled Ship
+  2BCA    |   Water Bird
+  2BCB    |   Executive Toy
+  2BCC    |   Telescope
+  2BCD    |   Mochi Pestle
+  2BCE    |   Old Sewing Machine
+  2BCF    |   Cardboard Box
+  2BD0    |   Wooden Box
+  2BD1    |   Fan
+  2BD2    |   Candle
+  2BD3    |   Mini Lamp
+  2BD4    |   Desk Light
+  2BD5    |   Table Lamp
+  2BD6    |   Throne
+  2BD7    |   Common Bed
+  2BD8    |   Block
+  2BD9    |   Coin
+  2BDA    |   Goal Pole
+  2BDB    |   Fire Flower
+  2BDC    |   Super Mushroom
+  2BDD    |   Green Shell
+  2BDE    |   Super Star
+  2BDF    |   1-Up Mushroom
+  2BE0    |   ? Block
+  2BE1    |   Pipe
+  2BE2    |   Fire Bar
+  2BE3    |   Bill Blaster
+  2BE4    |   Yoshi's Egg
+  2BE5    |   Triple Bananas
+  2BE6    |   Triple Red Shells
+  2BE7    |   Kart
+  2BE8    |   Pikmin
+  2BE9    |   Blue Falcon
+  2BEA    |   Master Sword
+  2BEB    |   Arwing
+  2BEC    |   Triforce
+  2BED    |   Metroid
+  2BEE    |   S.S. Dolphin
+  2BEF    |   Jack-In-The-Box
+  2BF0    |   Kadomatsu
+  2BF1    |   Kagamimochi
+  2BF2    |   Hinaningyo
+  2BF3    |   Big Festive Tree
+  2BF4    |   Festive Tree
+  2BF5    |   Festive Flag
+  2BF6    |   Festive Candle
+  2BF7    |   Lovely Phone
+  2BF8    |   Box Of Tissues
+  2BF9    |   Piggy Bank
+  2BFA    |   Bellpoint
+  2BFB    |   Aluminum Briefcase
+  2BFC    |   Rice Cake
+  2BFD    |   Dango
+  2BFE    |   Bamboo Grass
+  2BFF    |   Resetti Model
+  2C00    |   Cool Globe
+  2C01    |   Picnic Basket
+  2C02    |   Sailboat Model
+  2C03    |   Wheat Bundle
+  2C04    |   Espresso Maker
+  2C05    |   Stuffed Stocking
+  2C06    |   Snow Globe
+  2C07    |   Veggie Basket
+  2C08    |   Yut Board
+  2C09    |   Hibiscus
+  2C0A    |   Bureom
+  2C0B    |   Festive Wreath
+  2C0C    |   Brown Pot
+  2C0D    |   White Pot
+  2C0E    |   Tapestry
+  2C0F    |   Top
+  2C10    |   Tokonoma
+  2C11    |   Carp Banner
+  2C12    |   Eggplant Cow
+  2C13    |   Morning Glory
+  2C14    |   Pile Of Leaves
+  2C15    |   Sand Castle
+  2C16    |   Shopping Cart
+  2C17    |   Hagoita
+  2C18    |   Blossom Lantern
+  2C19    |   Cucumber Horse
+  2C1A    |   Fedora Chair
+  2C1B    |   Tteok Plate
+  2C1C    |   Kimbap Plate
+  2C1D    |   Shaved-Ice Lamp
+  2C1E    |   Flower Bouquet
+  2C1F    |   Cupid Bench
+  2C20    |   Display Stand
+  2C21    |   Glass Display Case
+  2C22    |   Flat Display Case
+  2C23    |   Tall Display Case
+  2C24    |   Museum Chair
+  2C25    |   Arrow Sign
+  2C26    |   Fancy Frame
+  2C27    |   Thermohygrometer
+  2C28    |   Reception Table
+  2C29    |   Poster Stand
+  2C2A    |   Exhibit Partition
+  2C2B    |   Jellyfish Lamp
+  2C2C    |   Air Conditioner
+  2C2D    |   Pendulum Clock
+  2C2E    |   LED Display
+  2C2F    |   Gold Fish Trophy
+  2C30    |   Silver Fish Trophy
+  2C31    |   Bronze Fish Trophy
+  2C32    |   Gold Bug Trophy
+  2C33    |   Silver Bug Trophy
+  2C34    |   Bronze Bug Trophy
+  2C35    |   Museum Model
+  2C36    |   Letter Set
+  2C37    |   New Year's Noodles
+  2C38    |   Bell Knickknack
+  2C39    |   Pipe Stool
+  2C3A    |   Cornucopia
+  2C3B    |   Pumpkin Pie
+  2C3C    |   Turkey
+  2C3D    |   Afternoon-Tea Set
+  2C3E    |   Large Bookshelf
+  2C3F    |   Stepladder
+  2C40    |   Microscope
+  2C41    |   Moth Orchid
+  2C42    |   Tricycle
+  2C43    |   Shower Stall
+  2C44    |   Mic Stand
+  2C45    |   Tatami Bed
+  2C46    |   Harpsichord
+  2C47    |   Director's Chair
+  2C48    |   Theremin
+  2C49    |   Bunk Bed
+  2C4A    |   Lovely Doll
+  2C4B    |   Volleyball Net
+  2C4C    |   Pink Velvet Stool
+  2C4D    |   Yule Log
+  2C4E    |   Fancy Doll
+  2C4F    |   Fruit Basket
+  2C50    |   Poinsettia
+  2C51    |   Hot Plate
+  2C52    |   Snow Bunny
+  2C53    |   Vintage Telephone
+  2C54    |   Record Player
+  2C55    |   Spinning Wheel
+  2C56    |   Pop-Up Book
+  2C57    |   Drip Pail
+  2C58    |   Oil Lamp
+  2C59    |   Electric Kettle
+  2C5A    |   Wedding Cake
+  2C5B    |   Candy Jar
+  2C5C    |   Holiday Candle
+  2C5D    |   Fish Grill
+  2C5E    |   Lily Lamp
+  2C5F    |   Standing Spotlight
+  2C60    |   Small Spotlight
+  2C61    |   Stained-Glass Lamp
+  2C62    |   Campfire Cookware
+  2C63    |   Small Igloo
+  2C64    |   Colorful Wheel
+  2C65    |   Vintage Camera
+  2C66    |   Small LED Display
+  2C67    |   HHA Pennant
+  2C68    |   Silver HHA Plaque
+  2C69    |   Gold HHA Plaque
+  2C6A    |   Silver HHA Trophy
+  2C6B    |   Gold HHA Trophy
+  2C6C    |   Gold House Model
+  2C6D    |   Cat Tower
+  2C6E    |   Dishwasher
+  2C6F    |   Wooden Stool
+  2C70    |   CD Shelf
+  2C71    |   Metal Guitar
+  2C72    |   Large Magazine Rack
+  2C73    |   Trunk
+  2C74    |   Milk Can
+  2C75    |   Coat Hanger
+  2C76    |   Lotus Lamp
+  2C77    |   Sewing Machine
+  2C78    |   Dollhouse
+  2C79    |   Slushie Machine
+  2C7A    |   Computer Desk
+  2C7B    |   Potty
+  2C7C    |   Kettle
+  2C7D    |   Homework Set
+  2C7E    |   Salad Bar
+  2C7F    |   Rope Partition
+  2C80    |   Washing Machine
+  2C81    |   Aroma Pot
+  2C82    |   Game-Show Stand
+  2C83    |   Soda Case
+  2C84    |   Donut Stool
+  2C85    |   Steamed-Bun Case
+  2C86    |   Clay Furnace
+  2C87    |   Flat-Screen TV
+  2C88    |   Bingo Wheel
+  2C89    |   Editor's Chair
+  2C8A    |   Painting Set
+  2C8B    |   Editor's Desk
+  2C8C    |   Revolving Spice Rack
+  2C8D    |   Bathroom Sink
+  2C8E    |   Incense Burner
+  2C8F    |   Small Magazine Rack
+  2C90    |   Rice Cooker
+  2C91    |   Star Projector
+  2C92    |   Conveyor-Belt Sushi
+  2C93    |   Star Globe
+  2C94    |   Whiteboard
+  2C95    |   Peacock Chair
+  2C96    |   Whirlpool Bath
+  2C97    |   Kitchen Island
+  2C98    |   Cushion
+  2C99    |   Sanshin
+  2C9A    |   Effects Rack
+  2C9B    |   Humidifier
+  2C9C    |   Time Clock
+  2C9D    |   Crane Game
+  2C9E    |   Music Stand
+  2C9F    |   Ironing Set
+  2CA0    |   Rolling Suitcase
+  2CA1    |   Planter
+  2CA2    |   Dentist's Chair
+  2CA3    |   Amp
+  2CA4    |   Loom
+  2CA5    |   Lazy-Susan Table
+  2CA6    |   Pickle Jar
+  2CA7    |   TV Camera
+  2CA8    |   Buffet Server
+  2CA9    |   Freezer
+  2CAA    |   Ceramic Hot Pot
+  2CAB    |   Stewpot
+  2CAC    |   Laptop
+  2CAD    |   Server
+  2CAE    |   Copy Machine
+  2CAF    |   Drum Set
+  2CB0    |   Soda Fountain
+  2CB1    |   Water Cooler
+  2CB2    |   Upright Vacuum
+  2CB3    |   Makeup Case
+  2CB4    |   Double-Neck Guitar
+  2CB5    |   Virtual Boy
+  2CB6    |   Popcorn Machine
+  2CB7    |   DJ's Turntable
+  2CB8    |   Flashy-Flower Sign
+  2CB9    |   Soft-Serve Lamp
+  2CBA    |   Home-Computer Rack
+  2CBB    |   Pipe Organ
+  2CBC    |   Karaoke System
+  2CBD    |   Simple Kettle
+  2CBE    |   Digital-Photo Frame
+  2CBF    |   Pot Rack
+  2CC0    |   Wall Flowerpot
+  2CC1    |   Display Shelf
+  2CC2    |   Stained Glass
+  2CC3    |   School Speaker
+  2CC4    |   Blue Certificate
+  2CC5    |   Hospital TV
+  2CC6    |   Cuckoo Clock
+  2CC7    |   Wall Fan
+  2CC8    |   Mobile
+  2CC9    |   Breaker
+  2CCA    |   Yellow Certificate
+  2CCB    |   Ventilation Fan
+  2CCC    |   Life Preserver
+  2CCD    |   Festival Lantern
+  2CCE    |   Surveillance Camera
+  2CCF    |   Exit Sign
+  2CD0    |   Wall-Mounted Speaker
+  2CD1    |   Sconce
+  2CD2    |   Bathroom Stall
+  2CD3    |   Portable Toilet
+  2CD4    |   Elder Mask
+  2CD5    |   Ogre Mask
+  2CD6    |   Female Mask
+  2CD7    |   Spiderweb Clock
+  2CD8    |   Caterpillar Sofa
+  2CD9    |   Beetle Chair
+  2CDA    |   Stag-Beetle Chair
+  2CDB    |   Honeybee Chest
+  2CDC    |   Firefly Lamp
+  2CDD    |   Mini Butterfly Table
+  2CDE    |   Ladybug Chair
+  2CDF    |   Snail Clock
+  2CE0    |   Cicada Stereo
+  2CE1    |   Sea-Anemone Bed
+  2CE2    |   Squid Chair
+  2CE3    |   Crab Clock
+  2CE4    |   Football-Fish Lamp
+  2CE5    |   Octopus Chair
+  2CE6    |   Red-Snapper Chair
+  2CE7    |   Puffer-Fish TV
+  2CE8    |   Dab Table
+  2CE9    |   Flounder Table
+  2CEA    |   Raccoon Wall Clock
+  2CEB    |   Tall Mini Cactus
+  2CEC    |   Mini Cactus
+  2CED    |   Round Mini Cactus
+  2CEE    |   Exercise Bike
+  2CEF    |   Butterfly Machine
+  2CF0    |   Lat Pulldown Machine
+  2CF1    |   Treadmill
+  2CF2    |   Bread Box
+  2CF3    |   Chaise Lounge
+  2CF4    |   Chocolate Fountain
+  2CF5    |   Box Sofa
+  2CF6    |   Box Corner Sofa
+  2CF7    |   Lunch Tray
+  2CF8    |   Hourglass
+  2CF9    |   Boxed Figurine
+  2CFA    |   Miniature Car
+  2CFB    |   Mini Circuit
+  2CFC    |   Capsule-Toy Machine
+  2CFD    |   Bilboquet
+  2CFE    |   Foosball Table
+  2CFF    |   Slide Puzzle
+  2D00    |   Egg Basket
+  2D01    |   Partition Screen
+  2D02    |   Typewriter
+  2D03    |   Sleek Sideboard
+  2D04    |   Sleek Stereo
+  2D05    |   Sleek Bed
+  2D06    |   Sleek Sofa
+  2D07    |   Sleek Chair
+  2D08    |   Sleek Dresser
+  2D09    |   Sleek Closet
+  2D0A    |   Sleek Clock
+  2D0B    |   Sleek Lamp
+  2D0C    |   Sleek Table
+  2D0D    |   Sleek Side Table
+  2D0E    |   Modern Wood Bed
+  2D0F    |   Modern Wood Sofa
+  2D10    |   Modern Wood Chair
+  2D11    |   Modern Wood Chest
+  2D12    |   Modern Wood Closet
+  2D13    |   Modern Wood Clock
+  2D14    |   Modern Wood Lamp
+  2D15    |   Modern Wood Stool
+  2D16    |   Modern Wood Table
+  2D17    |   Modern Wood Shelf
+  2D18    |   Modern Wood TV
+  2D19    |   Mermaid Bed
+  2D1A    |   Mermaid Sofa
+  2D1B    |   Mermaid Chair
+  2D1C    |   Mermaid Dresser
+  2D1D    |   Mermaid Closet
+  2D1E    |   Mermaid Clock
+  2D1F    |   Mermaid Vanity
+  2D20    |   Mermaid Lamp
+  2D21    |   Mermaid Screen
+  2D22    |   Mermaid Shelf
+  2D23    |   Mermaid Table
+  2D24    |   Ice Dresser
+  2D25    |   Ice Closet
+  2D26    |   Ice Table
+  2D27    |   Ice Chair
+  2D28    |   Ice Side Table
+  2D29    |   Ice Lamp
+  2D2A    |   Ice Shelf
+  2D2B    |   Ice Sofa
+  2D2C    |   Ice Bed
+  2D2D    |   Ice Clock
+  2D2E    |   Ice Vanity
+  2D2F    |   Rococo Candlestick
+  2D30    |   Rococo Bed
+  2D31    |   Rococo Shelf
+  2D32    |   Rococo Sofa
+  2D33    |   Rococo Chair
+  2D34    |   Rococo Dresser
+  2D35    |   Rococo Wardrobe
+  2D36    |   Rococo Clock
+  2D37    |   Rococo Vanity
+  2D38    |   Rococo Lamp
+  2D39    |   Rococo Table
+  2D3A    |   Alpine Bed
+  2D3B    |   Alpine Sofa
+  2D3C    |   Alpine Chair
+  2D3D    |   Alpine Dresser
+  2D3E    |   Alpine Closet
+  2D3F    |   Alpine Lamp
+  2D40    |   Alpine Panel
+  2D41    |   Alpine Shelf
+  2D42    |   Large Alpine Table
+  2D43    |   Alpine Low Table
+  2D44    |   Alpine Kitchen Cart
+  2D45    |   Astro CD Player
+  2D46    |   Astro Bed
+  2D47    |   Astro Sofa
+  2D48    |   Astro Chair
+  2D49    |   Astro Dresser
+  2D4A    |   Astro Closet
+  2D4B    |   Astro Clock
+  2D4C    |   Astro Table
+  2D4D    |   Astro TV
+  2D4E    |   Astro Shelf
+  2D4F    |   Astro Lamp
+  2D50    |   Card Tower
+  2D51    |   Card Bed
+  2D52    |   Card Sofa
+  2D53    |   Card Chair
+  2D54    |   Card Dresser
+  2D55    |   Card Closet
+  2D56    |   Card Wall Clock
+  2D57    |   Card Lamp
+  2D58    |   Card Screen
+  2D59    |   Card Shelf
+  2D5A    |   Card Table
+  2D5B    |   Stripe Dresser
+  2D5C    |   Stripe Lamp
+  2D5D    |   Stripe Closet
+  2D5E    |   Stripe TV
+  2D5F    |   Stripe Table
+  2D60    |   Stripe Sofa
+  2D61    |   Stripe Shelf
+  2D62    |   Stripe Clock
+  2D63    |   Stripe Bed
+  2D64    |   Stripe Bathroom Sink
+  2D65    |   Stripe Chair
+  2D66    |   Sloppy Bed
+  2D67    |   Sloppy Sofa
+  2D68    |   Sloppy Clock
+  2D69    |   Sloppy Chair
+  2D6A    |   Sloppy Table
+  2D6B    |   Sloppy Closet
+  2D6C    |   Sloppy Sink
+  2D6D    |   Sloppy Lamp
+  2D6E    |   Sloppy Stereo
+  2D6F    |   Sloppy TV
+  2D70    |   Sloppy Dresser
+  2D71    |   Beacon Fire
+  2D72    |   Circle Banner
+  2D73    |   General's Fan
+  2D74    |   Hedge Standee
+  2D75    |   Grass Standee
+  2D76    |   Mountain Standee
+  2D77    |   Tree Standee
+  2D78    |   Cacao Tree
+  2D79    |   Drinking Fountain
+  2D7A    |   Potted Ivy
+  2D7B    |   Genie's Lamp
+  2D7C    |   Boomerang
+  2D7D    |   Neon Sign
+  2D7E    |   Rooster Of Barcelos
+  2D7F    |   Dala Horse
+  2D80    |   Dream Catcher
+  2D81    |   Skeleton Figurine
+  2D82    |   Post-Office Poster
+  2D83    |   Shamrock Clock
+  2D84    |   Red-Tasseled Lantern
+  2D85    |   Hula Doll
+  2D86    |   Moai Statue
+  2D87    |   Tribal Mask
+  2D88    |   Merlion
+  2D89    |   Pagoda
+  2D8A    |   Mermaid Statue
+  2D8B    |   Mouth Of Truth
+  2D8C    |   Manneken Pis
+  2D8D    |   Matryoshka
+  2D8E    |   Samgyetang
+  2D8F    |   Eiffel Tower
+  2D90    |   Jolly Roger
+  2D91    |   Vintage Telescope
+  2D92    |   Pirate's Armor
+  2D93    |   Marshmallow Chair
+  2D94    |   Cardboard Table
+  2D95    |   Cardboard Chair
+  2D96    |   Cardboard Sofa
+  2D97    |   Cardboard Closet
+  2D98    |   Cardboard Bed
+  2D99    |   Zodiac Rat
+  2D9A    |   Zodiac Ox
+  2D9B    |   Zodiac Tiger
+  2D9C    |   Zodiac Rabbit
+  2D9D    |   Zodiac Dragon
+  2D9E    |   Zodiac Snake
+  2D9F    |   Zodiac Horse
+  2DA0    |   Zodiac Goat
+  2DA1    |   Zodiac Monkey
+  2DA2    |   Zodiac Rooster
+  2DA3    |   Zodiac Dog
+  2DA4    |   Zodiac Boar
+  2DA5    |   Wall-Mounted Monitor
+  2DA6    |   Hologram Machine
+  2DA7    |   Space Captain's Seat
+  2DA8    |   Crew Member's Seat
+  2DA9    |   Space Console
+  2DAA    |   Large Space Console
+  2DAB    |   Small Space Console
+  2DAC    |   Captain's Monitor
+  2DAD    |   Crew's Monitor
+  2DAE    |   Spherical Radar
+  2DAF    |   Chocolate Cake
+  2DB0    |   Cream And Sugar
+  2DB1    |   Coffee Cup
+  2DB2    |   Dessert Case
+  2DB3    |   Coffee Grinder
+  2DB4    |   Birthday Table
+  2DB5    |   Birthday Candles
+  2DB6    |   Birthday Sign
+  2DB7    |   Birthday Cake
+  2DB8    |   Lift Chair
+  2DB9    |   Snowman Matryoshka
+  2DBA    |   Ten Billion Barrel
+  2DBB    |   Curling Stone
+  2DBC    |   Pepper Mill
+  2DBD    |   Sketchbook
+  2DBE    |   Toy Camera
+  2DBF    |   Kinderdijk Windmill
+  2DC0    |   Tuk-Tuk
+  2DC1    |   World Map
+  2DC2    |   Bobsled
+  2DC3    |   Slalom Gate
+  2DC4    |   Camp Stove
+  2DC5    |   Ski Rack
+  2DC6    |   Sitar
+  2DC7    |   Ayers Rock
+  2DC8    |   Smoker
+  2DC9    |   Gaudí's Lizard
+  2DCA    |   Songpyeon
+  2DCB    |   Bagpipes
+  2DCC    |   Big Ben
+  2DCD    |   Snow Machine
+  2DCE    |   Twelve-Grape Plate
+  2DCF    |   Sea Globe
+  2DD0    |   Nutcracker
+  2DD1    |   Wii Balance Board
+  2DD2    |   Holiday Stocking
+  2DD3    |   Berliner
+  2DD4    |   Snowmobile
+  2DD5    |   Love Tester
+  2DD6    |   Statue Of Liberty
+  2DD7    |   Patchwork Chair
+  2DD8    |   Patchwork Dresser
+  2DD9    |   Patchwork Lamp
+  2DDA    |   Patchwork Table
+  2DDB    |   Patchwork Sofa
+  2DDC    |   General's Stool
+  2DDD    |   Shogi Piece
+  2DDE    |   Board Game Piece
+  2DDF    |   Balloon TV
+  2DE0    |   Balloon Sofa
+  2DE1    |   Balloon Clock
+  2DE2    |   Balloon Lamp
+  2DE3    |   Balloon Table
+  2DE4    |   Balloon Bed
+  2DE5    |   Balloon Chair
+  2DE6    |   Balloon Dresser
+  2DE7    |   Balloon-Poodle Lamp
+  2DE8    |   Balloon Closet
+  2DE9    |   Balloon Vanity
+  2DEA    |   Lily Record Player
+  2DEB    |   Rose Sofa
+  2DEC    |   Sunflower Stereo
+  2DED    |   Tulip Dresser
+  2DEE    |   Violet Screen
+  2DEF    |   Hydrangea Bed
+  2DF0    |   Azalea Stool
+  2DF1    |   Pansy Table
+  2DF2    |   Cosmos Fan
+  2DF3    |   Hibiscus Clock
+  2DF4    |   Ultra Hand
+  2DF5    |   Ultra Scope
+  2DF6    |   Ultra Machine
+  2DF7    |   Giraffe Ruler
+  2DF8    |   Vintage Radio
+  2DF9    |   Zero Lamp
+  2DFA    |   One Lamp
+  2DFB    |   Two Lamp
+  2DFC    |   Three Lamp
+  2DFD    |   Four Lamp
+  2DFE    |   Five Lamp
+  2DFF    |   Six Lamp
+  2E00    |   Seven Lamp
+  2E01    |   Eight Lamp
+  2E02    |   Nine Lamp
+  2E03    |   Aries Rocking Chair
+  2E04    |   Taurus Bathtub
+  2E05    |   Gemini Closet
+  2E06    |   Cancer Table
+  2E07    |   Leo Sculpture
+  2E08    |   Virgo Harp
+  2E09    |   Libra Scale
+  2E0A    |   Scorpio Lamp
+  2E0B    |   Sagittarius Arrow
+  2E0C    |   Capricorn Ornament
+  2E0D    |   Aquarius Urn
+  2E0E    |   Pisces Lamp
+  2E0F    |   Sunrise Lamp
+  2E10    |   Aurora Screen
+  2E11    |   Sprout Table
+  2E12    |   Cherry-Blossom Clock
+  2E13    |   Leaf Bed
+  2E14    |   Rainbow Screen
+  2E15    |   Palm-Tree Lamp
+  2E16    |   Fireworks Table
+  2E17    |   Full-Moon Vanity
+  2E18    |   Rice-Plant Bed
+  2E19    |   Autumn-Leaf Chair
+  2E1A    |   Tree-Stump Chair
+  2E1B    |   Corkboard
+  2E1C    |   Kitchen Scale
+  2E1D    |   Sushi Platter
+  2E1E    |   Kokeshi Doll
+  2E1F    |   24-hour-Shop Model
+  2E20    |   In-Store Bellpoint
+  2E21    |   Soft-Drink Display
+  2E22    |   Sandwich Display
+  2E23    |   24-hour-Shop Sign
+  2E24    |   24-hour-Shop Counter
+  2E25    |   Barbecue Bed
+  2E26    |   Notebook Wardrobe
+  2E27    |   Eraser Sofa
+  2E28    |   Notebook Bed
+  2E29    |   Pencil Screen
+  2E2A    |   Sticker Tape Liner
+  2E2B    |   Set Square Table
+  2E2C    |   Mannequin #1
+  2E2D    |   Mannequin #2
+  2E2E    |   Mannequin #3
+  2E2F    |   Mannequin #4
+  2E30    |   Gracie Display Mannequin #1
+  2E31    |   Gracie Display Mannequin #2
+  2E32    |   Dynamic Painting
+  2E33    |   Solemn Painting
+  2E34    |   Quaint Painting
+  2E35    |   Basic Painting
+  2E36    |   Famous Painting
+  2E37    |   Perfect Painting
+  2E38    |   Amazing Painting
+  2E39    |   Nice Painting
+  2E3A    |   Moving Painting
+  2E3B    |   Common Painting
+  2E3C    |   Flowery Painting
+  2E3D    |   Warm Painting
+  2E3E    |   Jolly Painting
+  2E3F    |   Fine Painting
+  2E40    |   Scary Painting
+  2E41    |   Proper Painting
+  2E42    |   Neutral Painting
+  2E43    |   Worthy Painting
+  2E44    |   Calm Painting
+  2E45    |   Moody Painting
+  2E46    |   Wistful Painting
+  2E47    |   Serene Painting
+  2E48    |   Scenic Painting
+  2E49    |   Wild Painting
+  2E4A    |   Graceful Painting
+  2E4B    |   Beautiful Statue
+  2E4C    |   Valiant Statue
+  2E4D    |   Gallant Statue
+  2E4E    |   Robust Statue
+  2E4F    |   Great Statue
+  2E50    |   Mystic Statue
+  2E51    |   Ancient Statue
+  2E52    |   Motherly Statue
+  2E53    |   Dynamic Painting (Fake)
+  2E54    |   Solemn Painting (Fake)
+  2E55    |   Quaint Painting (Fake)
+  2E56    |   Basic Painting (Fake)
+  2E57    |   Famous Painting (Fake)
+  2E58    |   Amazing Painting (Fake)
+  2E59    |   Moving Painting (Fake)
+  2E5A    |   Jolly Painting (Fake)
+  2E5B    |   Scary Painting (Fake)
+  2E5C    |   Neutral Painting (Fake)
+  2E5D    |   Wistful Painting (Fake)
+  2E5E    |   Serene Painting (Fake)
+  2E5F    |   Wild Painting (Fake)
+  2E60    |   Graceful Painting (Fake)
+  2E61    |   Beautiful Statue (Fake)
+  2E62    |   Valiant Statue (Fake)
+  2E63    |   Gallant Statue (Fake)
+  2E64    |   Robust Statue (Fake)
+  2E65    |   Great Statue (Fake)
+  2E66    |   Mystic Statue (Fake)
+  2E67    |   Ancient Statue (Fake)
+  2E68    |   Motherly Statue (Fake)
+  2E69    |   Dynamic Painting (Wall)
+  2E6A    |   Solemn Painting (Wall)
+  2E6B    |   Quaint Painting (Wall)
+  2E6C    |   Basic Painting (Wall)
+  2E6D    |   Famous Painting (Wall)
+  2E6E    |   Perfect Painting (Wall)
+  2E6F    |   Amazing Painting (Wall)
+  2E70    |   Nice Painting (Wall)
+  2E71    |   Moving Painting (Wall)
+  2E72    |   Common Painting (Wall)
+  2E73    |   Flowery Painting (Wall)
+  2E74    |   Warm Painting (Wall)
+  2E75    |   Jolly Painting (Wall)
+  2E76    |   Fine Painting (Wall)
+  2E77    |   Scary Painting (Wall)
+  2E78    |   Proper Painting (Wall)
+  2E79    |   Neutral Painting (Wall)
+  2E7A    |   Worthy Painting (Wall)
+  2E7B    |   Calm Painting (Wall)
+  2E7C    |   Moody Painting (Wall)
+  2E7D    |   Wistful Painting (Wall)
+  2E7E    |   Serene Painting (Wall)
+  2E7F    |   Scenic Painting (Wall)
+  2E80    |   Wild Painting (Wall)
+  2E81    |   Graceful Painting (Wall)
+  2E82    |   Dynamic Painting (Fake) (Wall)
+  2E83    |   Solemn Painting (Fake) (Wall)
+  2E84    |   Quaint Painting (Fake) (Wall)
+  2E85    |   Basic Painting (Fake) (Wall)
+  2E86    |   Famous Painting (Fake) (Wall)
+  2E87    |   Amazing Painting (Fake) (Wall)
+  2E88    |   Moving Painting (Fake) (Wall)
+  2E89    |   Jolly Painting (Fake) (Wall)
+  2E8A    |   Scary Painting (Fake) (Wall)
+  2E8B    |   Neutral Painting (Fake) (Wall)
+  2E8C    |   Wistful Painting (Fake) (Wall)
+  2E8D    |   Serene Painting (Fake) (Wall)
+  2E8E    |   Wild Painting (Fake) (Wall)
+  2E8F    |   Graceful Painting (Fake) (Wall)
+  2E90    |   Amber
+  2E91    |   Ammonite
+  2E92    |   Coprolite
+  2E93    |   Dinosaur Egg
+  2E94    |   Fern Fossil
+  2E95    |   Dinosaur Track
+  2E96    |   Archaeopteryx
+  2E97    |   Peking Man
+  2E98    |   Shark Tooth
+  2E99    |   Trilobite
+  2E9A    |   T. Rex Skull
+  2E9B    |   T. Rex Torso
+  2E9C    |   T. Rex Tail
+  2E9D    |   Tricera Skull
+  2E9E    |   Tricera Torso
+  2E9F    |   Tricera Tail
+  2EA0    |   Mammoth Skull
+  2EA1    |   Mammoth Torso
+  2EA2    |   Ankylo Skull
+  2EA3    |   Ankylo Torso
+  2EA4    |   Ankylo Tail
+  2EA5    |   Apato Skull
+  2EA6    |   Apato Torso
+  2EA7    |   Apato Tail
+  2EA8    |   Dimetrodon Skull
+  2EA9    |   Dimetrodon Torso
+  2EAA    |   Dimetrodon Tail
+  2EAB    |   Iguanodon Skull
+  2EAC    |   Iguanodon Torso
+  2EAD    |   Iguanodon Tail
+  2EAE    |   Sabertooth Skull
+  2EAF    |   Sabertooth Torso
+  2EB0    |   Pachysaurus Skull
+  2EB1    |   Pachysaurus Torso
+  2EB2    |   Pachysaurus Tail
+  2EB3    |   Parasaur Skull
+  2EB4    |   Parasaur Torso
+  2EB5    |   Parasaur Tail
+  2EB6    |   Diplo Skull
+  2EB7    |   Diplo Neck
+  2EB8    |   Diplo Chest
+  2EB9    |   Diplo Hip
+  2EBA    |   Diplo Tail
+  2EBB    |   Plesio Skull
+  2EBC    |   Plesio Neck
+  2EBD    |   Plesio Torso
+  2EBE    |   Stego Skull
+  2EBF    |   Stego Torso
+  2EC0    |   Stego Tail
+  2EC1    |   Ptera Skull
+  2EC2    |   Ptera Left Wing
+  2EC3    |   Ptera Right Wing
+  2EC4    |   Ichthyo Skull
+  2EC5    |   Ichthyo Torso
+  2EC6    |   Raptor Skull
+  2EC7    |   Raptor Torso
+  2EC8    |   Styraco Skull
+  2EC9    |   Styraco Torso
+  2ECA    |   Styraco Tail
+  2ECB    |   Spino Skull
+  2ECC    |   Spino Torso
+  2ECD    |   Spino Tail
+  2ECE    |   Megacero Skull
+  2ECF    |   Megacero Torso
+  2ED0    |   Megacero Tail
+  2ED1    |   Archelon Skull
+  2ED2    |   Archelon Torso
+  2ED3    |   T. Rex Model
+  2ED4    |   Tricera Model
+  2ED5    |   Mammoth Model
+  2ED6    |   Ankylo Model
+  2ED7    |   Apato Model
+  2ED8    |   Dimetrodon Model
+  2ED9    |   Iguanodon Model
+  2EDA    |   Sabertooth Model
+  2EDB    |   Pachysaurus Model
+  2EDC    |   Parasaur Model
+  2EDD    |   Diplo Model
+  2EDE    |   Plesio Model
+  2EDF    |   Stego Model
+  2EE0    |   Ptera Model
+  2EE1    |   Ichthyo Model
+  2EE2    |   Raptor Model
+  2EE3    |   Styraco Model
+  2EE4    |   Spino Model
+  2EE5    |   Megacero Model
+  2EE6    |   Archelon Model
+  2EE7    |   Pic Of Cyrano
+  2EE8    |   Pic Of Antonio
+  2EE9    |   Pic Of Pango
+  2EEA    |   Pic Of Anabelle
+  2EEB    |   Pic Of Annalisa
+  2EEC    |   Pic Of Olaf
+  2EED    |   Pic Of Teddy
+  2EEE    |   Pic Of Pinky
+  2EEF    |   Pic Of Curt
+  2EF0    |   Pic Of Chow
+  2EF1    |   Pic Of Nate
+  2EF2    |   Pic Of Groucho
+  2EF3    |   Pic Of Tutu
+  2EF4    |   Pic Of Grizzly
+  2EF5    |   Pic Of Paula
+  2EF6    |   Pic Of Charlise
+  2EF7    |   Pic Of Beardo
+  2EF8    |   Pic Of Klaus
+  2EF9    |   Pic Of Jay
+  2EFA    |   Pic Of Robin
+  2EFB    |   Pic Of Anchovy
+  2EFC    |   Pic Of Twiggy
+  2EFD    |   Pic Of Jitters
+  2EFE    |   Pic Of Midge
+  2EFF    |   Pic Of Lucha
+  2F00    |   Pic Of Jacques
+  2F01    |   Pic Of Peck
+  2F02    |   Pic Of Sparro
+  2F03    |   Pic Of Angus
+  2F04    |   Pic Of Rodeo
+  2F05    |   Pic Of T-Bone
+  2F06    |   Pic Of Coach
+  2F07    |   Pic Of Vic
+  2F08    |   Pic Of Bob
+  2F09    |   Pic Of Mitzi
+  2F0A    |   Pic Of Rosie
+  2F0B    |   Pic Of Olivia
+  2F0C    |   Pic Of Kiki
+  2F0D    |   Pic Of Tangy
+  2F0E    |   Pic Of Punchy
+  2F0F    |   Pic Of Purrl
+  2F10    |   Pic Of Moe
+  2F11    |   Pic Of Kabuki
+  2F12    |   Pic Of Kid Cat
+  2F13    |   Pic Of Monique
+  2F14    |   Pic Of Tabby
+  2F15    |   Pic Of Stinky
+  2F16    |   Pic Of Kitty
+  2F17    |   Pic Of Tom
+  2F18    |   Pic Of Merry
+  2F19    |   Pic Of Felicity
+  2F1A    |   Pic Of Lolly
+  2F1B    |   Pic Of Ankha
+  2F1C    |   Pic Of Rudy
+  2F1D    |   Pic Of Katt
+  2F1E    |   Pic Of Bluebear
+  2F1F    |   Pic Of Maple
+  2F20    |   Pic Of Poncho
+  2F21    |   Pic Of Pudge
+  2F22    |   Pic Of Kody
+  2F23    |   Pic Of Stitches
+  2F24    |   Pic Of Vladimir
+  2F25    |   Pic Of Cheri
+  2F26    |   Pic Of Pekoe
+  2F27    |   Pic Of Chester
+  2F28    |   Pic Of Barold
+  2F29    |   Pic Of Tammy
+  2F2A    |   Pic Of Goose
+  2F2B    |   Pic Of Benedict
+  2F2C    |   Pic Of Egbert
+  2F2D    |   Pic Of Ava
+  2F2E    |   Pic Of Becky
+  2F2F    |   Pic Of Knox
+  2F30    |   Pic Of Broffina
+  2F31    |   Pic Of Ken
+  2F32    |   Pic Of Patty
+  2F33    |   Pic Of Tipper
+  2F34    |   Pic Of Naomi
+  2F35    |   Pic Of Alfonso
+  2F36    |   Pic Of Alli
+  2F37    |   Pic Of Del
+  2F38    |   Pic Of Sly
+  2F39    |   Pic Of Gayle
+  2F3A    |   Pic Of Drago
+  2F3B    |   Pic Of Fauna
+  2F3C    |   Pic Of Bam
+  2F3D    |   Pic Of Zell
+  2F3E    |   Pic Of Bruce
+  2F3F    |   Pic Of Deirdre
+  2F40    |   Pic Of Lopez
+  2F41    |   Pic Of Fuchsia
+  2F42    |   Pic Of Beau
+  2F43    |   Pic Of Diana
+  2F44    |   Pic Of Erik
+  2F45    |   Pic Of Goldie
+  2F46    |   Pic Of Butch
+  2F47    |   Pic Of Lucky
+  2F48    |   Pic Of Biskit
+  2F49    |   Pic Of Bones
+  2F4A    |   Pic Of Portia
+  2F4B    |   Pic Of Walker
+  2F4C    |   Pic Of Daisy
+  2F4D    |   Pic Of Cookie
+  2F4E    |   Pic Of Mac
+  2F4F    |   Pic Of Marcel
+  2F50    |   Pic Of Benjamin
+  2F51    |   Pic Of Cherry
+  2F52    |   Pic Of Shep
+  2F53    |   Pic Of Bill
+  2F54    |   Pic Of Joey
+  2F55    |   Pic Of Pate
+  2F56    |   Pic Of Maelle
+  2F57    |   Pic Of Deena
+  2F58    |   Pic Of Pompom
+  2F59    |   Pic Of Mallary
+  2F5A    |   Pic Of Freckles
+  2F5B    |   Pic Of Derwin
+  2F5C    |   Pic Of Drake
+  2F5D    |   Pic Of Scoot
+  2F5E    |   Pic Of Miranda
+  2F5F    |   Pic Of Gloria
+  2F60    |   Pic Of Molly
+  2F61    |   Pic Of Quillson
+  2F62    |   Pic Of Opal
+  2F63    |   Pic Of Dizzy
+  2F64    |   Pic Of Big Top
+  2F65    |   Pic Of Eloise
+  2F66    |   Pic Of Margie
+  2F67    |   Pic Of Axel
+  2F68    |   Pic Of Tucker
+  2F69    |   Pic Of Tia
+  2F6A    |   Pic Of Lily
+  2F6B    |   Pic Of Ribbot
+  2F6C    |   Pic Of Frobert
+  2F6D    |   Pic Of Camofrog
+  2F6E    |   Pic Of Drift
+  2F6F    |   Pic Of Wart Jr.
+  2F70    |   Pic Of Puddles
+  2F71    |   Pic Of Jeremiah
+  2F72    |   Pic Of Cousteau
+  2F73    |   Pic Of Prince
+  2F74    |   Pic Of Jambette
+  2F75    |   Pic Of Gigi
+  2F76    |   Pic Of Croque
+  2F77    |   Pic Of Diva
+  2F78    |   Pic Of Henry
+  2F79    |   Pic Of Chevre
+  2F7A    |   Pic Of Nan
+  2F7B    |   Pic Of Gruff
+  2F7C    |   Pic Of Velma
+  2F7D    |   Pic Of Kidd
+  2F7E    |   Pic Of Pashmina
+  2F7F    |   Pic Of Cesar
+  2F80    |   Pic Of Peewee
+  2F81    |   Pic Of Boone
+  2F82    |   Pic Of Violet
+  2F83    |   Pic Of Al
+  2F84    |   Pic Of Rocket
+  2F85    |   Pic Of Hans
+  2F86    |   Pic Of Hamlet
+  2F87    |   Pic Of Apple
+  2F88    |   Pic Of Graham
+  2F89    |   Pic Of Rodney
+  2F8A    |   Pic Of Soleil
+  2F8B    |   Pic Of Clay
+  2F8C    |   Pic Of Flurry
+  2F8D    |   Pic Of Hamphrey
+  2F8E    |   Pic Of Rocco
+  2F8F    |   Pic Of Bubbles
+  2F90    |   Pic Of Bertha
+  2F91    |   Pic Of Biff
+  2F92    |   Pic Of Harry
+  2F93    |   Pic Of Hippeux
+  2F94    |   Pic Of Buck
+  2F95    |   Pic Of Victoria
+  2F96    |   Pic Of Savannah
+  2F97    |   Pic Of Elmer
+  2F98    |   Pic Of Roscoe
+  2F99    |   Pic Of Winnie
+  2F9A    |   Pic Of Ed
+  2F9B    |   Pic Of Peaches
+  2F9C    |   Pic Of Annalise
+  2F9D    |   Pic Of Clyde
+  2F9E    |   Pic Of Colton
+  2F9F    |   Pic Of Papi
+  2FA0    |   Pic Of Julian
+  2FA1    |   Pic Of Yuka
+  2FA2    |   Pic Of Alice
+  2FA3    |   Pic Of Melba
+  2FA4    |   Pic Of Sydney
+  2FA5    |   Pic Of Ozzie
+  2FA6    |   Pic Of Canberra
+  2FA7    |   Pic Of Lyman
+  2FA8    |   Pic Of Eugene
+  2FA9    |   Pic Of Kitt
+  2FAA    |   Pic Of Mathilda
+  2FAB    |   Pic Of Astrid
+  2FAC    |   Pic Of Sylvia
+  2FAD    |   Pic Of Walt
+  2FAE    |   Pic Of Rooney
+  2FAF    |   Pic Of Marcie
+  2FB0    |   Pic Of Bud
+  2FB1    |   Pic Of Elvis
+  2FB2    |   Pic Of Mott
+  2FB3    |   Pic Of Rory
+  2FB4    |   Pic Of Lionel
+  2FB5    |   Pic Of Nana
+  2FB6    |   Pic Of Simon
+  2FB7    |   Pic Of Tammi
+  2FB8    |   Pic Of Monty
+  2FB9    |   Pic Of Elise
+  2FBA    |   Pic Of Flip
+  2FBB    |   Pic Of Shari
+  2FBC    |   Pic Of Deli
+  2FBD    |   Pic Of Dora
+  2FBE    |   Pic Of Limberg
+  2FBF    |   Pic Of Bella
+  2FC0    |   Pic Of Bree
+  2FC1    |   Pic Of Samson
+  2FC2    |   Pic Of Rod
+  2FC3    |   Pic Of Rizzo
+  2FC4    |   Pic Of Anicotti
+  2FC5    |   Pic Of Broccolo
+  2FC6    |   Pic Of Moose
+  2FC7    |   Pic Of Bettina
+  2FC8    |   Pic Of Greta
+  2FC9    |   Pic Of Penelope
+  2FCA    |   Pic Of Chadder
+  2FCB    |   Pic Of Octavian
+  2FCC    |   Pic Of Marina
+  2FCD    |   Pic Of Zucker
+  2FCE    |   Pic Of Queenie
+  2FCF    |   Pic Of Gladys
+  2FD0    |   Pic Of Cranston
+  2FD1    |   Pic Of Phil
+  2FD2    |   Pic Of Blanche
+  2FD3    |   Pic Of Flora
+  2FD4    |   Pic Of Phoebe
+  2FD5    |   Pic Of Apollo
+  2FD6    |   Pic Of Amelia
+  2FD7    |   Pic Of Pierce
+  2FD8    |   Pic Of Avery
+  2FD9    |   Pic Of Frank
+  2FDA    |   Pic Of Sterling
+  2FDB    |   Pic Of Keaton
+  2FDC    |   Pic Of Celia
+  2FDD    |   Pic Of Aurora
+  2FDE    |   Pic Of Roald
+  2FDF    |   Pic Of Cube
+  2FE0    |   Pic Of Hopper
+  2FE1    |   Pic Of Friga
+  2FE2    |   Pic Of Gwen
+  2FE3    |   Pic Of Puck
+  2FE4    |   Pic Of Boomer
+  2FE5    |   Pic Of Iggly
+  2FE6    |   Pic Of Tex
+  2FE7    |   Pic Of Flo
+  2FE8    |   Pic Of Sprinkles
+  2FE9    |   Pic Of Curly
+  2FEA    |   Pic Of Truffles
+  2FEB    |   Pic Of Rasher
+  2FEC    |   Pic Of Hugh
+  2FED    |   Pic Of Lucy
+  2FEE    |   Pic Of Crackle
+  2FEF    |   Pic Of Cobb
+  2FF0    |   Pic Of Peggy
+  2FF1    |   Pic Of Gala
+  2FF2    |   Pic Of Chops
+  2FF3    |   Pic Of Kevin
+  2FF4    |   Pic Of Pancetti
+  2FF5    |   Pic Of Agnes
+  2FF6    |   Pic Of Bunnie
+  2FF7    |   Pic Of Dotty
+  2FF8    |   Pic Of Coco
+  2FF9    |   Pic Of Snake
+  2FFA    |   Pic Of Gaston
+  2FFB    |   Pic Of Gabi
+  2FFC    |   Pic Of Pippy
+  2FFD    |   Pic Of Tiffany
+  2FFE    |   Pic Of Genji
+  2FFF    |   Pic Of Ruby
+  3000    |   Pic Of Doc
+  3001    |   Pic Of Francine
+  3002    |   Pic Of Chrissy
+  3003    |   Pic Of O'Hare
+  3004    |   Pic Of Carmen
+  3005    |   Pic Of Bonbon
+  3006    |   Pic Of Cole
+  3007    |   Pic Of Mira
+  3008    |   Pic Of Tank
+  3009    |   Pic Of Rhonda
+  300A    |   Pic Of Merengue
+  300B    |   Pic Of Renée
+  300C    |   Pic Of Vesta
+  300D    |   Pic Of Baabara
+  300E    |   Pic Of Eunice
+  300F    |   Pic Of Willow
+  3010    |   Pic Of Curlos
+  3011    |   Pic Of Wendy
+  3012    |   Pic Of Timbra
+  3013    |   Pic Of Frita
+  3014    |   Pic Of Muffy
+  3015    |   Pic Of Pietro
+  3016    |   Pic Of Peanut
+  3017    |   Pic Of Blaire
+  3018    |   Pic Of Filbert
+  3019    |   Pic Of Pecan
+  301A    |   Pic Of Nibbles
+  301B    |   Pic Of Agent S
+  301C    |   Pic Of Caroline
+  301D    |   Pic Of Sally
+  301E    |   Pic Of Static
+  301F    |   Pic Of Mint
+  3020    |   Pic Of Ricky
+  3021    |   Pic Of Cally
+  3022    |   Pic Of Poppy
+  3023    |   Pic Of Sheldon
+  3024    |   Pic Of Marshal
+  3025    |   Pic Of Hazel
+  3026    |   Pic Of Rolf
+  3027    |   Pic Of Rowan
+  3028    |   Pic Of Bangle
+  3029    |   Pic Of Leonardo
+  302A    |   Pic Of Claudia
+  302B    |   Pic Of Bianca
+  302C    |   Pic Of Chief
+  302D    |   Pic Of Lobo
+  302E    |   Pic Of Wolfgang
+  302F    |   Pic Of Whitney
+  3030    |   Pic Of Freya
+  3031    |   Pic Of Fang
+  3032    |   Pic Of Skye
+  3033    |   Pic Of Kyle
+  3034    |   Pic Of Blanca
+  3035    |   Pic Of Zipper
+  3036    |   Pic Of Jingle
+  3037    |   Pic Of Resetti
+  3038    |   Pic Of Don Resetti
+  3039    |   Pic Of Katie
+  303A    |   Pic Of K.K.
+  303B    |   Rental Axe
+  303C    |   Axe
+  303D    |   Silver Axe
+  303E    |   Golden Axe
+  303F    |   Rental Net
+  3040    |   Net
+  3041    |   Silver Net
+  3042    |   Golden Net
+  3043    |   Rental Rod
+  3044    |   Fishing Rod
+  3045    |   Silver Rod
+  3046    |   Golden Rod
+  3047    |   Rental Shovel
+  3048    |   Shovel
+  3049    |   Silver Shovel
+  304A    |   Golden Shovel
+  304B    |   Rental Can
+  304C    |   Watering Can
+  304D    |   Silver Can
+  304E    |   Golden Can
+  304F    |   Rental Slingshot
+  3050    |   Slingshot
+  3051    |   Silver Slingshot
+  3052    |   Golden Slingshot
+  3053    |   Rental Toy Hammer
+  3054    |   Toy Hammer
+  3055    |   Megaphone
+  3056    |   Timer
+  3057    |   Sparkler
+  3058    |   Roman Candle
+  3059    |   Party Popper
+  305A    |   Bubble Wand
+  305B    |   Bunny R. Balloon
+  305C    |   Bunny O. Balloon
+  305D    |   Bunny Y. Balloon
+  305E    |   Bunny G. Balloon
+  305F    |   Bunny C. Balloon
+  3060    |   Bunny B. Balloon
+  3061    |   Bunny I. Balloon
+  3062    |   Bunny P. Balloon
+  3063    |   Red Balloon
+  3064    |   Orange Balloon
+  3065    |   Yellow Balloon
+  3066    |   Green Balloon
+  3067    |   Cyan Balloon
+  3068    |   Blue Balloon
+  3069    |   Indigo Balloon
+  306A    |   Pink Balloon
+  306B    |   Heart R. Balloon
+  306C    |   Heart O. Balloon
+  306D    |   Heart Y. Balloon
+  306E    |   Heart G. Balloon
+  306F    |   Heart C. Balloon
+  3070    |   Heart B. Balloon
+  3071    |   Heart I. Balloon
+  3072    |   Heart P. Balloon
+  3073    |   Red Pinwheel
+  3074    |   Orange Pinwheel
+  3075    |   Yellow Pinwheel
+  3076    |   Green Pinwheel
+  3077    |   Cyan Pinwheel
+  3078    |   Blue Pinwheel
+  3079    |   Indigo Pinwheel
+  307A    |   Pink Pinwheel
+  307B    |   Coffee
+  307C    |   Fizzy Apple Juice
+  307D    |   Beans
+  307E    |   Good-Luck Roll
+  307F    |   Vanilla Soft-Serve
+  3080    |   Choco Soft-Serve
+  3081    |   Matcha Soft-Serve
+  3082    |   Swirl Soft-Serve
+  3083    |   Vanilla Ice Cream
+  3084    |   Strawberry Ice Cream
+  3085    |   Lemon Double Scoop
+  3086    |   Mint Double Scoop
+  3087    |   Blue Glow Wand
+  3088    |   Green Glow Wand
+  3089    |   Pink Glow Wand
+  308A    |   Yellow Glow Wand
+  308B    |   Tweeter
+  308C    |   Fountain Firework
+  308D    |   Used Firework
+  308E    |   Santa Bag
+  308F    |   Mystery Bag
+  3090    |   Normal Coffee Beans
+  3091    |   Good Coffee Beans
+  3092    |   Superb Coffee Beans
+  3093    |   Chocolate Coin
+  3094    |   Custom Shirt
+  3095    |   Pattern Easel
+  3096    |   Pattern Wall Canvas
+  3097    |   Custom Design Umbrella 
+  3098    |   Custom Design Horned Hat
+  3099    |   Custom Design Female Hat
+  309A    |   Custom Design Knit Hat
+  309B    |   Custom Design T-Shirt
+  309C    |   Custom Design Tank Shirt
+  309D    |   Custom Design T-Shirt (Distorted Sleeves)
+  309E    |   Custom Design Long Sleeve Shirt
+  309F    |   Custom Design Tank Dress
+  30A0    |   Custom Design Sleeve Dress
+  30A1    |   Custom Design Long Sleeve Dress
+  30A2    |   Signature Sheet
+  30A3    |   Petition Form
+  30A4    |   Paper Scrap
+  30A5    |   Lost Item [Book]
+  30A6    |   Lost Item [Pouch]
+  30A7    |   Lost Item [Mitten]
+  30A8    |   Lost Item [Paper Bag]
+  30A9    |   Book
+  30AA    |   Pouch
+  30AB    |   Mitten
+  30AC    |   Paper Bag
+  30AD    |   Towel
+  30AE    |   Fortune Cookie
+  30AF    |   Fortune #1
+  30B0    |   Fortune #2
+  30B1    |   Fortune #3
+  30B2    |   Fortune #46
+  30B3    |   Fortune #5
+  30B4    |   Fortune #49
+  30B5    |   Fortune #7
+  30B6    |   Fortune #8
+  30B7    |   Fortune #9
+  30B8    |   Fortune #10
+  30B9    |   Fortune #11
+  30BA    |   Fortune #12
+  30BB    |   Fortune #13
+  30BC    |   Fortune #14
+  30BD    |   Fortune #15
+  30BE    |   Fortune #50
+  30BF    |   Fortune #17
+  30C0    |   Fortune #18
+  30C1    |   Fortune #19
+  30C2    |   Fortune #20
+  30C3    |   Fortune #21
+  30C4    |   Fortune #22
+  30C5    |   Fortune #23
+  30C6    |   Fortune #24
+  30C7    |   Fortune #25
+  30C8    |   Fortune #26
+  30C9    |   Fortune #27
+  30CA    |   Fortune #28
+  30CB    |   Fortune #29
+  30CC    |   Fortune #48
+  30CD    |   Fortune #31
+  30CE    |   Fortune #32
+  30CF    |   Fortune #33
+  30D0    |   Fortune #34
+  30D1    |   Fortune #35
+  30D2    |   Fortune #36
+  30D3    |   Fortune #37
+  30D4    |   Fortune #47
+  30D5    |   Fortune #39
+  30D6    |   Fortune #40
+  30D7    |   Fortune #41
+  30D8    |   Fortune #42
+  30D9    |   Fortune #43
+  30DA    |   Fortune #44
+  30DB    |   Fortune #45
+  30DC    |   Fortune #4
+  30DD    |   Fortune #38
+  30DE    |   Fortune #30
+  30DF    |   Fortune #6
+  30E0    |   Fortune #16
+  30E1    |   Redd's Cookie
+  30E2    |   Dud Ticket
+  30E3    |   Flash Ticket
+  30E4    |   Bang Ticket
+  30E5    |   Sparkle Ticket
+  30E6    |   Whiz Ticket
+  30E7    |   Pow Ticket
+  30E8    |   Crackle Ticket
+  30E9    |   Kaboom Ticket
+  30EA    |   Pop Ticket
+  30EB    |   Bronze Badge (Sprite)
+  30EC    |   Silver Badge (Sprite)
+  30ED    |   Gold Badge (Sprite)
+  30EE    |   Map (Sprite)
+  30EF    |   TPC (Sprite)
+  30F0    |   Lost Book (Sprite)
+  30F1    |   Mail (Sprite)
+  30F2    |   Flower Seed (Sprite)
+  30F3    |   Basic Sapling (Sprite)
+  30F4    |   Cedar Sapling (Sprite)
+  30F5    |   Palm Sapling (Sprite)
+  30F6    |   Gold Trophy (Sprite)
+  30F7    |   Silver Trophy (Sprite)
+  30F8    |   Bronze Trophy (Sprite)
+  30F9    |   Bingo Card
+  30FA    |   Expired Bingo Card
+  30FB    |   Time Capsule
+  30FC    |   Scavenger-Hunt List
+  30FD    |   Club Tortimer Form (Sprite)
+  30FE    |   "Red Flowers" (Sprite)
+  30FF    |   "White Flowers" (Sprite)
+  3100    |   "Yellow Flowers" (Sprite)
+  3101    |   "Tulips" (Sprite)
+  3102    |   "Pansies" (Sprite)
+  3103    |   "Cosmos" (Sprite)
+  3104    |   "Roses" (Sprite)
+  3105    |   Red Mailbox
+  3106    |   Metal Mailbox
+  3107    |   Blue Mailbox
+  3108    |   Yellow Mailbox
+  3109    |   Orange Mailbox
+  310A    |   Green Mailbox
+  310B    |   Golden Mailbox
+  310C    |   Wooden Mailbox
+  310D    |   White Mailbox
+  310E    |   Pink Mailbox
+  310F    |   Zen Mailbox
+  3110    |   Shabby Mailbox
+  3111    |   Stainless Mailbox
+  3112    |   Square Mailbox
+  3113    |   Light-Blue Mailbox
+  3114    |   Cyan Mailbox
+  3115    |   Mermaid Mailbox
+  3116    |   Cabana Mailbox
+  3117    |   Fairy-Tale Mailbox
+  3118    |   Royal Mailbox
+  3119    |   Barrel Mailbox
+  311A    |   Sweets Mailbox
+  311B    |   Arched Circle Door
+  311C    |   Arched Fish Door
+  311D    |   Arched Astro Door
+  311E    |   Arched Door
+  311F    |   Arched Yellow Door
+  3120    |   Arched Metal Door
+  3121    |   Arched Patched Door
+  3122    |   Arched Sweets Door
+  3123    |   Arched Mermaid Door
+  3124    |   Arched Zen Door
+  3125    |   Arched Cabin Door
+  3126    |   Arch Fairy-Tale Door
+  3127    |   Arched Brown Door
+  3128    |   Arched Green Door
+  3129    |   Arched Heavy Door
+  312A    |   Arched Blue Door
+  312B    |   Arched Beige Door
+  312C    |   Arched Imperial Door
+  312D    |   Arched Pink Door
+  312E    |   Arched Kiddie Door
+  312F    |   Arched Bamboo Door
+  3130    |   Arched Golden Door
+  3131    |   Basic Door
+  3132    |   Fish Door
+  3133    |   Astro Door
+  3134    |   Classic Door
+  3135    |   Yellow Door
+  3136    |   Metal Door
+  3137    |   Patched Door
+  3138    |   Sweets Door
+  3139    |   Mermaid Door
+  313A    |   Zen Door
+  313B    |   Cabin Door
+  313C    |   Fairy-Tale Door
+  313D    |   Brown Door
+  313E    |   Green Door
+  313F    |   Heavy Door
+  3140    |   Blue Door
+  3141    |   Beige Door
+  3142    |   Imperial Door
+  3143    |   Pink Door
+  3144    |   Kiddie Door
+  3145    |   Bamboo Door
+  3146    |   Red Roof
+  3147    |   Green-Tile Roof
+  3148    |   Blue-Shingle Roof
+  3149    |   Astro Roof
+  314A    |   Kiddie Roof
+  314B    |   Black Modern Roof
+  314C    |   Straw-Thatched Roof
+  314D    |   Black-Tile Roof
+  314E    |   Fairy-Tale Roof
+  314F    |   Ranch Roof
+  3150    |   Shanty Roof
+  3151    |   Concrete Roof
+  3152    |   Sweets Roof
+  3153    |   White Roof
+  3154    |   Purple-Shingle Roof
+  3155    |   Black-Straw Roof
+  3156    |   Mermaid Roof
+  3157    |   Simple Blue Roof
+  3158    |   Purple Roof
+  3159    |   Pink Roof
+  315A    |   Black Roof
+  315B    |   Yellow Roof
+  315C    |   Fuchsia Roof
+  315D    |   Black-Shingle Roof
+  315E    |   Brown Roof
+  315F    |   Grass Roof
+  3160    |   Stone Roof
+  3161    |   Mint Fairy-Tale Roof
+  3162    |   Uneven Stone Roof
+  3163    |   Simple Green Roof
+  3164    |   Simple Gray Roof
+  3165    |   Golden Roof
+  3166    |   Blue Roof
+  3167    |   Yellow Roof
+  3168    |   Green Roof
+  3169    |   Rope Fence
+  316A    |   Picket Fence
+  316B    |   Country Fence
+  316C    |   Hedge
+  316D    |   Pink Mermaid Fence
+  316E    |   Blue Mermaid Fence
+  316F    |   Red-Brick Fence
+  3170    |   Gray-Brick Fence
+  3171    |   Pink Fence
+  3172    |   Fairy-Tale Fence
+  3173    |   Corral Fence
+  3174    |   Curvy Fence
+  3175    |   Blue Fence
+  3176    |   Fancy Fence
+  3177    |   Zen Fence
+  3178    |   Barbed-Wire Fence
+  3179    |   Sweets Fence
+  317A    |   Concrete Fence
+  317B    |   Shanty Fence
+  317C    |   Bamboo Fence
+  317D    |   Sculpted Hedge
+  317E    |   Cinder-Block Wall
+  317F    |   Golden Fence
+  3180    |   Brick Exterior
+  3181    |   Exotic Exterior
+  3182    |   Cobblestone Exterior
+  3183    |   Astro Exterior
+  3184    |   Kiddie Exterior
+  3185    |   Simple Exterior
+  3186    |   Cabana Exterior
+  3187    |   Zen Exterior
+  3188    |   Fairy-Tale Exterior
+  3189    |   Cabin Exterior
+  318A    |   Shanty Exterior
+  318B    |   Concrete Exterior
+  318C    |   Sweets Exterior
+  318D    |   White-Brick Exterior
+  318E    |   Chalet Exterior
+  318F    |   Brown-Brick Exterior
+  3190    |   Mermaid Exterior
+  3191    |   Red-Barn Exterior
+  3192    |   Blue Chalet Exterior
+  3193    |   Pink Exterior
+  3194    |   Blue Exterior
+  3195    |   Orange Exterior
+  3196    |   Garden Exterior
+  3197    |   Yellow Exterior
+  3198    |   White Exterior
+  3199    |   Stucco Exterior
+  319A    |   Stone Exterior
+  319B    |   Melon Exterior
+  319C    |   Earthy Exterior
+  319D    |   Fancy Exterior
+  319E    |   Black Exterior
+  319F    |   Golden Exterior
+  31A0    |   Colorful Gravel
+  31A1    |   Stone Pavement
+  31A2    |   Brick Pavement
+  31A3    |   Pebble Pavement
+  31A4    |   Square Pavement
+  31A5    |   Concrete Pavement
+  31A6    |   Blue-Brick Pavement
+  31A7    |   Pink Pavement
+  31A8    |   Brown Pavement
+  31A9    |   Mansion
+  31AA    |   Zen Castle
+  31AB    |   Castle
+  31AC    |   Modern House
