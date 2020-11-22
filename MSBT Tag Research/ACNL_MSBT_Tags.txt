@@ -1,4 +1,5 @@
-ACNL Tag Parser Groups, Indexes, and Args
+-- ACNL Tag Parser Groups, Indexes, and Args --
+Based on Orig EUR 1.5; Function Address: 0x5FB3A8
 
 Tag Structure:
     u16 Command Character (0x000E) //0x000F is also in ACNL's code but leads to a stubbed function, presumably was debug
